@@ -76,13 +76,19 @@ const AcademicsPage = () => {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-3xl animate-float"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float-slow" style={{animationDelay: '1s'}}></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Academic <span className="text-blue-600">Excellence</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
+              Academic <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Excellence</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
               Discover our comprehensive CBC curriculum designed to nurture well-rounded, 
               confident learners prepared for the future.
             </p>
@@ -91,11 +97,16 @@ const AcademicsPage = () => {
       </section>
 
       {/* Curriculum Overview */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              CBC <span className="text-blue-600">Curriculum</span>
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-3xl animate-float"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16 animate-fadeInUp">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              CBC <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Curriculum</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Our Competency-Based Curriculum focuses on developing practical skills, critical thinking, 
@@ -104,23 +115,33 @@ const AcademicsPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {curriculumLevels.map((level) => (
-              <div key={level.level} className="text-center">
-                <div className={`w-20 h-20 bg-gradient-to-br ${level.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                  <BookOpen className="w-10 h-10 text-white" />
+            {curriculumLevels.map((level, index) => (
+              <div 
+                key={level.level} 
+                className="group text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fadeInUp hover-lift overflow-hidden relative"
+                style={{animationDelay: `${(index + 1) * 0.1}s`}}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${level.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                
+                <div className="relative z-10">
+                  <div className={`w-20 h-20 bg-gradient-to-br ${level.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <BookOpen className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:bg-clip-text transition-all">
+                    {level.level}
+                  </h3>
+                  <p className="text-gray-600 font-medium mb-2">
+                    {level.grades}
+                  </p>
+                  <p className="text-gray-500 text-sm mb-3">
+                    {level.age}
+                  </p>
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                    {level.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {level.level}
-                </h3>
-                <p className="text-gray-600 font-medium mb-2">
-                  {level.grades}
-                </p>
-                <p className="text-gray-500 text-sm">
-                  {level.age}
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  {level.description}
-                </p>
+
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </div>
             ))}
           </div>
@@ -128,11 +149,16 @@ const AcademicsPage = () => {
       </section>
 
       {/* Core Subjects */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Core <span className="text-blue-600">Subjects</span>
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-3xl animate-float-slow"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16 animate-fadeInUp">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              Core <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Subjects</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Comprehensive subject offerings designed to build strong academic foundations.
@@ -140,24 +166,34 @@ const AcademicsPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {coreSubjects.map((subject) => (
-              <div key={subject.title} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <subject.icon className="w-8 h-8 text-blue-600" />
+            {coreSubjects.map((subject, index) => (
+              <div 
+                key={subject.title} 
+                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fadeInUp hover-lift overflow-hidden relative"
+                style={{animationDelay: `${(index + 1) * 0.1}s`}}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-200 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <subject.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:bg-clip-text transition-all">
+                    {subject.title}
+                  </h3>
+                  <div className="space-y-2 mb-4">
+                    {subject.subjects.map((sub) => (
+                      <span key={sub} className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm mr-2 mb-2 group-hover:bg-blue-100 transition-colors">
+                        {sub}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                    {subject.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
-                  {subject.title}
-                </h3>
-                <div className="space-y-2 mb-4">
-                  {subject.subjects.map((sub) => (
-                    <span key={sub} className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm mr-2 mb-2">
-                      {sub}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-600 leading-relaxed">
-                  {subject.description}
-                </p>
+
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </div>
             ))}
           </div>
@@ -165,11 +201,16 @@ const AcademicsPage = () => {
       </section>
 
       {/* Co-curricular Activities */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Co-curricular <span className="text-blue-600">Activities</span>
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16 animate-fadeInUp">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              Co-curricular <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Activities</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Beyond academics, we offer diverse activities to develop talents and build character.
@@ -177,24 +218,34 @@ const AcademicsPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {coCurricular.map((activity) => (
-              <div key={activity.title} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <activity.icon className="w-8 h-8 text-purple-600" />
+            {coCurricular.map((activity, index) => (
+              <div 
+                key={activity.title} 
+                className="group p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fadeInUp hover-lift text-center overflow-hidden relative"
+                style={{animationDelay: `${(index + 1) * 0.1}s`}}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-300 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <activity.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-indigo-600 group-hover:bg-clip-text transition-all">
+                    {activity.title}
+                  </h3>
+                  <div className="space-y-1 mb-4">
+                    {activity.activities.map((act) => (
+                      <span key={act} className="inline-block bg-purple-50 text-purple-700 px-2 py-1 rounded text-xs mr-1 mb-1 group-hover:bg-purple-100 transition-colors">
+                        {act}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors">
+                    {activity.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {activity.title}
-                </h3>
-                <div className="space-y-1 mb-4">
-                  {activity.activities.map((act) => (
-                    <span key={act} className="inline-block bg-purple-50 text-purple-700 px-2 py-1 rounded text-xs mr-1 mb-1">
-                      {act}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {activity.description}
-                </p>
+
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </div>
             ))}
           </div>

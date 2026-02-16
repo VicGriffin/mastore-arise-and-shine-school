@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 import AboutClient from './AboutClient'
 
 export const metadata: Metadata = {
-  title: 'About Mastore School - Our History, Vision & Mission',
+  title: 'About Mastore Arise and Shine School - Our History, Vision & Mission',
   description: 'Learn about Mastore Arise and Shine School\'s history, vision, mission, and core values. Serving Juja community with quality education and compassionate care since 2014.',
-  keywords: 'about mastore school, school history, vision mission, juja school, education kenya',
+  keywords: 'about mastore arise and shine school, school history, vision mission, juja school, education kenya',
 }
 
 const AboutPage = () => {

@@ -60,8 +60,8 @@ const Header = () => {
               <span className="text-white font-bold text-xl">M</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-800">Mastore School</h1>
-              <p className="text-xs text-gray-600">Arise and Shine</p>
+              <h1 className="text-lg font-bold text-gray-800">Mastore Arise and Shine</h1>
+              <p className="text-xs text-gray-600">School of Excellence</p>
             </div>
           </Link>
 
@@ -71,9 +71,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-green-600 font-medium transition-all duration-200 relative group"
               >
                 {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-600 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
           </div>
@@ -82,13 +83,13 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="px-4 py-2 text-green-600 border border-green-600 rounded-lg hover:bg-green-50 transition-colors duration-200"
+              className="px-4 py-2 text-green-600 border-2 border-green-600 rounded-lg hover:bg-green-50 transition-all duration-300 font-medium hover:shadow-lg hover:shadow-green-500/30"
             >
               Enroll Now
             </Link>
             <Link
               href="/childrens-home"
-              className="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-colors duration-200"
+              className="px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all duration-300 font-medium hover:shadow-lg hover:shadow-orange-500/30"
             >
               Support Us
             </Link>

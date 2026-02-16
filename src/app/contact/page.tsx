@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, Send, User, FileText } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Phone, Mail, MapPin, Clock, Send, User, FileText, CheckCircle, AlertCircle } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,6 +13,11 @@ export default function ContactPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -24,10 +29,22 @@ export default function ContactPage() {
     setIsSubmitting(true)
     
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
-    } catch {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -92,11 +109,17 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen">
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Contact <span className="text-blue-600">Us</span>
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-3xl animate-float"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float-slow" style={{animationDelay: '1s'}}></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className={`text-center transition-all duration-700 ${isVisible ? 'animate-fadeInDown' : 'opacity-0'}`}>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Contact <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Us</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               We&apos;d love to hear from you. Reach out for inquiries, partnerships, 
@@ -106,11 +129,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Get in <span className="text-blue-600">Touch</span>
+          <div className="text-center mb-16 animate-fadeInUp">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              Get in <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Touch</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Multiple ways to reach us for inquiries and support.
@@ -118,33 +141,46 @@ export default function ContactPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {contactInfo.map((info) => (
-              <div key={info.title} className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <info.icon className="w-8 h-8 text-blue-600" />
+            {contactInfo.map((info, index) => (
+              <div 
+                key={info.title} 
+                className="group text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fadeInUp hover-lift overflow-hidden relative"
+                style={{animationDelay: `${(index + 1) * 0.1}s`}}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <info.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all">
+                    {info.title}
+                  </h3>
+                  <p className="text-gray-600 font-medium mb-1 group-hover:text-gray-700">
+                    {info.content}
+                  </p>
+                  <p className="text-gray-500 text-sm group-hover:text-gray-600">
+                    {info.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {info.title}
-                </h3>
-                <p className="text-gray-600 font-medium mb-1">
-                  {info.content}
-                </p>
-                <p className="text-gray-500 text-sm">
-                  {info.description}
-                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float"></div>
+          <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-3xl animate-float-slow" style={{animationDelay: '1s'}}></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <div className="p-8 bg-white rounded-xl shadow-md">
+            <div className="animate-fadeInLeft">
+              <div className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Send us a <span className="text-blue-600">Message</span>
+                  Send us a <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Message</span>
                 </h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -162,7 +198,7 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                          className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
                           placeholder="John Doe"
                         />
                       </div>
@@ -181,7 +217,7 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                          className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -199,7 +235,7 @@ export default function ContactPage() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                          className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
                           placeholder="+254 XXX XXX XXX"
                         />
                       </div>
@@ -217,7 +253,7 @@ export default function ContactPage() {
                           required
                           value={formData.subject}
                           onChange={handleInputChange}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 appearance-none"
+                          className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 appearance-none hover:border-gray-300"
                         >
                           <option value="">Select a subject</option>
                           {inquiryTypes.map((type) => (
@@ -240,7 +276,7 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={handleInputChange}
                         rows={5}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 resize-none hover:border-gray-300"
                         placeholder="Tell us how we can help..."
                       ></textarea>
                     </div>
@@ -249,26 +285,41 @@ export default function ContactPage() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed transition-colors duration-200"
+                        className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/50 flex items-center justify-center gap-2 group"
                       >
-                        {isSubmitting ? 'Sending...' : 'Send Message'}
-                        <Send className="w-5 h-5 ml-2" />
+                        {isSubmitting ? (
+                          <>
+                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            Send Message
+                            <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                          </>
+                        )}
                       </button>
                     </div>
 
                     {submitStatus === 'success' && (
-                      <div className="md:col-span-2 p-4 bg-green-50 border border-green-200 rounded-lg">
-                        <p className="text-green-700 font-medium text-center">
-                          ✓ Message sent successfully! We&apos;ll respond within 24 hours.
-                        </p>
+                      <div className="md:col-span-2 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300 rounded-lg animate-slideInDown">
+                        <div className="flex items-center justify-center gap-3">
+                          <CheckCircle className="w-6 h-6 text-green-600" />
+                          <p className="text-green-700 font-medium">
+                            Message sent successfully! We&apos;ll respond within 24 hours.
+                          </p>
+                        </div>
                       </div>
                     )}
 
                     {submitStatus === 'error' && (
-                      <div className="md:col-span-2 p-4 bg-red-50 border border-red-200 rounded-lg">
-                        <p className="text-red-700 font-medium text-center">
-                          ✗ Error sending message. Please try again or call us directly.
-                        </p>
+                      <div className="md:col-span-2 p-4 bg-gradient-to-r from-red-50 to-rose-50 border-2 border-red-300 rounded-lg animate-slideInDown">
+                        <div className="flex items-center justify-center gap-3">
+                          <AlertCircle className="w-6 h-6 text-red-600" />
+                          <p className="text-red-700 font-medium">
+                            Error sending message. Please try again or call us directly.
+                          </p>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -276,22 +327,40 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div>
-              <div className="p-8 h-full min-h-[400px] bg-gray-100 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-gray-400 mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            <div className="animate-fadeInRight">
+              <div className="p-8 h-full min-h-[500px] bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-between overflow-hidden relative group">
+                {/* Background Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10 text-center w-full">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                    <MapPin className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all">
                     Find Us Here
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-6 group-hover:text-gray-700">
                     Located in Juja Sub County, along Thika Superhighway
                   </p>
-                  <div className="w-full h-48 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center">
-                    <span className="text-gray-500 font-medium">
-                      Interactive Map
-                    </span>
+
+                  {/* Map Placeholder with Animation */}
+                  <div className="w-full h-56 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 rounded-xl flex items-center justify-center overflow-hidden relative mb-6 group-hover:shadow-lg transition-shadow">
+                    <div className="absolute inset-0 opacity-30">
+                      <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-blue-400 rounded-full blur-2xl animate-pulse"></div>
+                    </div>
+                    <div className="relative z-10 text-center">
+                      <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-2 animate-bounce" />
+                      <span className="text-gray-600 font-medium block">
+                        Interactive Map
+                      </span>
+                      <span className="text-sm text-gray-500 block">
+                        (Integration coming soon)
+                      </span>
+                    </div>
                   </div>
-                  <p className="text-gray-600 text-sm">
+
+                  <p className="text-gray-600 text-sm group-hover:text-gray-700">
                     Visit us Monday - Friday: 7:00 AM - 5:00 PM
                   </p>
                 </div>
@@ -301,11 +370,16 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Frequently Asked <span className="text-blue-600">Questions</span>
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-12 animate-fadeInUp">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              Frequently Asked <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Questions</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Find answers to common questions about our school and programs.
@@ -314,14 +388,21 @@ export default function ContactPage() {
 
           <div className="max-w-4xl mx-auto">
             {faqs.map((faq, index) => (
-              <div key={index} className="mb-6">
-                <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    {faq.question}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </p>
+              <div key={index} className="mb-6 animate-fadeInUp group hover-lift" style={{animationDelay: `${(index + 1) * 0.1}s`}}>
+                <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  <div className="relative z-10">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all">
+                      {faq.question}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                      {faq.answer}
+                    </p>
+                  </div>
+
+                  {/* Top Accent Border */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </div>
               </div>
             ))}
