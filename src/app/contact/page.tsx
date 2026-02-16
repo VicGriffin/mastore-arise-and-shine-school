@@ -109,7 +109,7 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen">
-      <section className="py-20 relative overflow-hidden">
+<section className="py-20 relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <div 
