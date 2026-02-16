@@ -2,31 +2,33 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --primary: #3b82f6;
-  --primary-dark: #1e40af;
-  --secondary: #8b5cf6;
-  --tertiary: #ec4899;
-  --accent-green: #10b981;
-  --accent-yellow: #f59e0b;
+  --foreground: #1a1a1a;
+  --primary: #059669;
+  --primary-dark: #047857;
+  --secondary: #eab308;
+  --tertiary: #10b981;
+  --accent-gold: #f59e0b;
   --accent-orange: #f97316;
-  --card-bg: #f8fafc;
-  --border: #e2e8f0;
+  --accent-pink: #ec4899;
+  --card-bg: #f0fdf4;
+  --border: #d1fae5;
+  --shadow-color: rgba(5, 150, 105, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --primary: #60a5fa;
-    --primary-dark: #3b82f6;
-    --secondary: #a78bfa;
-    --tertiary: #f472b6;
-    --accent-green: #34d399;
-    --accent-yellow: #fbbf24;
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+    --primary: #10b981;
+    --primary-dark: #059669;
+    --secondary: #fbbf24;
+    --tertiary: #34d399;
+    --accent-gold: #fcd34d;
     --accent-orange: #fb923c;
-    --card-bg: #1a1a2e;
-    --border: #334155;
+    --accent-pink: #f472b6;
+    --card-bg: #1e293b;
+    --border: #064e3b;
+    --shadow-color: rgba(16, 185, 129, 0.1);
   }
 }
 
@@ -241,19 +243,19 @@ body {
 
 /* Gradient Backgrounds */
 .gradient-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--tertiary) 100%);
 }
 
-.gradient-warm {
-  background: linear-gradient(135deg, var(--accent-orange) 0%, var(--tertiary) 100%);
-}
-
-.gradient-cool {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-green) 100%);
+.gradient-gold {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--accent-gold) 100%);
 }
 
 .gradient-vibrant {
-  background: linear-gradient(135deg, var(--tertiary) 0%, var(--accent-orange) 50%, var(--accent-yellow) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent-orange) 100%);
+}
+
+.gradient-soft {
+  background: linear-gradient(135deg, var(--tertiary) 0%, var(--accent-pink) 100%);
 }
 
 .gradient-text {
