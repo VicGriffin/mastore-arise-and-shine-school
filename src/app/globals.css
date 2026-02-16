@@ -31,6 +31,10 @@
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-margin-top: 200px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
