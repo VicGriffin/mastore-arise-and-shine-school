@@ -123,7 +123,7 @@ const ChildrensHomePage = () => {
               backgroundImage: `url("/images/meal time.jpg")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-red-900/85 via-pink-800/80 to-rose-900/85"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-red-900/70 via-pink-800/60 to-rose-900/70"></div>
           </div>
         </div>
 
@@ -210,7 +210,7 @@ const ChildrensHomePage = () => {
               backgroundImage: `url("/images/meal time.jpg")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 to-white/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/85 to-white/85"></div>
           </div>
         </div>
 
@@ -277,7 +277,7 @@ const ChildrensHomePage = () => {
               backgroundImage: `url("/images/art.jfif")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-gray-50/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-white/85 to-gray-50/85"></div>
           </div>
         </div>
 

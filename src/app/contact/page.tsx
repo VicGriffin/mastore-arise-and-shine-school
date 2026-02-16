@@ -118,7 +118,7 @@ export default function ContactPage() {
               backgroundImage: `url("/images/mastore school bus2.jfif")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-purple-800/80 to-pink-900/85"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-purple-800/60 to-pink-900/70"></div>
           </div>
         </div>
 
@@ -392,7 +392,7 @@ export default function ContactPage() {
               backgroundImage: `url("/images/computer lab.jfif")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-gray-50/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-white/85 to-gray-50/85"></div>
           </div>
         </div>
 

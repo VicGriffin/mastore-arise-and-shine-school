@@ -38,7 +38,7 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
               backgroundImage: `url("/images/mastore school bus.jfif")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-green-900/85 via-emerald-800/80 to-teal-900/85"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-green-900/70 via-emerald-800/60 to-teal-900/70"></div>
           </div>
         </div>
 
@@ -112,7 +112,7 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
               backgroundImage: `url("/images/classes.jfif")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-green-600/90 via-emerald-600/90 to-teal-600/90"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-green-600/70 via-emerald-600/70 to-teal-600/70"></div>
           </div>
         </div>
 
@@ -143,7 +143,7 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
               backgroundImage: `url("/images/library.jfif")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 to-white/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/85 to-white/85"></div>
           </div>
         </div>
 
@@ -204,7 +204,7 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
               backgroundImage: `url("/images/sport.jfif")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-gray-50/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-white/85 to-gray-50/85"></div>
           </div>
         </div>
 
@@ -262,7 +262,7 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
               backgroundImage: `url("/images/art.jfif")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 to-white/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/85 to-white/85"></div>
           </div>
         </div>
 

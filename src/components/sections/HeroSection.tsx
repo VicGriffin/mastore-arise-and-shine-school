@@ -13,7 +13,7 @@ const HeroSection = () => {
             backgroundImage: `url("/images/laboratory.jfif")`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-green-900/90 via-green-800/80 to-emerald-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-green-900/70 via-green-800/60 to-emerald-900/70"></div>
         </div>
       </div>
 

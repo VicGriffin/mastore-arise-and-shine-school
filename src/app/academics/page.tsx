@@ -88,7 +88,7 @@ const AcademicsPage = () => {
               backgroundImage: `url("/images/computer lab.jfif")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-indigo-800/80 to-purple-900/85"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-indigo-800/60 to-purple-900/70"></div>
           </div>
         </div>
 
@@ -172,7 +172,7 @@ const AcademicsPage = () => {
               backgroundImage: `url("/images/library.jfif")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 to-white/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/85 to-white/85"></div>
           </div>
         </div>
 
@@ -236,7 +236,7 @@ const AcademicsPage = () => {
               backgroundImage: `url("/images/sport.jfif")`,
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-gray-50/95"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-white/85 to-gray-50/85"></div>
           </div>
         </div>
 
