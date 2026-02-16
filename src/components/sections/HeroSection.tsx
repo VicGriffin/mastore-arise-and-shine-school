@@ -4,7 +4,7 @@ import Button from '@/components/common/Button'
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <div 
@@ -13,7 +13,7 @@ const HeroSection = () => {
             backgroundImage: `url("/images/laboratory.jfif")`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-green-900/70 via-green-800/60 to-emerald-900/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-green-900/40 via-green-800/30 to-emerald-900/40"></div>
         </div>
       </div>
 
