@@ -45,7 +45,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Header />
-        <main className="flex-grow border-t border-emerald-600 animate-fade-line scroll-pt-96" style={{ scrollPaddingTop: '200px' }}>
+        <main className="flex-grow scroll-pt-96" style={{ scrollPaddingTop: '200px' }}>
           {children}
         </main>
         <Footer />
