@@ -31,6 +31,10 @@
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-margin-top: 200px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -248,6 +252,18 @@ body {
   }
 }
 
+/* Fade Line Animation */
+@keyframes fade-line {
+  0% {
+    border-top-color: rgb(5, 150, 105);
+    opacity: 1;
+  }
+  100% {
+    border-top-color: rgba(5, 150, 105, 0);
+    opacity: 0;
+  }
+}
+
 /* Animation Classes */
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out forwards;
@@ -323,6 +339,10 @@ body {
 
 .animate-parallax {
   animation: parallax linear forwards;
+}
+
+.animate-fade-line {
+  animation: fade-line 2s ease-out forwards;
 }
 
 /* Stagger animation delays */
