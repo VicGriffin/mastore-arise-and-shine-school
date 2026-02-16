@@ -32,7 +32,7 @@ const blogPosts: BlogPost[] = [
     id: 2,
     slug: 'holistic-child-development',
     title: 'Holistic Child Development: Beyond Academics',
-    excerpt: 'Learn how Mastore School nurtures every aspect of child development through sports, arts, and character building.',
+    excerpt: 'Learn how Mastore Arise and Shine School nurtures every aspect of child development through sports, arts, and character building.',
     author: 'Sarah Kipchoge',
     date: '2024-02-10',
     readTime: 6,

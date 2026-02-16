@@ -114,13 +114,19 @@ const ChildrensHomePage = () => {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-red-50 to-pink-50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-br from-red-50 via-pink-50 to-rose-50 relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-red-400 to-transparent rounded-full blur-3xl animate-float"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-pink-400 to-transparent rounded-full blur-3xl animate-float-slow" style={{animationDelay: '1s'}}></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Children&apos;s <span className="text-red-600">Home</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
+              Children&apos;s <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Home</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
               A safe, loving environment where vulnerable children find hope, education, 
               and the opportunity to shine brightly in their unique way.
             </p>
@@ -129,15 +135,20 @@ const ChildrensHomePage = () => {
       </section>
 
       {/* Mission & Impact */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-red-400 to-transparent rounded-full blur-3xl animate-float"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Our <span className="text-red-600">Mission</span>
+            <div className="group animate-fadeInLeft">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                Our <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Mission</span>
               </h2>
-              <div className="bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-xl">
-                <Heart className="w-12 h-12 text-red-600 mb-6" />
+              <div className="bg-gradient-to-br from-red-50 to-pink-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift">
+                <Heart className="w-12 h-12 text-red-600 mb-6 group-hover:scale-110 transition-transform" />
                 <p className="text-lg text-gray-700 leading-relaxed">
                   To provide a safe, nurturing environment where vulnerable children 
                   receive quality education, healthcare, and emotional support, empowering them 
@@ -146,23 +157,27 @@ const ChildrensHomePage = () => {
               </div>
             </div>
 
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Our <span className="text-red-600">Impact</span>
+            <div className="animate-fadeInRight">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                Our <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Impact</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {impactStats.map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <stat.icon className="w-8 h-8 text-red-600" />
+                {impactStats.map((stat, index) => (
+                  <div 
+                    key={stat.label} 
+                    className="group text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fadeInUp hover-lift"
+                    style={{animationDelay: `${(index + 1) * 0.1}s`}}
+                  >
+                    <div className="w-16 h-16 bg-gradient-to-br from-red-200 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                      <stat.icon className="w-8 h-8 text-white" />
                     </div>
                     <div className="text-3xl font-bold text-gray-900 mb-2">
                       {stat.number}
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-red-600 group-hover:to-pink-600 group-hover:bg-clip-text transition-all">
                       {stat.label}
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
                       {stat.description}
                     </p>
                   </div>
@@ -174,11 +189,16 @@ const ChildrensHomePage = () => {
       </section>
 
       {/* Sponsorship Programs */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Sponsorship <span className="text-red-600">Opportunities</span>
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-pink-400 to-transparent rounded-full blur-3xl animate-float-slow"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16 animate-fadeInUp">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              Sponsorship <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Opportunities</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Your support can transform a child&apos;s life and provide them with a brighter future.
@@ -186,27 +206,37 @@ const ChildrensHomePage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {sponsorshipLevels.map((level) => (
-              <div key={level.level} className={`text-center p-8 rounded-xl ${
-                level.featured ? 'ring-2 ring-red-500 ring-offset-2' : ''
-              }`}>
-                <div className={`w-20 h-20 bg-gradient-to-br ${level.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                  <Heart className="w-10 h-10 text-white" />
+            {sponsorshipLevels.map((level, index) => (
+              <div 
+                key={level.level} 
+                className={`group text-center p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fadeInUp hover-lift overflow-hidden relative ${
+                  level.featured ? 'ring-2 ring-red-500 ring-offset-4 md:scale-105' : ''
+                }`}
+                style={{animationDelay: `${(index + 1) * 0.1}s`}}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${level.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                
+                <div className="relative z-10">
+                  <div className={`w-20 h-20 bg-gradient-to-br ${level.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <Heart className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-red-600 group-hover:to-pink-600 group-hover:bg-clip-text transition-all">
+                    {level.level}
+                  </h3>
+                  <p className="text-2xl font-bold text-red-600 mb-4">
+                    {level.amount}
+                  </p>
+                  <ul className="text-left space-y-2 mb-4">
+                    {level.benefits.map((benefit) => (
+                      <li key={benefit} className="flex items-start text-gray-700 group-hover:text-gray-800 transition-colors">
+                        <span className="text-green-500 mr-2 font-bold">✓</span>
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {level.level}
-                </h3>
-                <p className="text-2xl font-bold text-red-600 mb-4">
-                  {level.amount}
-                </p>
-                <ul className="text-left space-y-2 mb-4">
-                  {level.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-start">
-                      <span className="text-green-500 mr-2">✓</span>
-                      <span className="text-gray-600">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
+
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 to-pink-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </div>
             ))}
           </div>
@@ -214,11 +244,16 @@ const ChildrensHomePage = () => {
       </section>
 
       {/* Success Stories */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Success <span className="text-red-600">Stories</span>
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-red-400 to-transparent rounded-full blur-3xl animate-float"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16 animate-fadeInUp">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              Success <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Stories</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Meet the children whose lives have been transformed through your generous support.
@@ -226,20 +261,30 @@ const ChildrensHomePage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {successStories.map((story) => (
-              <div key={story.name} className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-red-100 to-pink-100 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6">
-                  {story.avatar}
+            {successStories.map((story, index) => (
+              <div 
+                key={story.name} 
+                className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fadeInUp hover-lift text-center overflow-hidden relative"
+                style={{animationDelay: `${(index + 1) * 0.1}s`}}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="w-20 h-20 bg-gradient-to-br from-red-200 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    {story.avatar}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-red-600 group-hover:to-pink-600 group-hover:bg-clip-text transition-all">
+                    {story.name}, Age {story.age}
+                  </h3>
+                  <p className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent font-medium mb-3 group-hover:opacity-80 transition-opacity">
+                    {story.achievement}
+                  </p>
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                    {story.story}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {story.name}, Age {story.age}
-                </h3>
-                <p className="text-red-600 font-medium mb-3">
-                  {story.achievement}
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  {story.story}
-                </p>
+
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 to-pink-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </div>
             ))}
           </div>
@@ -247,11 +292,16 @@ const ChildrensHomePage = () => {
       </section>
 
       {/* Donation Methods */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Ways to <span className="text-red-600">Support</span>
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-orange-400 to-transparent rounded-full blur-3xl animate-float"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16 animate-fadeInUp">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              Ways to <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Support</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Every contribution makes a difference in a child&apos;s life. Choose how you&apos;d like to help.
@@ -259,24 +309,34 @@ const ChildrensHomePage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {donationMethods.map((method) => (
-              <div key={method.title} className="text-center">
-                <div className={`w-16 h-16 bg-gradient-to-br ${method.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                  <Heart className="w-8 h-8 text-white" />
+            {donationMethods.map((method, index) => (
+              <div 
+                key={method.title} 
+                className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-fadeInUp hover-lift text-center overflow-hidden relative"
+                style={{animationDelay: `${(index + 1) * 0.1}s`}}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${method.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                
+                <div className="relative z-10">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${method.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <Heart className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-red-600 group-hover:to-pink-600 group-hover:bg-clip-text transition-all">
+                    {method.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-700 transition-colors">
+                    {method.description}
+                  </p>
+                  <ul className="text-left space-y-1">
+                    {method.examples.map((example) => (
+                      <li key={example} className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
+                        • {example}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {method.title}
-                </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {method.description}
-                </p>
-                <ul className="text-left space-y-1">
-                  {method.examples.map((example) => (
-                    <li key={example} className="text-gray-600 text-sm">
-                      • {example}
-                    </li>
-                  ))}
-                </ul>
+
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 to-pink-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </div>
             ))}
           </div>

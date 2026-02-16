@@ -35,7 +35,7 @@ const AboutPreviewSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fadeInUp">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            About <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Mastore School</span>
+            About <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Mastore Arise and Shine School</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             For over a decade, we have been dedicated to providing quality education 

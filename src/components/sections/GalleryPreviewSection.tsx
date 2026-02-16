@@ -54,7 +54,7 @@ const GalleryPreviewSection = () => {
             Gallery <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Preview</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Glimpses of daily life, learning, and celebrations at Mastore School
+            Glimpses of daily life, learning, and celebrations at Mastore Arise and Shine School
           </p>
         </div>
 

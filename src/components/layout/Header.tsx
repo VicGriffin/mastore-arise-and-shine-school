@@ -60,8 +60,8 @@ const Header = () => {
               <span className="text-white font-bold text-xl">M</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-800">Mastore School</h1>
-              <p className="text-xs text-gray-600">Arise and Shine</p>
+              <h1 className="text-lg font-bold text-gray-800">Mastore Arise and Shine</h1>
+              <p className="text-xs text-gray-600">School of Excellence</p>
             </div>
           </Link>
 

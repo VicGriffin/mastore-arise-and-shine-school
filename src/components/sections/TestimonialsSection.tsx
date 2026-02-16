@@ -9,7 +9,7 @@ const TestimonialsSection = () => {
     {
       name: 'Mary Wanjiku',
       role: 'Parent',
-      content: 'Mastore School has transformed my daughter&apos;s life. The teachers are dedicated, and the CBC curriculum has helped her develop critical thinking skills.',
+      content: 'Mastore Arise and Shine School has transformed my daughter&apos;s life. The teachers are dedicated, and the CBC curriculum has helped her develop critical thinking skills.',
       rating: 5,
       avatar: 'MW',
       color: 'from-blue-400 to-cyan-600',
@@ -17,7 +17,7 @@ const TestimonialsSection = () => {
     {
       name: 'John Kamau',
       role: 'Alumni',
-      content: 'The foundation I received at Mastore prepared me well for secondary school. I especially appreciate the emphasis on both academics and character development.',
+      content: 'The foundation I received at Mastore Arise and Shine prepared me well for secondary school. I especially appreciate the emphasis on both academics and character development.',
       rating: 5,
       avatar: 'JK',
       color: 'from-green-400 to-emerald-600',
@@ -33,7 +33,7 @@ const TestimonialsSection = () => {
     {
       name: 'David Mwangi',
       role: 'Parent',
-      content: 'My son has grown tremendously in confidence and academic performance. The holistic approach to education at Mastore is exceptional.',
+      content: 'My son has grown tremendously in confidence and academic performance. The holistic approach to education at Mastore Arise and Shine is exceptional.',
       rating: 5,
       avatar: 'DM',
       color: 'from-orange-400 to-red-600',

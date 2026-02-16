@@ -29,8 +29,8 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight animate-fadeInUp">
-            Welcome to <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">Mastore</span> <br /> Arise and Shine
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fadeInUp">
+            Welcome to <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">Mastore Arise and Shine School</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">

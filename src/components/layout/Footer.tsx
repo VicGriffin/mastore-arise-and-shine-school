@@ -43,8 +43,8 @@ const Footer = () => {
                 <span className="text-white font-bold text-lg">M</span>
               </div>
               <div>
-                <h3 className="text-lg font-bold group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-emerald-400 group-hover:bg-clip-text transition-all">Mastore School</h3>
-                <p className="text-sm text-gray-400">Arise and Shine</p>
+                <h3 className="text-lg font-bold group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-emerald-400 group-hover:bg-clip-text transition-all">Mastore Arise and Shine</h3>
+                <p className="text-sm text-gray-400">School of Excellence</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
