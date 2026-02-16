@@ -163,7 +163,19 @@ const AcademicsPage = () => {
       </section>
 
       {/* Core Subjects */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("/images/library.jfif")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 to-white/95"></div>
+          </div>
+        </div>
+
         {/* Background Animation */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-3xl animate-float-slow"></div>
@@ -215,7 +227,19 @@ const AcademicsPage = () => {
       </section>
 
       {/* Co-curricular Activities */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("/images/sport.jfif")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-gray-50/95"></div>
+          </div>
+        </div>
+
         {/* Background Animation */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float"></div>

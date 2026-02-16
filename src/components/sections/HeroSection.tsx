@@ -10,7 +10,7 @@ const HeroSection = () => {
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url("/images/classes.jfif")`,
+            backgroundImage: `url("/images/laboratory.jfif")`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-green-900/90 via-green-800/80 to-emerald-900/90"></div>

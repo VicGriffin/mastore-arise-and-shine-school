@@ -35,7 +35,7 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url("/images/library.jfif")`,
+              backgroundImage: `url("/images/mastore school bus.jfif")`,
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-900/85 via-emerald-800/80 to-teal-900/85"></div>
@@ -103,7 +103,19 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
       </section>
 
       {/* School Motto */}
-      <section className="py-16 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 text-white relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("/images/classes.jfif")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-green-600/90 via-emerald-600/90 to-teal-600/90"></div>
+          </div>
+        </div>
+
         {/* Background Animation */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-white rounded-full blur-3xl animate-float"></div>
@@ -122,7 +134,19 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
       </section>
 
       {/* Core Values */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("/images/library.jfif")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 to-white/95"></div>
+          </div>
+        </div>
+
         {/* Background Animation */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float"></div>
@@ -171,7 +195,19 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("/images/sport.jfif")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-gray-50/95"></div>
+          </div>
+        </div>
+
         {/* Background Animation */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-cyan-400 to-transparent rounded-full blur-3xl animate-float"></div>
@@ -217,7 +253,19 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
       </section>
 
       {/* Leadership */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("/images/art.jfif")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/95 to-white/95"></div>
+          </div>
+        </div>
+
         {/* Background Animation */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-orange-400 to-transparent rounded-full blur-3xl animate-float"></div>

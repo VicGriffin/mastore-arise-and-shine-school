@@ -357,7 +357,8 @@ export default function ContactPage() {
                   </p>
 
                   {/* Map Placeholder with Animation */}
-                  <div className="w-full h-56 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 rounded-xl flex items-center justify-center overflow-hidden relative mb-6 group-hover:shadow-lg transition-shadow">
+                  <div className="w-full h-56 bg-cover bg-center bg-no-repeat rounded-xl flex items-center justify-center overflow-hidden relative mb-6 group-hover:shadow-lg transition-shadow" style={{backgroundImage: `url("/images/mastore school bus.jfif")`}}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100/90 via-purple-100/90 to-pink-100/90"></div>
                     <div className="absolute inset-0 opacity-30">
                       <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-blue-400 rounded-full blur-2xl animate-pulse"></div>
                     </div>
@@ -382,7 +383,19 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("/images/computer lab.jfif")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-gray-50/95"></div>
+          </div>
+        </div>
+
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float"></div>
