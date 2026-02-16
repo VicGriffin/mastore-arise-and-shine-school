@@ -29,7 +29,19 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("/images/library.jfif")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-green-900/85 via-emerald-800/80 to-teal-900/85"></div>
+          </div>
+        </div>
+
         {/* Background Animation */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-green-400 to-transparent rounded-full blur-3xl animate-float"></div>
@@ -38,10 +50,10 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-              About <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Mastore Arise and Shine School</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fadeInUp">
+              About <span className="bg-gradient-to-r from-green-300 to-emerald-300 bg-clip-text text-transparent">Mastore Arise and Shine School</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
+            <p className="text-lg text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
               For over a decade, we have been dedicated to providing quality education 
               and compassionate care to the children of Juja Sub County.
             </p>

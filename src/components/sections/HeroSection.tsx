@@ -4,7 +4,19 @@ import Button from '@/components/common/Button'
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-emerald-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <div 
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url("/images/classes.jfif")`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-green-900/90 via-green-800/80 to-emerald-900/90"></div>
+        </div>
+      </div>
+
       {/* Animated Background Gradients */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float"></div>
@@ -29,11 +41,11 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fadeInUp">
-            Welcome to <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">Mastore Arise and Shine School</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-fadeInUp">
+            Welcome to <span className="bg-gradient-to-r from-green-300 via-emerald-300 to-teal-300 bg-clip-text text-transparent">Mastore Arise and Shine School</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
+          <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
             Where every child discovers their potential and shines brightly in their unique way
           </p>
 

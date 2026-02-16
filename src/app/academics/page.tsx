@@ -8,6 +8,7 @@ const AcademicsPage = () => {
       description: 'Foundation years focusing on basic literacy, numeracy, and life skills through play-based learning.',
       age: '4-9 years',
       color: 'from-blue-400 to-blue-600',
+      image: '/images/art.jfif',
     },
     {
       level: 'Lower Primary',
@@ -15,6 +16,7 @@ const AcademicsPage = () => {
       description: 'Building on foundational skills with introduction to more complex concepts and practical applications.',
       age: '9-11 years',
       color: 'from-green-400 to-green-600',
+      image: '/images/classes.jfif',
     },
     {
       level: 'Upper Primary',
@@ -22,6 +24,7 @@ const AcademicsPage = () => {
       description: 'Advanced preparation for secondary education with focus on critical thinking and problem-solving.',
       age: '11-13 years',
       color: 'from-purple-400 to-purple-600',
+      image: '/images/laboratory.jfif',
     },
   ]
 
@@ -76,7 +79,19 @@ const AcademicsPage = () => {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("/images/computer lab.jfif")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-indigo-800/80 to-purple-900/85"></div>
+          </div>
+        </div>
+
         {/* Background Animation */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-3xl animate-float"></div>
@@ -85,10 +100,10 @@ const AcademicsPage = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-              Academic <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Excellence</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fadeInUp">
+              Academic <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">Excellence</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
+            <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
               Discover our comprehensive CBC curriculum designed to nurture well-rounded, 
               confident learners prepared for the future.
             </p>
@@ -124,8 +139,7 @@ const AcademicsPage = () => {
                 <div className={`absolute inset-0 bg-gradient-to-br ${level.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
                 
                 <div className="relative z-10">
-                  <div className={`w-20 h-20 bg-gradient-to-br ${level.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <BookOpen className="w-10 h-10 text-white" />
+                  <div className="w-20 h-20 bg-cover bg-center bg-no-repeat rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{backgroundImage: `url(${level.image})`}}>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:bg-clip-text transition-all">
                     {level.level}

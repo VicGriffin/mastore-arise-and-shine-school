@@ -114,7 +114,19 @@ const ChildrensHomePage = () => {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-red-50 via-pink-50 to-rose-50 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("/images/meal time.jpg")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-red-900/85 via-pink-800/80 to-rose-900/85"></div>
+          </div>
+        </div>
+
         {/* Background Animation */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-red-400 to-transparent rounded-full blur-3xl animate-float"></div>
@@ -123,10 +135,10 @@ const ChildrensHomePage = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-              Children&apos;s <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Home</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fadeInUp">
+              Children&apos;s <span className="bg-gradient-to-r from-red-300 to-pink-300 bg-clip-text text-transparent">Home</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
+            <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
               A safe, loving environment where vulnerable children find hope, education, 
               and the opportunity to shine brightly in their unique way.
             </p>

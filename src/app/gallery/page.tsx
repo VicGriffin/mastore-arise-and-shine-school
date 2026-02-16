@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { X, ChevronLeft, ChevronRight, Download } from 'lucide-react'
 
 interface GalleryImage {
@@ -8,47 +8,43 @@ interface GalleryImage {
   category: string
   title: string
   description: string
+  image: string
 }
 
 const categories = ['All', 'School Life', 'Children\'s Home', 'Events', 'Achievements']
 
 const galleryImages: GalleryImage[] = [
   // School Life (6 images)
-  { id: 1, category: 'School Life', title: 'Classroom Learning', description: 'Interactive classroom sessions with student engagement' },
-  { id: 2, category: 'School Life', title: 'Library Time', description: 'Students studying in our well-equipped library' },
-  { id: 3, category: 'School Life', title: 'Laboratory Work', description: 'Hands-on science experiments and learning' },
-  { id: 4, category: 'School Life', title: 'Computer Lab', description: 'Digital literacy and ICT training' },
-  { id: 5, category: 'School Life', title: 'Sports Day', description: 'Students competing in various sports events' },
-  { id: 6, category: 'School Life', title: 'Art Class', description: 'Creative expression through visual arts' },
+  { id: 1, category: 'School Life', title: 'Classroom Learning', description: 'Interactive classroom sessions with student engagement', image: '/images/classes.jfif' },
+  { id: 2, category: 'School Life', title: 'Library Time', description: 'Students studying in our well-equipped library', image: '/images/library.jfif' },
+  { id: 3, category: 'School Life', title: 'Laboratory Work', description: 'Hands-on science experiments and learning', image: '/images/laboratory.jfif' },
+  { id: 4, category: 'School Life', title: 'Computer Lab', description: 'Digital literacy and ICT training', image: '/images/computer lab.jfif' },
+  { id: 5, category: 'School Life', title: 'Sports Day', description: 'Students competing in various sports events', image: '/images/sport.jfif' },
+  { id: 6, category: 'School Life', title: 'Art Class', description: 'Creative expression through visual arts', image: '/images/art.jfif' },
 
   // Children's Home (4 images)
-  { id: 7, category: 'Children\'s Home', title: 'Home Life', description: 'Daily activities at our children\'s home' },
-  { id: 8, category: 'Children\'s Home', title: 'Meal Time', description: 'Nutritious meals for our children' },
-  { id: 9, category: 'Children\'s Home', title: 'Recreation', description: 'Play and recreation activities' },
-  { id: 10, category: 'Children\'s Home', title: 'Learning Together', description: 'Group study sessions and bonding' },
+  { id: 7, category: 'Children\'s Home', title: 'Home Life', description: 'Daily activities at our children\'s home', image: '/images/meal time.jpg' },
+  { id: 8, category: 'Children\'s Home', title: 'Meal Time', description: 'Nutritious meals for our children', image: '/images/meal time.jpg' },
+  { id: 9, category: 'Children\'s Home', title: 'Recreation', description: 'Play and recreation activities', image: '/images/sport.jfif' },
+  { id: 10, category: 'Children\'s Home', title: 'Learning Together', description: 'Group study sessions and bonding', image: '/images/classes.jfif' },
 
   // Events (5 images)
-  { id: 11, category: 'Events', title: 'Annual Prize Giving', description: 'Celebrating student achievements' },
-  { id: 12, category: 'Events', title: 'School Concert', description: 'Musical performances by students' },
-  { id: 13, category: 'Events', title: 'Sports Day', description: 'Inter-house sports competitions' },
-  { id: 14, category: 'Events', title: 'Educational Tours', description: 'Field trips and educational excursions' },
-  { id: 15, category: 'Events', title: 'Community Day', description: 'Community engagement activities' },
+  { id: 11, category: 'Events', title: 'Annual Prize Giving', description: 'Celebrating student achievements', image: '/images/classes.jfif' },
+  { id: 12, category: 'Events', title: 'School Concert', description: 'Musical performances by students', image: '/images/art.jfif' },
+  { id: 13, category: 'Events', title: 'Sports Day', description: 'Inter-house sports competitions', image: '/images/sport.jfif' },
+  { id: 14, category: 'Events', title: 'Educational Tours', description: 'Field trips and educational excursions', image: '/images/mastore school bus.jfif' },
+  { id: 15, category: 'Events', title: 'Community Day', description: 'Community engagement activities', image: '/images/classes.jfif' },
 
   // Achievements (4 images)
-  { id: 16, category: 'Achievements', title: 'KCPE Results', description: 'Excellence in academic performance' },
-  { id: 17, category: 'Achievements', title: 'Sports Trophies', description: 'Winning trophies and awards' },
-  { id: 18, category: 'Achievements', title: 'Debate Champions', description: 'Debate team victories' },
-  { id: 19, category: 'Achievements', title: 'Certificate Awards', description: 'Student recognition and awards' },
+  { id: 16, category: 'Achievements', title: 'KCPE Results', description: 'Excellence in academic performance', image: '/images/library.jfif' },
+  { id: 17, category: 'Achievements', title: 'Sports Trophies', description: 'Winning trophies and awards', image: '/images/sport.jfif' },
+  { id: 18, category: 'Achievements', title: 'Debate Champions', description: 'Debate team victories', image: '/images/classes.jfif' },
+  { id: 19, category: 'Achievements', title: 'Certificate Awards', description: 'Student recognition and awards', image: '/images/library.jfif' },
 ]
 
 export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [selectedImageId, setSelectedImageId] = useState<number | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
 
   const filteredImages = selectedCategory === 'All'
     ? galleryImages
@@ -79,12 +75,12 @@ export default function GalleryPage() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className={`text-center transition-all duration-700 ${isVisible ? 'animate-fadeInDown' : 'opacity-0'}`}>
+          <div className="text-center transition-all duration-700 animate-fadeInDown">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Photo <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Gallery</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore moments from our school, children's home, and community events
+              Explore moments from our school, children&apos;s home, and community events
             </p>
           </div>
         </div>
@@ -122,11 +118,14 @@ export default function GalleryPage() {
               <div
                 key={image.id}
                 onClick={() => setSelectedImageId(image.id)}
-                className={`group relative aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300 hover-lift animate-fadeInUp`}
-                style={{animationDelay: `${(index % 8) * 0.05}s`}}
+                className={`group relative aspect-square bg-cover bg-center bg-no-repeat rounded-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300 hover-lift animate-fadeInUp`}
+                style={{
+                  backgroundImage: `url("${image.image}")`,
+                  animationDelay: `${(index % 8) * 0.05}s`
+                }}
               >
-                {/* Shimmer Loading Effect */}
-                <div className="absolute inset-0 animate-shimmer"></div>
+                {/* Dark Overlay for better text visibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -165,28 +164,24 @@ export default function GalleryPage() {
           {/* Lightbox Content */}
           <div className="relative max-w-5xl w-full h-[70vh] animate-scale-up">
             {/* Image Container */}
-            <div className="w-full h-full bg-gradient-to-br from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center overflow-hidden relative group">
-              {/* Loading Shimmer */}
-              <div className="absolute inset-0 animate-shimmer"></div>
+            <div className="w-full h-full bg-cover bg-center bg-no-repeat rounded-2xl flex items-center justify-center overflow-hidden relative group" style={{backgroundImage: `url("${selectedImage.image}")`}}>
+              {/* Dark Overlay for better text visibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
-              {/* Image Placeholder with Details */}
+              {/* Image Details */}
               <div className="relative z-10 text-center px-8">
-                <div className="w-32 h-32 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
-                  <div className="text-center">
-                    <p className="text-white/80 text-sm font-medium">Image #{selectedImage.id}</p>
-                    <p className="text-white/60 text-xs mt-2">{selectedImage.category}</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-md mx-auto">
+                  <h2 className="text-3xl font-bold text-white mb-4">{selectedImage.title}</h2>
+                  <p className="text-lg text-white/90 mb-4">{selectedImage.description}</p>
+                  <p className="text-sm text-white/70 mb-6">{selectedImage.category}</p>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-4 justify-center">
+                    <button className="flex items-center gap-2 px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all duration-300 backdrop-blur-sm hover:scale-105">
+                      <Download className="w-5 h-5" />
+                      Download
+                    </button>
                   </div>
-                </div>
-
-                <h2 className="text-3xl font-bold text-white mb-4">{selectedImage.title}</h2>
-                <p className="text-lg text-white/80 mb-8">{selectedImage.description}</p>
-
-                {/* Action Buttons */}
-                <div className="flex gap-4 justify-center">
-                  <button className="flex items-center gap-2 px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all duration-300 backdrop-blur-sm hover:scale-105">
-                    <Download className="w-5 h-5" />
-                    Download
-                  </button>
                 </div>
               </div>
             </div>

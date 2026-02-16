@@ -109,7 +109,19 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen">
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("/images/mastore school bus2.jfif")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-purple-800/80 to-pink-900/85"></div>
+          </div>
+        </div>
+
         {/* Background Animation */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-3xl animate-float"></div>
@@ -118,10 +130,10 @@ export default function ContactPage() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className={`text-center transition-all duration-700 ${isVisible ? 'animate-fadeInDown' : 'opacity-0'}`}>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Contact <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Us</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Contact <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">Us</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
               We&apos;d love to hear from you. Reach out for inquiries, partnerships, 
               or to learn more about our programs.
             </p>
