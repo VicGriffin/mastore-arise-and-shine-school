@@ -31,22 +31,22 @@ const Header = () => {
       isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
     }`}>
       {/* Top Bar */}
-      <div className="bg-primary-blue-green text-white py-2">
+      <div className="bg-[#479FBE] text-white py-3">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-between items-center text-sm">
-            <div className="flex flex-wrap gap-4">
-              <span className="flex items-center gap-1">
-                <Phone className="w-4 h-4" />
-                +254 XXX XXX XXX
+          <div className="flex flex-wrap justify-between items-center text-sm gap-4">
+            <div className="flex flex-wrap gap-6">
+              <span className="flex items-center gap-2 font-medium">
+                <Phone className="w-4 h-4 flex-shrink-0" />
+                <span>+254 XXX XXX XXX</span>
               </span>
-              <span className="flex items-center gap-1">
-                <Mail className="w-4 h-4" />
-                info@mastoreschool.ac.ke
+              <span className="flex items-center gap-2 font-medium">
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <span>info@mastoreschool.ac.ke</span>
               </span>
             </div>
-            <span className="flex items-center gap-1">
-              <MapPin className="w-4 h-4" />
-              Juja Sub County, Kiambu County
+            <span className="flex items-center gap-2 font-medium">
+              <MapPin className="w-4 h-4 flex-shrink-0" />
+              <span>Juja Sub County, Kiambu County</span>
             </span>
           </div>
         </div>
