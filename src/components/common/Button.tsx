@@ -6,12 +6,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 focus:ring-green-500 shadow-lg hover:shadow-xl hover:shadow-green-500/50',
-        secondary: 'bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-600 hover:to-orange-600 focus:ring-amber-400 shadow-lg hover:shadow-xl hover:shadow-orange-500/50',
-        accent: 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 focus:ring-purple-500 shadow-lg hover:shadow-xl hover:shadow-pink-500/50',
-        outline: 'border-2 border-green-600 text-green-600 hover:bg-green-50 hover:border-green-700 focus:ring-green-500 transition-colors',
-        ghost: 'text-green-600 hover:bg-green-50/50 focus:ring-green-500 transition-colors',
-        danger: 'bg-gradient-to-r from-red-600 to-rose-600 text-white hover:from-red-700 hover:to-rose-700 focus:ring-red-500 shadow-lg hover:shadow-xl hover:shadow-red-500/50',
+        primary: 'bg-gradient-to-r from-[#479FBE] to-[#6ab3d4] text-white hover:from-[#2d6a8f] hover:to-[#479FBE] focus:ring-[#479FBE] shadow-lg hover:shadow-xl hover:shadow-[#479FBE]/50',
+        secondary: 'bg-gradient-to-r from-[#9E8016] to-[#b8a052] text-white hover:from-[#6d5a0f] hover:to-[#9E8016] focus:ring-[#9E8016] shadow-lg hover:shadow-xl hover:shadow-[#9E8016]/50',
+        accent: 'bg-gradient-to-r from-[#3C3B32] to-[#5a5955] text-white hover:from-[#2a2925] hover:to-[#3C3B32] focus:ring-[#3C3B32] shadow-lg hover:shadow-xl hover:shadow-[#3C3B32]/50',
+        outline: 'border-2 border-[#479FBE] text-[#479FBE] hover:bg-[#479FBE]/10 hover:border-[#2d6a8f] focus:ring-[#479FBE] transition-colors',
+        ghost: 'text-[#479FBE] hover:bg-[#479FBE]/10 focus:ring-[#479FBE] transition-colors',
+        danger: 'bg-gradient-to-r from-[#d97706] to-[#ea580c] text-white hover:from-[#92400e] hover:to-[#d97706] focus:ring-[#d97706] shadow-lg hover:shadow-xl hover:shadow-[#d97706]/50',
       },
       size: {
         sm: 'px-3 py-1.5 text-sm',

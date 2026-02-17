@@ -1,32 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAFBF7;
+  --foreground: #3C3B32;
   
-  /* New Theme Colors */
+  /* Theme Colors */
   --primary-blue-green: #479FBE;
   --secondary-dark-goldenrod: #9E8016;
   --accent-charcoal-brown: #3C3B32;
   --accent-porcelain: #FAFBF7;
   --neutral-alabaster-grey: #E1EAE9;
   
-  /* Legacy Colors (for compatibility) */
-  --primary-green: #059669;
-  --secondary-gold: #eab308;
-  --accent-green: #047857;
-  --vibrant-purple: #8b5cf6;
-  --vibrant-orange: #f97316;
-  --vibrant-pink: #ec4899;
-  --vibrant-blue: #0ea5e9;
-  --vibrant-cyan: #06b6d4;
+  /* Derived Colors for Harmony */
+  --primary-light: #6ab3d4;
+  --primary-dark: #2d6a8f;
+  --secondary-light: #b8a052;
+  --secondary-dark: #6d5a0f;
+  --text-primary: #3C3B32;
+  --text-secondary: #5a5955;
+  --text-light: #8b8784;
 }
 
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #2d2d2a;
+    --foreground: #FAFBF7;
   }
 }
 
@@ -125,19 +124,19 @@ body {
 /* Pulse & Glow Animations */
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7);
+    box-shadow: 0 0 0 0 rgba(71, 159, 190, 0.7);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(5, 150, 105, 0);
+    box-shadow: 0 0 0 10px rgba(71, 159, 190, 0);
   }
 }
 
 @keyframes glow-pulse {
   0%, 100% {
-    text-shadow: 0 0 10px rgba(5, 150, 105, 0.5), 0 0 20px rgba(5, 150, 105, 0.3);
+    text-shadow: 0 0 10px rgba(71, 159, 190, 0.5), 0 0 20px rgba(71, 159, 190, 0.3);
   }
   50% {
-    text-shadow: 0 0 20px rgba(5, 150, 105, 0.8), 0 0 30px rgba(5, 150, 105, 0.5);
+    text-shadow: 0 0 20px rgba(71, 159, 190, 0.8), 0 0 30px rgba(71, 159, 190, 0.5);
   }
 }
 
@@ -366,44 +365,44 @@ body {
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(5, 150, 105, 0.6);
+  box-shadow: 0 0 20px rgba(71, 159, 190, 0.6);
 }
 
-.hover-glow-purple:hover {
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+.hover-glow-blue:hover {
+  box-shadow: 0 0 20px rgba(71, 159, 190, 0.6);
 }
 
-.hover-glow-pink:hover {
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);
+.hover-glow-gold:hover {
+  box-shadow: 0 0 20px rgba(158, 128, 22, 0.6);
 }
 
-.hover-glow-orange:hover {
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.6);
+.hover-glow-brown:hover {
+  box-shadow: 0 0 20px rgba(60, 59, 50, 0.6);
 }
 
 /* Gradient Backgrounds */
-.gradient-green {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+.gradient-blue-green {
+  background: linear-gradient(135deg, #479FBE 0%, #6ab3d4 100%);
 }
 
-.gradient-purple-pink {
-  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+.gradient-gold-brown {
+  background: linear-gradient(135deg, #9E8016 0%, #6d5a0f 100%);
 }
 
-.gradient-orange-pink {
-  background: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+.gradient-blue-gold {
+  background: linear-gradient(135deg, #479FBE 0%, #9E8016 100%);
 }
 
-.gradient-blue-cyan {
-  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+.gradient-brown-blue {
+  background: linear-gradient(135deg, #3C3B32 0%, #479FBE 100%);
 }
 
 .gradient-vibrant {
-  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f97316 100%);
+  background: linear-gradient(135deg, #479FBE 0%, #9E8016 50%, #3C3B32 100%);
 }
 
 .gradient-animated {
-  background: linear-gradient(135deg, #059669, #8b5cf6, #ec4899, #f97316);
+  background: linear-gradient(135deg, #479FBE, #9E8016, #3C3B32, #479FBE);
   background-size: 200% 200%;
   animation: gradient-shift 4s ease infinite;
 }
@@ -443,16 +442,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--accent-porcelain);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-green);
+  background: var(--primary-blue-green);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-green);
+  background: var(--secondary-dark-goldenrod);
 }
 
 /* Focus styles for accessibility */
@@ -460,6 +459,6 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--primary-green);
+  outline: 2px solid var(--primary-blue-green);
   outline-offset: 2px;
 }
