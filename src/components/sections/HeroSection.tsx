@@ -13,7 +13,7 @@ const HeroSection = () => {
             backgroundImage: `url("/images/laboratory.jfif")`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-green-900/40 via-green-800/30 to-emerald-900/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-blue-green/70 via-secondary-dark-goldenrod/60 to-accent-charcoal-brown/70"></div>
         </div>
       </div>
 
@@ -36,7 +36,7 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-4 py-8 sm:py-0">
         <div className="max-w-4xl mx-auto">
           <div className="animate-fadeInDown mb-6">
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-sm font-semibold mb-6">
+            <span className="inline-block px-4 py-2 bg-gradient-to-r from-primary-blue-green to-secondary-dark-goldenrod text-white rounded-full text-sm font-semibold mb-6">
               Welcome to Excellence
             </span>
           </div>
@@ -45,20 +45,20 @@ const HeroSection = () => {
             Welcome to <span className="bg-gradient-to-r from-green-300 via-emerald-300 to-teal-300 bg-clip-text text-transparent">Mastore Arise and Shine School</span>
           </h1>
           
-          <p className="text-sm sm:text-lg md:text-2xl text-gray-100 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
+          <p className="text-sm sm:text-lg md:text-2xl text-neutral-alabaster-grey mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
             Where every child discovers their potential and shines brightly in their unique way
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 animate-fadeInUp stagger-2">
             <Link href="/about">
-              <Button variant="primary" size="lg" className="group hover-lift">
+              <Button variant="primary" size="lg" className="group hover-lift bg-gradient-to-r from-primary-blue-green to-secondary-dark-goldenrod hover:from-secondary-dark-goldenrod hover:to-accent-charcoal-brown text-white hover:shadow-lg hover:shadow-primary-blue-green/30">
                 Learn More
                 <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
             
             <Link href="/contact">
-              <Button variant="outline" size="lg" className="hover-lift">
+              <Button variant="outline" size="lg" className="hover-lift border-2 border-neutral-alabaster-grey text-neutral-alabaster-grey hover:border-primary-blue-green hover:text-primary-blue-green hover:shadow-lg hover:shadow-primary-blue-green/30">
                 Contact Us
               </Button>
             </Link>

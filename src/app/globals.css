@@ -3,6 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* New Theme Colors */
+  --primary-blue-green: #479FBE;
+  --secondary-dark-goldenrod: #9E8016;
+  --accent-charcoal-brown: #3C3B32;
+  --accent-porcelain: #FAFBF7;
+  --neutral-alabaster-grey: #E1EAE9;
+  
+  /* Legacy Colors (for compatibility) */
   --primary-green: #059669;
   --secondary-gold: #eab308;
   --accent-green: #047857;

@@ -31,7 +31,7 @@ const Header = () => {
       isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
     }`}>
       {/* Top Bar */}
-      <div className="bg-green-700 text-white py-2">
+      <div className="bg-primary-blue-green text-white py-2">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-between items-center text-sm">
             <div className="flex flex-wrap gap-4">
@@ -78,10 +78,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-green-600 font-medium transition-all duration-200 relative group"
+                className="text-neutral-alabaster-grey hover:text-primary-blue-green font-medium transition-all duration-200 relative group"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-600 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-blue-green to-secondary-dark-goldenrod group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
           </div>
@@ -90,22 +90,22 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="px-4 py-2 text-green-600 border-2 border-green-600 rounded-lg hover:bg-green-50 transition-all duration-300 font-medium hover:shadow-lg hover:shadow-green-500/30"
+              className="px-4 py-2 text-white bg-gradient-to-r from-primary-blue-green to-secondary-dark-goldenrod rounded-lg hover:from-secondary-dark-goldenrod hover:to-accent-charcoal-brown transition-all duration-300 font-medium hover:shadow-lg hover:shadow-primary-blue-green/30"
             >
-              Enroll Now
+              Contact Us
             </Link>
             <Link
               href="/childrens-home"
-              className="px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all duration-300 font-medium hover:shadow-lg hover:shadow-orange-500/30"
+              className="px-4 py-2 text-white bg-gradient-to-r from-accent-porcelain to-accent-charcoal-brown rounded-lg hover:from-accent-charcoal-brown hover:to-neutral-alabaster-grey transition-all duration-300 font-medium hover:shadow-lg hover:shadow-accent-porcelain/30"
             >
-              Support Us
+              Support Children
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 text-gray-800 hover:text-green-600"
+            className="lg:hidden p-2 rounded-lg hover:bg-neutral-alabaster-grey transition-colors duration-200 text-neutral-alabaster-grey hover:text-primary-blue-green"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -120,7 +120,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-green-600 font-medium px-2 py-1 transition-colors duration-200"
+                  className="text-neutral-alabaster-grey hover:text-primary-blue-green font-medium px-2 py-1 transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -129,17 +129,17 @@ const Header = () => {
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
                 <Link
                   href="/contact"
-                  className="px-4 py-2 text-green-600 border border-green-600 rounded-lg hover:bg-green-50 transition-colors duration-200 text-center"
+                  className="px-4 py-2 text-white bg-gradient-to-r from-primary-blue-green to-secondary-dark-goldenrod rounded-lg hover:from-secondary-dark-goldenrod hover:to-accent-charcoal-brown transition-all duration-300 font-medium hover:shadow-lg hover:shadow-primary-blue-green/30"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Enroll Now
+                  Contact Us
                 </Link>
                 <Link
                   href="/childrens-home"
-                  className="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-colors duration-200 text-center"
+                  className="px-4 py-2 text-white bg-gradient-to-r from-accent-porcelain to-accent-charcoal-brown rounded-lg hover:from-accent-charcoal-brown hover:to-neutral-alabaster-grey transition-all duration-300 font-medium hover:shadow-lg hover:shadow-accent-porcelain/30"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Support Us
+                  Support Children
                 </Link>
               </div>
             </div>
