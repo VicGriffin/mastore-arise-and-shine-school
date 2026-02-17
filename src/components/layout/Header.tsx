@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -56,8 +57,14 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">M</span>
+            <div className="w-12 h-12 rounded-full overflow-hidden">
+              <Image 
+                src="/LOGO/SCHOOL LOGO.jpg" 
+                alt="Mastore Arise and Shine School Logo"
+                width={48}
+                height={48}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <h1 className="text-lg font-bold text-gray-800">Mastore Arise and Shine</h1>
