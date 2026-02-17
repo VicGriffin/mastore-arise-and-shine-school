@@ -45,7 +45,7 @@ const HeroSection = () => {
             Welcome to <span className="bg-gradient-to-r from-[#E1EAE9] via-[#6ab3d4] to-[#479FBE] bg-clip-text text-transparent">Mastore Arise and Shine School</span>
           </h1>
           
-          <p className="text-sm sm:text-lg md:text-2xl text-[#FAFBF7] mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
+          <p className="text-sm sm:text-lg md:text-2xl text-[#E1EAE9] mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
             Where every child discovers their potential and shines brightly in their unique way
           </p>
 
