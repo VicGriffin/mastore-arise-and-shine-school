@@ -4,7 +4,7 @@ import Button from '@/components/common/Button'
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen sm:h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <div 
@@ -13,7 +13,7 @@ const HeroSection = () => {
             backgroundImage: `url("/images/laboratory.jfif")`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-green-900/70 via-green-800/60 to-emerald-900/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-green-900/40 via-green-800/30 to-emerald-900/40"></div>
         </div>
       </div>
 
@@ -33,7 +33,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4 py-8 sm:py-0">
         <div className="max-w-4xl mx-auto">
           <div className="animate-fadeInDown mb-6">
             <span className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-sm font-semibold mb-6">
@@ -41,15 +41,15 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-fadeInUp">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight animate-fadeInUp">
             Welcome to <span className="bg-gradient-to-r from-green-300 via-emerald-300 to-teal-300 bg-clip-text text-transparent">Mastore Arise and Shine School</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
+          <p className="text-sm sm:text-lg md:text-2xl text-gray-100 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
             Where every child discovers their potential and shines brightly in their unique way
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fadeInUp stagger-2">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 animate-fadeInUp stagger-2">
             <Link href="/about">
               <Button variant="primary" size="lg" className="group hover-lift">
                 Learn More
@@ -65,29 +65,29 @@ const HeroSection = () => {
           </div>
 
           {/* Quick Stats with Animations */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-3xl mx-auto">
             <div className="text-center animate-fadeInUp stagger-1 group hover-scale-lg">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg group-hover:shadow-green-500/50 transition-all duration-300">
-                <BookOpen className="w-8 h-8 text-white" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:shadow-lg group-hover:shadow-green-500/50 transition-all duration-300">
+                <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">10+ Years</h3>
-              <p className="text-gray-600">of Excellence</p>
+              <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">10+ Years</h3>
+              <p className="text-sm sm:text-base text-gray-600">of Excellence</p>
             </div>
 
             <div className="text-center animate-fadeInUp stagger-2 group hover-scale-lg">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg group-hover:shadow-cyan-500/50 transition-all duration-300">
-                <Heart className="w-8 h-8 text-white" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-400 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:shadow-lg group-hover:shadow-cyan-500/50 transition-all duration-300">
+                <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">500+</h3>
-              <p className="text-gray-600">Students Enrolled</p>
+              <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">500+</h3>
+              <p className="text-sm sm:text-base text-gray-600">Students Enrolled</p>
             </div>
 
             <div className="text-center animate-fadeInUp stagger-3 group hover-scale-lg">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg group-hover:shadow-pink-500/50 transition-all duration-300">
-                <ArrowRight className="w-8 h-8 text-white" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:shadow-lg group-hover:shadow-pink-500/50 transition-all duration-300">
+                <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">95%</h3>
-              <p className="text-gray-600">KCPE Pass Rate</p>
+              <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">95%</h3>
+              <p className="text-sm sm:text-base text-gray-600">KCPE Pass Rate</p>
             </div>
           </div>
         </div>
