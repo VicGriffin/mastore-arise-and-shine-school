@@ -109,26 +109,26 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 bg-gradient-to-r from-[#6ab3d4] to-[#9E8016] bg-clip-text text-transparent">Contact Info</h4>
             <div className="space-y-3">
-              <div className="flex items-start space-x-3 group hover-lift p-2 rounded-lg transition-all">
+              <div className="flex items-start space-x-3 group hover-lift p-2 rounded-lg transition-all bg-white/5 hover:bg-white/10">
                 <MapPin className="w-5 h-5 text-[#479FBE] mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <div>
-                  <p className="text-sm text-gray-300">Juja Sub County</p>
-                  <p className="text-sm text-gray-300">Kiambu County, Kenya</p>
+                  <p className="text-sm text-white/90">Juja Sub County</p>
+                  <p className="text-sm text-white/80">Kiambu County, Kenya</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3 group hover-lift p-2 rounded-lg transition-all">
+              <div className="flex items-center space-x-3 group hover-lift p-2 rounded-lg transition-all bg-white/5 hover:bg-white/10">
                 <Phone className="w-5 h-5 text-[#479FBE] flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <p className="text-sm text-gray-300">+254 XXX XXX XXX</p>
+                <p className="text-sm text-white/90">+254 XXX XXX XXX</p>
               </div>
-              <div className="flex items-center space-x-3 group hover-lift p-2 rounded-lg transition-all">
+              <div className="flex items-center space-x-3 group hover-lift p-2 rounded-lg transition-all bg-white/5 hover:bg-white/10">
                 <Mail className="w-5 h-5 text-[#479FBE] flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <p className="text-sm text-gray-300">info@mastoreschool.ac.ke</p>
+                <p className="text-sm text-white/90">info@mastoreschool.ac.ke</p>
               </div>
-              <div className="flex items-center space-x-3 group hover-lift p-2 rounded-lg transition-all">
+              <div className="flex items-center space-x-3 group hover-lift p-2 rounded-lg transition-all bg-white/5 hover:bg-white/10">
                 <Clock className="w-5 h-5 text-[#479FBE] flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <div>
-                  <p className="text-sm text-gray-300">Mon - Fri: 7:00 AM - 5:00 PM</p>
-                  <p className="text-sm text-gray-300">Sat: 8:00 AM - 1:00 PM</p>
+                  <p className="text-sm text-white/90">Mon - Fri: 7:00 AM - 5:00 PM</p>
+                  <p className="text-sm text-white/90">Sat: 8:00 AM - 1:00 PM</p>
                 </div>
               </div>
             </div>
