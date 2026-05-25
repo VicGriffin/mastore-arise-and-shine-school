@@ -5,7 +5,6 @@ const Footer = () => {
   const quickLinks = [
     { name: 'About Us', href: '/about' },
     { name: 'Academics', href: '/academics' },
-    { name: 'Children\'s Home', href: '/childrens-home' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
@@ -14,8 +13,8 @@ const Footer = () => {
   const programs = [
     { name: 'CBC Curriculum', href: '/academics' },
     { name: 'Co-curricular Activities', href: '/academics#activities' },
-    { name: 'Children\'s Home Support', href: '/childrens-home' },
-    { name: 'Sponsorship Program', href: '/childrens-home#sponsorship' },
+    { name: 'Sports Program', href: '/academics#sports' },
+    { name: 'Leadership Development', href: '/academics#leadership' },
   ]
 
   const socialLinks = [
@@ -49,7 +48,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Nurturing excellence, character, and hope in Juja Sub County. 
-              Providing quality education and a caring home for children.
+              Providing quality education and developing well-rounded learners.
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social) => (
