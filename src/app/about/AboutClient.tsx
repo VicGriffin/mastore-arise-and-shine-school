@@ -55,7 +55,7 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
             </h2>
             <p className="text-lg text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fadeInUp stagger-1">
               For over a decade, we have been dedicated to providing quality education 
-              and compassionate care to the children of Juja Sub County.
+              and developing well-rounded learners in Juja Sub County.
             </p>
           </div>
         </div>
@@ -92,9 +92,8 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  To provide quality education and compassionate care that empowers 
-                  children to excel academically, develop strong character, 
-                  and contribute positively to society.
+                  To provide quality education that empowers children to excel academically, 
+                  develop strong character, and become well-rounded contributors to society.
                 </p>
               </Card>
             </div>

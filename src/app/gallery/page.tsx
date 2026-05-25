@@ -11,7 +11,7 @@ interface GalleryImage {
   image: string
 }
 
-const categories = ['All', 'School Life', 'Children\'s Home', 'Events', 'Achievements']
+const categories = ['All', 'School Life', 'Activities', 'Events', 'Achievements']
 
 const galleryImages: GalleryImage[] = [
   // School Life (6 images)
@@ -22,11 +22,11 @@ const galleryImages: GalleryImage[] = [
   { id: 5, category: 'School Life', title: 'Sports Day', description: 'Students competing in various sports events', image: '/images/sport.jfif' },
   { id: 6, category: 'School Life', title: 'Art Class', description: 'Creative expression through visual arts', image: '/images/art.jfif' },
 
-  // Children's Home (4 images)
-  { id: 7, category: 'Children\'s Home', title: 'Home Life', description: 'Daily activities at our children\'s home', image: '/images/meal time.jpg' },
-  { id: 8, category: 'Children\'s Home', title: 'Meal Time', description: 'Nutritious meals for our children', image: '/images/meal time.jpg' },
-  { id: 9, category: 'Children\'s Home', title: 'Recreation', description: 'Play and recreation activities', image: '/images/sport.jfif' },
-  { id: 10, category: 'Children\'s Home', title: 'Learning Together', description: 'Group study sessions and bonding', image: '/images/classes.jfif' },
+  // Activities (4 images)
+  { id: 7, category: 'Activities', title: 'Drama Club', description: 'Student theatrical performances and expression', image: '/images/art.jfif' },
+  { id: 8, category: 'Activities', title: 'Music & Arts', description: 'Creative activities and artistic development', image: '/images/art.jfif' },
+  { id: 9, category: 'Activities', title: 'Sports Training', description: 'Physical education and athletic development', image: '/images/sport.jfif' },
+  { id: 10, category: 'Activities', title: 'Club Meetings', description: 'Student clubs and societies', image: '/images/classes.jfif' },
 
   // Events (5 images)
   { id: 11, category: 'Events', title: 'Annual Prize Giving', description: 'Celebrating student achievements', image: '/images/classes.jfif' },
@@ -80,7 +80,7 @@ export default function GalleryPage() {
               Photo <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Gallery</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore moments from our school, children&apos;s home, and community events
+              Explore moments from our school, activities, and community events
             </p>
           </div>
         </div>
