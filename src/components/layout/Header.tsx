@@ -21,7 +21,6 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Academics', href: '/academics' },
-    { name: 'Children\'s Home', href: '/childrens-home' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Contact', href: '/contact' },
   ]
@@ -94,12 +93,6 @@ const Header = () => {
             >
               Contact Us
             </Link>
-            <Link
-              href="/childrens-home"
-              className="px-4 py-2 text-white bg-gradient-to-r from-[#3C3B32] to-[#5a5955] rounded-lg hover:from-[#5a5955] hover:to-[#479FBE] transition-all duration-300 font-medium hover:shadow-lg hover:shadow-[#3C3B32]/30"
-            >
-              Support Children
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -133,13 +126,6 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact Us
-                </Link>
-                <Link
-                  href="/childrens-home"
-                  className="px-4 py-2 text-white bg-gradient-to-r from-[#3C3B32] to-[#5a5955] rounded-lg hover:from-[#5a5955] hover:to-[#479FBE] transition-all duration-300 font-medium hover:shadow-lg hover:shadow-[#3C3B32]/30"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Support Children
                 </Link>
               </div>
             </div>

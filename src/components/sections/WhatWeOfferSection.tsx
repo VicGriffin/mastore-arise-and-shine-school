@@ -1,4 +1,4 @@
-import { BookOpen, Heart, Users, Trophy, Target } from 'lucide-react'
+import { BookOpen, Heart, Users, Trophy, Target, Brain } from 'lucide-react'
 import Button from '@/components/common/Button'
 
 const WhatWeOfferSection = () => {
@@ -10,9 +10,9 @@ const WhatWeOfferSection = () => {
       color: 'from-blue-400 to-blue-600',
     },
     {
-      icon: Heart,
-      title: 'Children\'s Home',
-      description: 'Safe, caring environment for vulnerable children with proper nutrition and emotional support.',
+      icon: Trophy,
+      title: 'Core Curricular Activities',
+      description: 'Structured programs including sports, arts, music, and STEM activities integrated into our curriculum.',
       color: 'from-green-400 to-green-600',
     },
     {
@@ -22,15 +22,15 @@ const WhatWeOfferSection = () => {
       color: 'from-purple-400 to-purple-600',
     },
     {
-      icon: Trophy,
+      icon: Brain,
       title: 'Co-curricular Activities',
-      description: 'Sports, music, drama, and clubs to develop talents and build confidence.',
+      description: 'Clubs, societies, and leadership development to nurture talents and build character.',
       color: 'from-orange-400 to-orange-600',
     },
     {
       icon: Target,
       title: 'Modern Facilities',
-      description: 'Well-equipped classrooms, computer lab, library, and safe play areas.',
+      description: 'Well-equipped classrooms, computer lab, library, and dedicated spaces for activities.',
       color: 'from-red-400 to-red-600',
     },
     {

@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Heart, Lightbulb } from 'lucide-react'
+import { ArrowRight, BookOpen, Trophy, Lightbulb } from 'lucide-react'
 import Link from 'next/link'
 import Button from '@/components/common/Button'
 
@@ -11,10 +11,10 @@ const AboutPreviewSection = () => {
       color: 'from-blue-400 to-cyan-600',
     },
     {
-      icon: Heart,
-      title: 'Children\'s Home',
-      description: 'Our children\'s home provides a safe, loving environment for vulnerable children, ensuring they receive proper care, education, and emotional support.',
-      color: 'from-pink-400 to-rose-600',
+      icon: Trophy,
+      title: 'Core Activities & Development',
+      description: 'Our comprehensive co-curricular programs in sports, arts, music, and STEM help students develop talents, build confidence, and become well-rounded learners.',
+      color: 'from-green-400 to-emerald-600',
     },
     {
       icon: Lightbulb,
@@ -39,7 +39,7 @@ const AboutPreviewSection = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             For over a decade, we have been dedicated to providing quality education 
-            and compassionate care to the children of Juja Sub County.
+            and developing well-rounded learners in Juja Sub County.
           </p>
         </div>
 

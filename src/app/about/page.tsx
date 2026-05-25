@@ -16,12 +16,6 @@ const AboutPage = () => {
       icon: 'Calendar',
     },
     {
-      year: '2016',
-      title: 'Children\'s Home Opened',
-      description: 'Extended our mission to include a caring home for vulnerable children in the community.',
-      icon: 'Heart',
-    },
-    {
       year: '2018',
       title: 'First Graduating Class',
       description: 'Celebrated our first group of students who successfully completed their primary education.',
@@ -36,7 +30,7 @@ const AboutPage = () => {
     {
       year: '2024',
       title: 'Decade of Excellence',
-      description: 'Celebrating 10 years of transforming lives through education and compassionate care.',
+      description: 'Celebrating 10 years of transforming lives through quality education and developing well-rounded learners.',
       icon: 'Target',
     },
   ]
@@ -87,8 +81,8 @@ const AboutPage = () => {
     },
     {
       name: 'Mrs. Sarah Mwangi',
-      role: 'Children\'s Home Manager',
-      description: 'Dedicated to providing a loving home for every child in our care.',
+      role: 'Co-curricular Activities Director',
+      description: 'Dedicated to developing student talents through diverse activities and clubs.',
       avatar: 'SM',
     },
     {
