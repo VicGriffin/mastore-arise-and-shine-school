@@ -54,10 +54,6 @@ export default function Header() {
                 {siteConfig.location}
               </span>
             </div>
-
-            <span className="rounded-full bg-slate-950 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
-              {siteConfig.tagline}
-            </span>
           </div>
 
           <nav className="flex items-center justify-between gap-4 px-4 py-4 sm:px-5">
@@ -74,9 +70,6 @@ export default function Header() {
               </div>
 
               <div className="min-w-0">
-                <p className="truncate text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-blue-700">
-                  {siteConfig.tagline}
-                </p>
                 <p className="truncate text-sm font-semibold text-slate-950 sm:text-base">
                   {siteConfig.name}
                 </p>
@@ -136,10 +129,6 @@ export default function Header() {
           />
           <div className="fixed inset-x-3 top-[6.6rem] z-50 overflow-hidden rounded-[1.8rem] border border-white/80 bg-white/94 shadow-[0_40px_100px_-40px_rgba(15,23,42,0.5)] backdrop-blur-xl">
             <div className="space-y-1 px-4 py-4">
-              <div className="rounded-[1.5rem] bg-slate-950 px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-sky-100">
-                {siteConfig.tagline}
-              </div>
-
               {navigationLinks.map((item) => {
                 const isActive = pathname === item.href
 

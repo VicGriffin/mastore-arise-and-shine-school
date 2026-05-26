@@ -1,75 +1,83 @@
 import Image from 'next/image'
-import { ArrowRight, BookOpen, Sparkles } from 'lucide-react'
+import { ArrowRight, BookOpen } from 'lucide-react'
 import Button from '@/components/common/Button'
 import { homeHighlights, siteConfig } from '@/lib/site-content'
 
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden px-3 pt-2 sm:px-5">
-      <div className="page-shell relative overflow-hidden rounded-[2.4rem] border border-white/70 bg-slate-950 shadow-[0_45px_120px_-60px_rgba(15,23,42,0.8)]">
-        <Image
-          src="/images/heropage.jpg"
-          alt="Learners at Mastore Arise and Shine School"
-          fill
-          priority
-          sizes="(min-width: 1280px) 1200px, 100vw"
-          className="object-cover"
-        />
-        <div className="hero-overlay absolute inset-0" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(125,211,252,0.34),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.24),transparent_34%)]" />
+      <div className="page-shell relative overflow-hidden rounded-[2.4rem] border border-slate-200 shadow-lg">
+        <div className="relative flex flex-col min-h-[600px] sm:min-h-[700px] lg:min-h-[750px]">
+          {/* Background Image */}
+          <Image
+            src="/images/heropage.jpg"
+            alt="Learners at Mastore Arise and Shine School"
+            fill
+            priority
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            className="object-cover"
+          />
+          
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/35" />
 
-        <div className="relative grid gap-12 px-6 py-14 sm:px-8 sm:py-[4.5rem] lg:grid-cols-[1.2fr_0.8fr] lg:px-12 lg:py-20">
-          <div className="max-w-3xl">
-            <span className="section-kicker border-white/20 bg-white/10 text-sky-100">
-              <Sparkles className="h-3.5 w-3.5" />
-              Inclusive learning from PP1 to Grade 9
-            </span>
+          {/* Hero Content - Positioned Over Image */}
+          <div className="relative flex flex-col justify-between h-full px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
+            {/* Main Heading */}
+            <div className="max-w-4xl">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                Welcome to Mastore Arise and Shine School
+              </h1>
 
-            <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-7xl">
-              A modern learning home for children who are taught to{' '}
-              <span className="bg-gradient-to-r from-white via-sky-200 to-cyan-300 bg-clip-text text-transparent">
-                strive to excel.
-              </span>
-            </h1>
+              <p className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-white/90">
+                {siteConfig.mission}
+              </p>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
-              {siteConfig.mission}
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="/academics" size="xl">
-                Explore Academics
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button href="/contact#inquiry-form" variant="subtle" size="xl">
-                Contact Admissions
-              </Button>
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-slate-200">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-2">
-                <BookOpen className="h-4 w-4 text-cyan-300" />
-                KICD CBC excellence
-              </span>
-              <span className="rounded-full border border-white/15 bg-white/8 px-4 py-2">
-                Established {siteConfig.established}
-              </span>
-            </div>
-          </div>
-
-          <div className="grid gap-4 self-end">
-            {homeHighlights.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-[1.7rem] border border-white/15 bg-white/10 p-5 text-white backdrop-blur-sm"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
-                  {item.label}
-                </p>
-                <p className="mt-3 text-2xl font-semibold sm:text-3xl">{item.value}</p>
-                <p className="mt-2 text-sm leading-7 text-slate-200">{item.description}</p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button href="/academics" size="xl">
+                  Explore Academics
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+                <Button href="/contact#inquiry-form" variant="subtle" size="xl">
+                  Contact Admissions
+                </Button>
               </div>
-            ))}
+
+              <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-white">
+                <span className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/15 backdrop-blur-sm px-4 py-2">
+                  <BookOpen className="h-4 w-4 text-white" />
+                  KICD CBC Excellence
+                </span>
+                <span className="rounded-lg border border-white/30 bg-white/15 backdrop-blur-sm px-4 py-2">
+                  Est. {siteConfig.established}
+                </span>
+              </div>
+            </div>
+
+            {/* Highlights Grid at Bottom */}
+            <div className="mt-auto pt-12">
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-white/70 mb-8">
+                About Our School
+              </h2>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {homeHighlights.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-md p-6 hover:bg-white/15 transition-all"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-wider text-white/70">
+                      {item.label}
+                    </p>
+                    <p className="mt-4 text-2xl sm:text-3xl font-bold text-white">
+                      {item.value}
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-white/80">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
