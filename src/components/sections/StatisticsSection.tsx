@@ -29,14 +29,6 @@ const StatisticsSection = () => {
       color: 'from-orange-400 to-red-600',
       suffix: '+',
     },
-    {
-      icon: Heart,
-      number: 50,
-      label: 'Children in Home',
-      description: 'Providing care, education, and hope',
-      color: 'from-pink-400 to-rose-600',
-      suffix: '+',
-    },
   ]
 
   const sectionRef = useRef(null)
