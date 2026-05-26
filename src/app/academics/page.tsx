@@ -1,4 +1,4 @@
-import { BookOpen, Users, Brain, Palette, Music, Calculator, Trophy } from 'lucide-react'
+import { BookOpen, Users, Brain, Palette, Music, Calculator, Trophy, Award } from 'lucide-react'
 
 const AcademicsPage = () => {
   const curriculumLevels = [
@@ -107,6 +107,164 @@ const AcademicsPage = () => {
               Discover our comprehensive CBC curriculum designed to nurture well-rounded, 
               confident learners prepared for the future.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Academic Sector Department */}
+      <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50 relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-3xl animate-float-slow"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-400 to-transparent rounded-full blur-3xl animate-float"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            {/* Department Head */}
+            <div className="text-center mb-12 animate-fadeInUp">
+              <div className="inline-flex items-center justify-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Madam Martha Kamau</h3>
+              </div>
+              <p className="text-lg text-gray-700 font-semibold mb-2">Senior Teacher - Head of Academic Department</p>
+              <p className="text-gray-600">Leading excellence in teaching and learning</p>
+            </div>
+
+            {/* Department Vision and Role */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-8 animate-fadeInUp hover:shadow-2xl transition-shadow duration-300">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Academic Mission</h3>
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+                <p className="leading-relaxed">
+                  As the senior teacher in charge of academics, my role is to support excellence in teaching and learning, 
+                  guide learners towards achieving their goals, and work closely with teachers and parents to ensure holistic growth.
+                </p>
+                <p className="leading-relaxed">
+                  Our environment helps every learner to succeed academically and personally, nurturing not just knowledge, 
+                  but character, creativity, and confidence for life.
+                </p>
+              </div>
+            </div>
+
+            {/* Learning Areas Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 animate-fadeInUp stagger-1">
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-blue-600" />
+                  Languages
+                </h4>
+                <p className="text-gray-600">English, Kiswahili, and French</p>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <Calculator className="w-5 h-5 text-green-600" />
+                  Sciences
+                </h4>
+                <p className="text-gray-600">Science & Technology, Integrated Science, Agriculture & Nutrition</p>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <Brain className="w-5 h-5 text-purple-600" />
+                  Humanities
+                </h4>
+                <p className="text-gray-600">Social Studies and Christian Religious Education (CRE)</p>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <Trophy className="w-5 h-5 text-orange-600" />
+                  Technical Studies
+                </h4>
+                <p className="text-gray-600">ICT and Computer Studies for digital literacy</p>
+              </div>
+            </div>
+
+            {/* CBC Philosophy */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 animate-fadeInUp stagger-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Competency-Based Curriculum (CBC)</h3>
+              <div className="space-y-4 text-gray-700 leading-relaxed mb-6">
+                <p>
+                  Our school embraces the Kenya Institute of Curriculum Development (KICD) Competency-Based Curriculum. 
+                  CBC focuses on nurturing every learner&apos;s talents, abilities, values, and practical skills.
+                </p>
+                <p>
+                  The curriculum is designed to promote <strong>creativity, critical thinking, communication, collaboration, 
+                  and problem-solving</strong> among our learners from PP1 to Grade 9.
+                </p>
+              </div>
+
+              {/* Key Approaches */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-blue-200 flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-3 h-3 rounded-full bg-blue-600"></div>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Learner-Centered Approach</p>
+                    <p className="text-sm text-gray-600">Active participation, innovation, and holistic growth</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-200 flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-3 h-3 rounded-full bg-green-600"></div>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Continuous Assessment</p>
+                    <p className="text-sm text-gray-600">Regular evaluation and feedback for growth</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-purple-200 flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-3 h-3 rounded-full bg-purple-600"></div>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Project-Based Learning</p>
+                    <p className="text-sm text-gray-600">Practical application of knowledge and skills</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-orange-200 flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-3 h-3 rounded-full bg-orange-600"></div>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Technology Integration</p>
+                    <p className="text-sm text-gray-600">Modern tools to enhance learning experiences</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Parental Engagement */}
+              <div className="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-200">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <Users className="w-5 h-5 text-blue-600" />
+                  Parental Engagement
+                </h4>
+                <p className="text-gray-700">
+                  Parents are actively engaged through meetings and academic forums to understand CBC and support learners 
+                  both at school and at home.
+                </p>
+              </div>
+            </div>
+
+            {/* Academic Excellence */}
+            <div className="mt-8 bg-white rounded-2xl shadow-xl p-8 md:p-12 animate-fadeInUp stagger-3">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Excellence in Achievement</h3>
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  Our school has participated in both Kenya Primary School Education Assessment (KPSEA) and Kenya Junior 
+                  School Education Assessment (KJSEA) with excellent results. Most of our learners performed above expectations.
+                </p>
+                <p className="font-semibold text-blue-700 mb-4">
+                  We continue to uphold academic excellence as we prepare learners for the next level of education 
+                  with confidence and competence.
+                </p>
+                <p className="text-sm text-gray-600 italic">
+                  This outstanding performance is a result of the full dedication of our teachers, the determination of our 
+                  learners, and strong support from parents.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
