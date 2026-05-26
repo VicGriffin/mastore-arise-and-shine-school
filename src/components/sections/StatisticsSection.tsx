@@ -88,11 +88,11 @@ const StatisticsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex justify-center items-stretch flex-wrap gap-8 max-w-5xl mx-auto">
           {stats.map((stat, index) => (
             <div 
               key={stat.label} 
-              className={`group text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift animate-fadeInUp overflow-hidden relative`}
+              className={`group text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift animate-fadeInUp overflow-hidden relative flex-1 min-w-64 max-w-sm`}
               style={{animationDelay: `${(index + 1) * 0.1}s`}}
             >
               {/* Gradient Background */}
