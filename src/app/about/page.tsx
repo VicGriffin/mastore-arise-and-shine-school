@@ -3,34 +3,34 @@ import AboutClient from './AboutClient'
 
 export const metadata: Metadata = {
   title: 'About Mastore Arise and Shine School - Our History, Vision & Mission',
-  description: 'Learn about Mastore Arise and Shine School\'s history, vision, mission, and core values. Serving Juja community with quality education and compassionate care since 2014.',
+  description: 'Learn about Mastore Arise and Shine School\'s history, vision, mission, and core values. Established in May 2019, nurturing learners with knowledge, skill and values.',
   keywords: 'about mastore arise and shine school, school history, vision mission, juja school, education kenya',
 }
 
 const AboutPage = () => {
   const timeline = [
     {
-      year: '2014',
-      title: 'School Founded',
-      description: 'Mastore Arise and Shine School was established with a vision to provide quality education to the Juja community.',
+      year: '2019',
+      title: 'School Established',
+      description: 'Mastore Arise and Shine School was established in May 2019 with the aim of providing quality education and developing children spiritually, socially and academically.',
       icon: 'Calendar',
     },
     {
-      year: '2018',
-      title: 'First Graduating Class',
-      description: 'Celebrated our first group of students who successfully completed their primary education.',
+      year: '2019',
+      title: 'Built on Compassion',
+      description: 'Inspired by the success of our children\'s home supporting vulnerable and needy children in the community.',
       icon: 'Award',
     },
     {
-      year: '2020',
-      title: 'CBC Curriculum Adoption',
-      description: 'Successfully implemented Competency-Based Curriculum to align with national education standards.',
+      year: '2020-Present',
+      title: 'Steady Growth & Leadership Transition',
+      description: 'School grew from kindergarten to junior school under dedicated leadership, with Betty K Njiru promoting academic excellence.',
       icon: 'BookOpen',
     },
     {
-      year: '2024',
-      title: 'Decade of Excellence',
-      description: 'Celebrating 10 years of transforming lives through quality education and developing well-rounded learners.',
+      year: 'Present',
+      title: 'Unwavering Vision',
+      description: 'Continued support from board members and leadership in developing infrastructure, academic improvement and learners\' welfare.',
       icon: 'Target',
     },
   ]
@@ -68,28 +68,28 @@ const AboutPage = () => {
 
   const leadership = [
     {
-      name: 'Mrs. Grace Wangari',
-      role: 'School Director',
-      description: 'With over 20 years in education, Mrs. Wangari leads with vision and passion.',
-      avatar: 'GW',
+      name: 'Florence Kagendo',
+      role: 'Director & Founder',
+      description: 'Visionary founder who established both the children\'s home and school to serve vulnerable children in the community.',
+      avatar: 'FK',
     },
     {
-      name: 'Mr. David Kamau',
-      role: 'Academic Head',
-      description: 'Ensuring academic excellence through innovative teaching methods.',
-      avatar: 'DK',
+      name: 'Peter Murage',
+      role: 'Manager & Founder',
+      description: 'Co-founder dedicated to supporting vulnerable and needy children in the community.',
+      avatar: 'PM',
     },
     {
-      name: 'Mrs. Sarah Mwangi',
-      role: 'Co-curricular Activities Director',
-      description: 'Dedicated to developing student talents through diverse activities and clubs.',
-      avatar: 'SM',
+      name: 'Betty K Njiru',
+      role: 'Headteacher',
+      description: 'Leading the school with dedication to promote academic excellence and learner welfare.',
+      avatar: 'BN',
     },
     {
-      name: 'Mr. Peter Njoroge',
-      role: 'Administrative Director',
-      description: 'Managing school operations with efficiency and care.',
-      avatar: 'PN',
+      name: 'Wilkinson Mwenda',
+      role: 'Board Chairperson',
+      description: 'Leading the board in supporting infrastructure development and academic improvement.',
+      avatar: 'WM',
     },
   ]
 
