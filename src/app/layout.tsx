@@ -1,51 +1,94 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import { Manrope, Sora } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/common/WhatsAppButton'
+import { siteConfig } from '@/lib/site-content'
 
-const inter = Inter({ subsets: ['latin'] })
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-sans',
+})
+
+const sora = Sora({
+  subsets: ['latin'],
+  variable: '--font-display',
+})
 
 export const metadata: Metadata = {
-  title: 'Mastore Arise and Shine School - Quality Education in Juja, Kiambu',
-  description: 'Mastore Arise and Shine School provides quality education and a caring children\'s home in Juja Sub County, Kiambu County. Nurturing excellence, character, and hope.',
-  keywords: 'school, education, children\'s home, Juja, Kiambu, Kenya, CBC curriculum, primary education',
-  authors: [{ name: 'Mastore School' }],
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  keywords: [
+    'Mastore Arise and Shine School',
+    'Juja school',
+    'CBC school Kenya',
+    'PP1 to Grade 9',
+    'Junior School Kiambu',
+    'KICD curriculum',
+  ],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: 'education',
   openGraph: {
-    title: 'Mastore Arise and Shine School',
-    description: 'Quality education and caring home for children in Juja Sub County',
-    type: 'website',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
     locale: 'en_KE',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mastore Arise and Shine School',
-    description: 'Quality education and caring home for children in Juja Sub County',
+    title: siteConfig.name,
+    description: siteConfig.description,
   },
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  formatDetection: {
+    email: false,
+    telephone: false,
+    address: false,
+  },
 }
 
-export const viewport = {
+export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: '#0f172a',
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
+      <body
+        className={`${manrope.variable} ${sora.variable} min-h-screen bg-[var(--background)] text-slate-950 antialiased`}
+      >
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950"
+        >
+          Skip to content
+        </a>
         <Header />
-        <main className="flex-grow pt-24">
+        <main id="content" className="min-h-screen pt-[7.8rem] sm:pt-[8.4rem] lg:pt-[9.6rem]">
           {children}
         </main>
         <Footer />

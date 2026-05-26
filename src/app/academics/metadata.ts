@@ -1,7 +1,9 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Academics - CBC Curriculum at Mastore Arise and Shine School',
-  description: 'Discover our comprehensive CBC curriculum, subjects offered, teaching approach, and co-curricular activities at Mastore Arise and Shine School in Juja.',
-  keywords: 'CBC curriculum, academics, subjects, co-curricular activities, mastore arise and shine school education',
+  title: 'Academics',
+  description:
+    'Explore the PP1 to Grade 9 academic pathway, KICD CBC learning tracks, French programme, core learner skills, and assessment strengths at Mastore Arise and Shine School.',
+  keywords:
+    'Mastore Arise and Shine School academics, KICD CBC, PP1 to Grade 9, French programme, KPSEA, KJSEA',
 }

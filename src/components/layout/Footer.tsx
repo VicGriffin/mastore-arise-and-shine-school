@@ -1,162 +1,115 @@
+import Image from 'next/image'
 import Link from 'next/link'
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { Clock3, Mail, MapPin, Phone } from 'lucide-react'
+import {
+  historyHighlights,
+  navigationLinks,
+  siteConfig,
+} from '@/lib/site-content'
 
-const Footer = () => {
-  const quickLinks = [
-    { name: 'About Us', href: '/about' },
-    { name: 'Academics', href: '/academics' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
-  ]
-
-  const programs = [
-    { name: 'CBC Curriculum', href: '/academics' },
-    { name: 'Co-curricular Activities', href: '/academics#activities' },
-    { name: 'Sports Program', href: '/academics#sports' },
-    { name: 'Leadership Development', href: '/academics#leadership' },
-  ]
-
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
-  ]
-
+export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#3C3B32] to-[#2a2925] text-white relative overflow-hidden">
-      {/* Background Animation */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#479FBE] to-transparent rounded-full blur-3xl animate-float"></div>
-        <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-[#9E8016] to-transparent rounded-full blur-3xl animate-float-slow" style={{animationDelay: '1s'}}></div>
-      </div>
+    <footer className="relative mt-16 overflow-hidden border-t border-white/60 bg-slate-950 text-slate-100">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.2),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.24),transparent_32%)]" />
 
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* School Info */}
-          <div className="space-y-4 group">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#479FBE] to-[#2d6a8f] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-lg">M</span>
+      <div className="page-shell relative py-14 sm:py-16">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.85fr_1fr_1fr]">
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-white/15 bg-white/10">
+                <Image
+                  src="/LOGO/SCHOOL LOGO.jpg"
+                  alt={`${siteConfig.name} logo`}
+                  fill
+                  sizes="56px"
+                  className="object-cover"
+                />
               </div>
               <div>
-                <h3 className="text-lg font-bold group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#6ab3d4] group-hover:to-[#9E8016] group-hover:bg-clip-text transition-all">Mastore Arise and Shine</h3>
-                <p className="text-sm text-gray-400">School of Excellence</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-200">
+                  {siteConfig.tagline}
+                </p>
+                <h2 className="text-lg font-semibold text-white">{siteConfig.shortName}</h2>
               </div>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Nurturing excellence, character, and hope in Juja Sub County. 
-              Providing quality education and developing well-rounded learners.
+
+            <p className="max-w-md text-sm leading-7 text-slate-300">
+              {siteConfig.description}
             </p>
-            <div className="flex space-x-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-10 h-10 bg-gradient-to-br from-[#479FBE] to-[#6ab3d4] rounded-full flex items-center justify-center hover:from-[#9E8016] hover:to-[#b8a052] transition-all duration-300 hover:shadow-lg hover:shadow-[#479FBE]/50 hover:scale-110"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+
+            <div className="rounded-[1.6rem] border border-white/10 bg-white/5 px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-200">
+                School Motto
+              </p>
+              <p className="mt-2 font-semibold text-white">{siteConfig.motto}</p>
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 bg-gradient-to-r from-[#6ab3d4] to-[#9E8016] bg-clip-text text-transparent">Quick Links</h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-300 hover:text-[#479FBE] transition-all duration-200 text-sm relative group hover-lift"
-                  >
-                    <span className="relative">
-                      {link.name}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#479FBE] to-[#9E8016] group-hover:w-full transition-all duration-300"></span>
-                    </span>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-200">
+              Quick Links
+            </h3>
+            <ul className="mt-5 space-y-3 text-sm text-slate-300">
+              {navigationLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-white">
+                    {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Programs */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 bg-gradient-to-r from-[#6ab3d4] to-[#9E8016] bg-clip-text text-transparent">Our Programs</h4>
-            <ul className="space-y-2">
-              {programs.map((program) => (
-                <li key={program.name}>
-                  <Link
-                    href={program.href}
-                    className="text-gray-300 hover:text-[#479FBE] transition-all duration-200 text-sm relative group hover-lift"
-                  >
-                    <span className="relative">
-                      {program.name}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#479FBE] to-[#9E8016] group-hover:w-full transition-all duration-300"></span>
-                    </span>
-                  </Link>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-200">
+              Community Story
+            </h3>
+            <ul className="mt-5 space-y-4 text-sm leading-7 text-slate-300">
+              {historyHighlights.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sky-300" />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 bg-gradient-to-r from-[#6ab3d4] to-[#9E8016] bg-clip-text text-transparent">Contact Info</h4>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3 group hover-lift p-2 rounded-lg transition-all bg-white/5 hover:bg-white/10">
-                <MapPin className="w-5 h-5 text-[#479FBE] mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-200">
+              Reach the School
+            </h3>
+            <div className="mt-5 space-y-4 text-sm text-slate-300">
+              <div className="flex gap-3">
+                <Phone className="mt-0.5 h-4 w-4 text-sky-300" />
+                <span>{siteConfig.phone}</span>
+              </div>
+              <div className="flex gap-3">
+                <Mail className="mt-0.5 h-4 w-4 text-sky-300" />
+                <span>{siteConfig.email}</span>
+              </div>
+              <div className="flex gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 text-sky-300" />
+                <span>{siteConfig.location}</span>
+              </div>
+              <div className="flex gap-3">
+                <Clock3 className="mt-0.5 h-4 w-4 text-sky-300" />
                 <div>
-                  <p className="text-sm text-white/90">Juja Sub County</p>
-                  <p className="text-sm text-white/80">Kiambu County, Kenya</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3 group hover-lift p-2 rounded-lg transition-all bg-white/5 hover:bg-white/10">
-                <Phone className="w-5 h-5 text-[#479FBE] flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <p className="text-sm text-white/90">+254 XXX XXX XXX</p>
-              </div>
-              <div className="flex items-center space-x-3 group hover-lift p-2 rounded-lg transition-all bg-white/5 hover:bg-white/10">
-                <Mail className="w-5 h-5 text-[#479FBE] flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <p className="text-sm text-white/90">info@mastoreschool.ac.ke</p>
-              </div>
-              <div className="flex items-center space-x-3 group hover-lift p-2 rounded-lg transition-all bg-white/5 hover:bg-white/10">
-                <Clock className="w-5 h-5 text-[#479FBE] flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <div>
-                  <p className="text-sm text-white/90">Mon - Fri: 7:00 AM - 5:00 PM</p>
-                  <p className="text-sm text-white/90">Sat: 8:00 AM - 1:00 PM</p>
+                  {siteConfig.hours.map((hour) => (
+                    <p key={hour}>{hour}</p>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800 relative z-10">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-gray-400">
-              © {new Date().getFullYear()} Mastore Arise and Shine School. All rights reserved.
-            </div>
-            <div className="flex space-x-6 text-sm">
-              <Link href="/privacy" className="text-gray-400 hover:text-[#479FBE] transition-all duration-200 relative group">
-                Privacy Policy
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#479FBE] group-hover:w-full transition-all duration-300"></span>
-              </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-[#479FBE] transition-all duration-200 relative group">
-                Terms of Service
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#479FBE] group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            </div>
-          </div>
+        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            Copyright {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          </p>
+          <p>{siteConfig.tagline}</p>
         </div>
       </div>
     </footer>
   )
 }
-
-export default Footer

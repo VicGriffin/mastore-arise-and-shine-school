@@ -4,6 +4,7 @@ interface ContactFormData {
   name: string
   email: string
   phone: string
+  learnerLevel?: string
   subject: string
   message: string
 }

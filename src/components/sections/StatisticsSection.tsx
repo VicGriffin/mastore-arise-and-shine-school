@@ -1,135 +1,151 @@
 'use client'
 
-import { Users, BookOpen, Trophy, Heart } from 'lucide-react'
-import Button from '@/components/common/Button'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { BarChart3, CalendarDays, GraduationCap } from 'lucide-react'
+import { curriculumOverview } from '@/lib/site-content'
 
-const StatisticsSection = () => {
-  const stats = [
-    {
-      icon: Users,
-      number: 500,
-      label: 'Students Enrolled',
-      description: 'From diverse backgrounds across Kiambu County',
-      color: 'from-blue-400 to-cyan-600',
-    },
-    {
-      icon: BookOpen,
-      number: 95,
-      label: 'KCPE Pass Rate',
-      description: 'Consistently above national average',
-      color: 'from-green-400 to-emerald-600',
-      suffix: '%',
-    },
-    {
-      icon: Trophy,
-      number: 10,
-      label: 'Years of Excellence',
-      description: 'Serving Juja community since 2014',
-      color: 'from-orange-400 to-red-600',
-      suffix: '+',
-    },
-  ]
+const metrics = [
+  {
+    icon: CalendarDays,
+    end: 2019,
+    prefix: '',
+    suffix: '',
+    title: 'Established',
+    body: 'A purposeful beginning in May 2019.',
+  },
+  {
+    icon: GraduationCap,
+    end: 9,
+    prefix: 'Grade ',
+    suffix: '',
+    title: 'Current learning cap',
+    body: 'Learner-centered growth from PP1 through Grade 9.',
+  },
+  {
+    icon: BarChart3,
+    end: 2,
+    prefix: '',
+    suffix: '',
+    title: 'National assessment pathways',
+    body: 'KPSEA and KJSEA performance remains strong and consistent.',
+  },
+] as const
 
-  const sectionRef = useRef(null)
-  const [isVisible, setIsVisible] = useState(false)
-  const [counts, setCounts] = useState(stats.map(() => 0))
+export default function StatisticsSection() {
+  const ref = useRef<HTMLElement | null>(null)
+  const [active, setActive] = useState(false)
+  const [counts, setCounts] = useState(metrics.map(() => 0))
+
+  const targetValues = useMemo(() => metrics.map((item) => item.end), [])
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true)
-      }
-    }, { threshold: 0.1 })
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActive(true)
+        }
+      },
+      { threshold: 0.25 }
+    )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+    if (ref.current) {
+      observer.observe(ref.current)
     }
 
     return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
-    if (!isVisible) return
+    if (!active) {
+      return
+    }
 
-    const duration = 2000
-    const startTime = Date.now()
+    const duration = 1400
+    const start = performance.now()
+    let frame = 0
 
-    const interval = setInterval(() => {
-      const elapsed = Date.now() - startTime
-      const progress = Math.min(elapsed / duration, 1)
+    const tick = (time: number) => {
+      const progress = Math.min((time - start) / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
 
-      const newCounts = stats.map((stat) => Math.floor(stat.number * progress))
-      setCounts(newCounts)
+      setCounts(targetValues.map((value) => Math.round(value * eased)))
 
-      if (progress === 1) {
-        clearInterval(interval)
+      if (progress < 1) {
+        frame = window.requestAnimationFrame(tick)
       }
-    }, 30)
+    }
 
-    return () => clearInterval(interval)
-  }, [isVisible])
+    frame = window.requestAnimationFrame(tick)
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [active, targetValues])
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-cyan-400 to-transparent rounded-full blur-3xl animate-float"></div>
-        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float-slow" style={{animationDelay: '1s'}}></div>
-      </div>
+    <section ref={ref} className="section-pad relative">
+      <div className="page-shell">
+        <div className="grid gap-5 lg:grid-cols-[1fr_0.95fr]">
+          <div className="surface-panel p-8 sm:p-10">
+            <span className="section-kicker bg-blue-50 text-blue-700">
+              By the numbers
+            </span>
+            <h2 className="section-title mt-5">
+              Clear growth markers for a school steadily building depth and confidence.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
+              From its May 2019 start to its current Junior School pathway, the school
+              continues to expand its reach while maintaining attention to strong
+              learner outcomes.
+            </p>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fadeInUp">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Impact by <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Numbers</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Quantifiable results that demonstrate our commitment to excellence and community transformation
-          </p>
-        </div>
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
+              {metrics.map((metric, index) => (
+                <article key={metric.title} className="surface-card p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
+                    <metric.icon className="h-5 w-5" />
+                  </div>
+                  <p className="mt-5 text-3xl font-semibold text-slate-950 sm:text-4xl">
+                    {metric.prefix}
+                    {counts[index]}
+                    {metric.suffix}
+                  </p>
+                  <h3 className="mt-2 text-base font-semibold text-slate-950">
+                    {metric.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{metric.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
 
-        <div className="flex justify-center items-stretch flex-wrap gap-8 max-w-5xl mx-auto">
-          {stats.map((stat, index) => (
-            <div 
-              key={stat.label} 
-              className={`group text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift animate-fadeInUp overflow-hidden relative flex-1 min-w-64 max-w-sm`}
-              style={{animationDelay: `${(index + 1) * 0.1}s`}}
-            >
-              {/* Gradient Background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
-
-              <div className="relative z-10">
-                <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl`}>
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-
-                <div className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {isVisible ? counts[index] : 0}{stat.suffix || '+'}
-                </div>
-
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-green-600 group-hover:to-emerald-600 group-hover:bg-clip-text transition-all duration-300">
-                  {stat.label}
-                </h3>
-
-                <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors duration-300">
-                  {stat.description}
+          <div className="surface-card overflow-hidden p-8 sm:p-10">
+            <div className="rounded-full bg-emerald-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">
+              Excellent KPSEA / KJSEA performance
+            </div>
+            <h3 className="mt-5 text-3xl font-semibold text-slate-950">
+              Assessment confidence grounded in real learner progress.
+            </h3>
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              {curriculumOverview.assessment}
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-[1.6rem] border border-emerald-100 bg-emerald-50/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
+                  National assessments
+                </p>
+                <p className="mt-2 text-lg font-semibold text-slate-950">KPSEA and KJSEA</p>
+              </div>
+              <div className="rounded-[1.6rem] border border-blue-100 bg-blue-50/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-700">
+                  Outcome direction
+                </p>
+                <p className="mt-2 text-lg font-semibold text-slate-950">
+                  Most learners place above expectations
                 </p>
               </div>
-
-              {/* Top Accent Border */}
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${stat.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></div>
             </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-16 animate-fadeInUp" style={{animationDelay: '0.5s'}}>
-          <Button variant="primary" size="lg" className="hover-lift-lg">
-            Join Our Success Story
-          </Button>
+          </div>
         </div>
       </div>
     </section>
   )
 }
-
-export default StatisticsSection

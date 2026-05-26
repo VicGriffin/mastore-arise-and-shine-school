@@ -1,251 +1,144 @@
-'use client'
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import { Camera, MonitorSmartphone, School, Sparkles } from 'lucide-react'
+import { galleryItems } from '@/lib/site-content'
 
-import { useState } from 'react'
-import { X, ChevronLeft, ChevronRight, Download } from 'lucide-react'
+const categories = Array.from(new Set(galleryItems.map((item) => item.category)))
 
-interface GalleryImage {
-  id: number
-  category: string
-  title: string
-  description: string
-  image: string
+export const metadata: Metadata = {
+  title: 'Gallery',
+  description:
+    'Browse the visual story of Mastore Arise and Shine School across art, laboratories, library, sports, digital learning, and school transport.',
 }
 
-const categories = ['All', 'School Life', 'Activities', 'Events', 'Achievements']
-
-const galleryImages: GalleryImage[] = [
-  // School Life (6 images)
-  { id: 1, category: 'School Life', title: 'Classroom Learning', description: 'Interactive classroom sessions with student engagement', image: '/images/classes.jfif' },
-  { id: 2, category: 'School Life', title: 'Library Time', description: 'Students studying in our well-equipped library', image: '/images/library.jfif' },
-  { id: 3, category: 'School Life', title: 'Laboratory Work', description: 'Hands-on science experiments and learning', image: '/images/laboratory.jfif' },
-  { id: 4, category: 'School Life', title: 'Computer Lab', description: 'Digital literacy and ICT training', image: '/images/computer lab.jfif' },
-  { id: 5, category: 'School Life', title: 'Sports Day', description: 'Students competing in various sports events', image: '/images/sport.jfif' },
-  { id: 6, category: 'School Life', title: 'Art Class', description: 'Creative expression through visual arts', image: '/images/art.jfif' },
-
-  // Activities (4 images)
-  { id: 7, category: 'Activities', title: 'Drama Club', description: 'Student theatrical performances and expression', image: '/images/art.jfif' },
-  { id: 8, category: 'Activities', title: 'Music & Arts', description: 'Creative activities and artistic development', image: '/images/art.jfif' },
-  { id: 9, category: 'Activities', title: 'Sports Training', description: 'Physical education and athletic development', image: '/images/sport.jfif' },
-  { id: 10, category: 'Activities', title: 'Club Meetings', description: 'Student clubs and societies', image: '/images/classes.jfif' },
-
-  // Events (5 images)
-  { id: 11, category: 'Events', title: 'Annual Prize Giving', description: 'Celebrating student achievements', image: '/images/classes.jfif' },
-  { id: 12, category: 'Events', title: 'School Concert', description: 'Musical performances by students', image: '/images/art.jfif' },
-  { id: 13, category: 'Events', title: 'Sports Day', description: 'Inter-house sports competitions', image: '/images/sport.jfif' },
-  { id: 14, category: 'Events', title: 'Educational Tours', description: 'Field trips and educational excursions', image: '/images/mastore school bus.jfif' },
-  { id: 15, category: 'Events', title: 'Community Day', description: 'Community engagement activities', image: '/images/classes.jfif' },
-
-  // Achievements (4 images)
-  { id: 16, category: 'Achievements', title: 'KCPE Results', description: 'Excellence in academic performance', image: '/images/library.jfif' },
-  { id: 17, category: 'Achievements', title: 'Sports Trophies', description: 'Winning trophies and awards', image: '/images/sport.jfif' },
-  { id: 18, category: 'Achievements', title: 'Debate Champions', description: 'Debate team victories', image: '/images/classes.jfif' },
-  { id: 19, category: 'Achievements', title: 'Certificate Awards', description: 'Student recognition and awards', image: '/images/library.jfif' },
-]
-
 export default function GalleryPage() {
-  const [selectedCategory, setSelectedCategory] = useState('All')
-  const [selectedImageId, setSelectedImageId] = useState<number | null>(null)
-
-  const filteredImages = selectedCategory === 'All'
-    ? galleryImages
-    : galleryImages.filter((img) => img.category === selectedCategory)
-
-  const selectedImage = galleryImages.find((img) => img.id === selectedImageId)
-  const selectedIndex = filteredImages.findIndex((img) => img.id === selectedImageId)
-
-  const goToPrevious = () => {
-    if (selectedIndex > 0) {
-      setSelectedImageId(filteredImages[selectedIndex - 1].id)
-    }
-  }
-
-  const goToNext = () => {
-    if (selectedIndex < filteredImages.length - 1) {
-      setSelectedImageId(filteredImages[selectedIndex + 1].id)
-    }
-  }
-
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* Header Section */}
-      <section className="mt-20 py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-3xl animate-float"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float-slow" style={{animationDelay: '1s'}}></div>
-        </div>
+    <>
+      <section className="relative overflow-hidden px-3 pt-2 sm:px-5">
+        <div className="page-shell relative overflow-hidden rounded-[2.4rem] border border-white/70 bg-slate-950">
+          <Image
+            src="/images/mastore school bus2.jfif"
+            alt="School transport at Mastore Arise and Shine School"
+            fill
+            priority
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            className="object-cover"
+          />
+          <div className="hero-overlay absolute inset-0" />
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center transition-all duration-700 animate-fadeInDown">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Photo <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Gallery</span>
+          <div className="relative max-w-4xl px-6 py-14 sm:px-8 lg:px-12 lg:py-[4.5rem]">
+            <span className="section-kicker border-white/20 bg-white/10 text-sky-100">
+              Visual school life
+            </span>
+            <h1 className="mt-6 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+              A closer look at the learning spaces, routines, and experiences shaping
+              student life.
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore moments from our school, activities, and community events
+            <p className="mt-6 max-w-3xl text-base leading-8 text-slate-200 sm:text-lg">
+              Explore art, computer learning, laboratories, library culture, sports, and
+              the school transport fleet through a clean and modern visual grid.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-4 animate-fadeInUp">
+      <section className="section-pad relative">
+        <div className="page-shell">
+          <div className="mb-8 flex flex-wrap gap-3">
             {categories.map((category) => (
-              <button
+              <span
                 key={category}
-                onClick={() => {
-                  setSelectedCategory(category)
-                  setSelectedImageId(null)
-                }}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:shadow-xl'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
+                className="rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700"
               >
                 {category}
-              </button>
+              </span>
+            ))}
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {galleryItems.map((item, index) => (
+              <article
+                key={`${item.category}-${item.title}`}
+                className={`surface-card lift-hover overflow-hidden ${
+                  index === 0 ? 'md:col-span-2 xl:col-span-2' : ''
+                }`}
+              >
+                <div className={`relative ${index === 0 ? 'aspect-[16/9]' : 'aspect-[4/4.2]'}`}>
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes={
+                      index === 0
+                        ? '(min-width: 1280px) 760px, 100vw'
+                        : '(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw'
+                    }
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-100">
+                        {item.category}
+                      </p>
+                      <h2 className="mt-2 text-2xl font-semibold text-white">{item.title}</h2>
+                    </div>
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/12 text-white backdrop-blur-sm">
+                      <Camera className="h-5 w-5" />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-sm leading-7 text-slate-600">{item.description}</p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Gallery Grid */}
-      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {filteredImages.map((image, index) => (
-              <div
-                key={image.id}
-                onClick={() => setSelectedImageId(image.id)}
-                className={`group relative aspect-square bg-cover bg-center bg-no-repeat rounded-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300 hover-lift animate-fadeInUp`}
-                style={{
-                  backgroundImage: `url("${image.image}")`,
-                  animationDelay: `${(index % 8) * 0.05}s`
-                }}
-              >
-                {/* Dark Overlay for better text visibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <div className="text-white text-center px-4">
-                    <h3 className="font-semibold text-lg mb-2">{image.title}</h3>
-                    <p className="text-sm text-gray-200">{image.description}</p>
-                  </div>
-                </div>
-
-                {/* Shimmer Animation */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
-              </div>
-            ))}
-          </div>
-
-          {filteredImages.length === 0 && (
-            <div className="text-center py-16">
-              <p className="text-xl text-gray-600">No images found in this category</p>
+      <section className="section-pad pt-0">
+        <div className="page-shell grid gap-5 md:grid-cols-3">
+          <article className="surface-card p-6">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
+              <MonitorSmartphone className="h-5 w-5" />
             </div>
-          )}
+            <h2 className="mt-5 text-2xl font-semibold text-slate-950">
+              Digital and practical learning
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              The computer lab and laboratories show a learning model that values
+              practical exploration alongside strong classroom teaching.
+            </p>
+          </article>
+
+          <article className="surface-card p-6">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white">
+              <School className="h-5 w-5" />
+            </div>
+            <h2 className="mt-5 text-2xl font-semibold text-slate-950">
+              Daily rhythms and resources
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              Library, classroom, and transport images reflect the routines that keep
+              access, readiness, and learner support consistent every day.
+            </p>
+          </article>
+
+          <article className="surface-card p-6">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
+              <Sparkles className="h-5 w-5" />
+            </div>
+            <h2 className="mt-5 text-2xl font-semibold text-slate-950">
+              Whole-child expression
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              Art and sports images highlight the co-curricular environment that helps
+              learners develop creativity, discipline, and teamwork.
+            </p>
+          </article>
         </div>
       </section>
-
-      {/* Lightbox Modal */}
-      {selectedImage && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn">
-          {/* Close Button */}
-          <button
-            onClick={() => setSelectedImageId(null)}
-            className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 transition-all duration-300 hover:scale-110 z-60"
-            aria-label="Close lightbox"
-          >
-            <X className="w-6 h-6" />
-          </button>
-
-          {/* Lightbox Content */}
-          <div className="relative max-w-5xl w-full h-[70vh] animate-scale-up">
-            {/* Image Container */}
-            <div className="w-full h-full bg-cover bg-center bg-no-repeat rounded-2xl flex items-center justify-center overflow-hidden relative group" style={{backgroundImage: `url("${selectedImage.image}")`}}>
-              {/* Dark Overlay for better text visibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-
-              {/* Image Details */}
-              <div className="relative z-10 text-center px-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-md mx-auto">
-                  <h2 className="text-3xl font-bold text-white mb-4">{selectedImage.title}</h2>
-                  <p className="text-lg text-white/90 mb-4">{selectedImage.description}</p>
-                  <p className="text-sm text-white/70 mb-6">{selectedImage.category}</p>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-4 justify-center">
-                    <button className="flex items-center gap-2 px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-all duration-300 backdrop-blur-sm hover:scale-105">
-                      <Download className="w-5 h-5" />
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation Arrows */}
-            {selectedIndex > 0 && (
-              <button
-                onClick={goToPrevious}
-                className="absolute -left-16 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-200 rounded-full p-4 transition-all duration-300 hover:scale-110 group hover-glow"
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="w-6 h-6 text-gray-900" />
-              </button>
-            )}
-
-            {selectedIndex < filteredImages.length - 1 && (
-              <button
-                onClick={goToNext}
-                className="absolute -right-16 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-200 rounded-full p-4 transition-all duration-300 hover:scale-110 group hover-glow"
-                aria-label="Next image"
-              >
-                <ChevronRight className="w-6 h-6 text-gray-900" />
-              </button>
-            )}
-
-            {/* Image Counter */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white/20 text-white px-6 py-2 rounded-full backdrop-blur-sm">
-              <span>{selectedIndex + 1} / {filteredImages.length}</span>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Stats Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400 to-transparent rounded-full blur-3xl animate-float"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="group animate-fadeInUp hover-lift p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
-              <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3">
-                {galleryImages.length}
-              </div>
-              <p className="text-gray-600 font-semibold">Total Photos</p>
-            </div>
-
-            <div className="group animate-fadeInUp hover-lift p-8 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl" style={{animationDelay: '0.1s'}}>
-              <div className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-3">
-                {categories.length - 1}
-              </div>
-              <p className="text-gray-600 font-semibold">Categories</p>
-            </div>
-
-            <div className="group animate-fadeInUp hover-lift p-8 bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl" style={{animationDelay: '0.2s'}}>
-              <div className="text-5xl font-bold bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent mb-3">
-                ∞
-              </div>
-              <p className="text-gray-600 font-semibold">Moments Captured</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    </>
   )
 }

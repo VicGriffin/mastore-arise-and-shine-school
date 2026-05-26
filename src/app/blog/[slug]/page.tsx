@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { ArrowLeft, Calendar, User, Clock, Share2, ThumbsUp } from 'lucide-react'
@@ -147,18 +147,10 @@ const blogPostsData: Record<string, BlogPostData> = {
   },
 }
 
-// Get all blog posts for related posts section
-const allBlogPosts = Object.values(blogPostsData)
-
 export default function BlogPostPage() {
   const params = useParams()
   const slug = params.slug as string
-  const [isVisible, setIsVisible] = useState(false)
   const [liked, setLiked] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
 
   const post = blogPostsData[slug]
 
@@ -168,7 +160,9 @@ export default function BlogPostPage() {
         <section className="py-20">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Article Not Found</h1>
-            <p className="text-gray-600 mb-8">We couldn't find the article you're looking for.</p>
+            <p className="text-gray-600 mb-8">
+              We couldn&apos;t find the article you&apos;re looking for.
+            </p>
             <Link
               href="/blog"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
@@ -200,7 +194,7 @@ export default function BlogPostPage() {
             Back to Blog
           </Link>
 
-          <div className={`transition-all duration-700 ${isVisible ? 'animate-fadeInDown' : 'opacity-0'}`}>
+          <div className="animate-fadeUp transition-all duration-700">
             <div className="mb-4">
               <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
                 {post.category}

@@ -1,139 +1,188 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { Menu, X, Phone, Mail, MapPin } from 'lucide-react'
-import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { Mail, MapPin, Menu, Phone, X } from 'lucide-react'
+import Button from '@/components/common/Button'
+import { navigationLinks, siteConfig } from '@/lib/site-content'
 
-const Header = () => {
+export default function Header() {
+  const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setIsScrolled(window.scrollY > 18)
+    onScroll()
+    window.addEventListener('scroll', onScroll)
+
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Academics', href: '/academics' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Contact', href: '/contact' },
-  ]
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : ''
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMenuOpen])
 
   return (
-    <header className={`fixed top-0 w-full z-[60] transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
-    }`}>
-      {/* Top Bar */}
-      <div className="bg-[#479FBE] text-white py-3">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-between items-center text-sm gap-4">
-            <div className="flex flex-wrap gap-6">
-              <span className="flex items-center gap-2 font-medium">
-                <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+254 XXX XXX XXX</span>
+    <header className="fixed inset-x-0 top-0 z-50 px-3 py-3 sm:px-5">
+      <div className="mx-auto max-w-7xl">
+        <div
+          className={`overflow-hidden rounded-[2rem] border border-white/70 backdrop-blur-md transition duration-300 ${
+            isScrolled
+              ? 'bg-white/92 shadow-[0_30px_90px_-50px_rgba(15,23,42,0.5)]'
+              : 'bg-white/82 shadow-[0_20px_70px_-46px_rgba(37,99,235,0.4)]'
+          }`}
+        >
+          <div className="hidden items-center justify-between border-b border-slate-200/80 px-5 py-3 lg:flex">
+            <div className="flex flex-wrap items-center gap-5 text-sm text-slate-600">
+              <span className="inline-flex items-center gap-2">
+                <Phone className="h-4 w-4 text-blue-700" />
+                {siteConfig.phone}
               </span>
-              <span className="flex items-center gap-2 font-medium">
-                <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>info@mastoreschool.ac.ke</span>
+              <span className="inline-flex items-center gap-2">
+                <Mail className="h-4 w-4 text-blue-700" />
+                {siteConfig.email}
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-blue-700" />
+                {siteConfig.location}
               </span>
             </div>
-            <span className="flex items-center gap-2 font-medium">
-              <MapPin className="w-4 h-4 flex-shrink-0" />
-              <span>Juja Sub County, Kiambu County</span>
+
+            <span className="rounded-full bg-slate-950 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
+              {siteConfig.tagline}
             </span>
           </div>
+
+          <nav className="flex items-center justify-between gap-4 px-4 py-4 sm:px-5">
+            <Link href="/" className="flex min-w-0 items-center gap-3">
+              <div className="soft-ring relative h-[3.25rem] w-[3.25rem] overflow-hidden rounded-2xl border border-white/80 bg-white">
+                <Image
+                  src="/LOGO/SCHOOL LOGO.jpg"
+                  alt={`${siteConfig.name} logo`}
+                  fill
+                  sizes="52px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+
+              <div className="min-w-0">
+                <p className="truncate text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-blue-700">
+                  {siteConfig.tagline}
+                </p>
+                <p className="truncate text-sm font-semibold text-slate-950 sm:text-base">
+                  {siteConfig.name}
+                </p>
+                <p className="truncate text-xs text-slate-500">
+                  Motto: {siteConfig.motto}
+                </p>
+              </div>
+            </Link>
+
+            <div className="hidden items-center gap-2 lg:flex">
+              {navigationLinks.map((item) => {
+                const isActive = pathname === item.href
+
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`relative rounded-full px-4 py-2 text-sm font-medium ${
+                      isActive
+                        ? 'bg-blue-50 text-slate-950'
+                        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-950'
+                    }`}
+                  >
+                    <span className="relative z-10">{item.label}</span>
+                    {isActive ? (
+                      <span className="absolute inset-x-5 bottom-1 h-1 rounded-full bg-gradient-to-r from-blue-700 to-cyan-500" />
+                    ) : null}
+                  </Link>
+                )
+              })}
+            </div>
+
+            <div className="hidden lg:block">
+              <Button href="/contact#inquiry-form" size="md">
+                Book an Admission Tour
+              </Button>
+            </div>
+
+            <button
+              type="button"
+              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isMenuOpen}
+              onClick={() => setIsMenuOpen((open) => !open)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 shadow-sm lg:hidden"
+            >
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </nav>
         </div>
       </div>
 
-      {/* Main Navigation */}
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 rounded-full overflow-hidden">
-              <Image 
-                src="/LOGO/SCHOOL LOGO.jpg" 
-                alt="Mastore Arise and Shine School Logo"
-                width={48}
-                height={48}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h1 className="text-lg font-bold text-gray-800">Mastore Arise and Shine</h1>
-              <p className="text-xs text-gray-600">School of Excellence</p>
-            </div>
-          </Link>
+      {isMenuOpen ? (
+        <div className="lg:hidden">
+          <div
+            className="fixed inset-0 z-40 bg-slate-950/45 backdrop-blur-md"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          <div className="fixed inset-x-3 top-[6.6rem] z-50 overflow-hidden rounded-[1.8rem] border border-white/80 bg-white/94 shadow-[0_40px_100px_-40px_rgba(15,23,42,0.5)] backdrop-blur-xl">
+            <div className="space-y-1 px-4 py-4">
+              <div className="rounded-[1.5rem] bg-slate-950 px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-sky-100">
+                {siteConfig.tagline}
+              </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-[#3C3B32] hover:text-[#479FBE] font-medium transition-all duration-200 relative group"
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#479FBE] to-[#9E8016] group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            ))}
-          </div>
+              {navigationLinks.map((item) => {
+                const isActive = pathname === item.href
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Link
-              href="/contact"
-              className="px-4 py-2 text-white bg-gradient-to-r from-[#479FBE] to-[#9E8016] rounded-lg hover:from-[#9E8016] hover:to-[#3C3B32] transition-all duration-300 font-medium hover:shadow-lg hover:shadow-[#479FBE]/30"
-            >
-              Contact Us
-            </Link>
-          </div>
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`flex items-center justify-between rounded-2xl px-4 py-3 text-base font-medium ${
+                      isActive
+                        ? 'bg-blue-50 text-slate-950'
+                        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-950'
+                    }`}
+                  >
+                    {item.label}
+                    <span
+                      className={`h-2.5 w-2.5 rounded-full ${
+                        isActive ? 'bg-blue-700' : 'bg-slate-300'
+                      }`}
+                    />
+                  </Link>
+                )
+              })}
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-[#E1EAE9] transition-colors duration-200 text-[#3C3B32] hover:text-[#479FBE]"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-[#E1EAE9]">
-            <div className="flex flex-col space-y-3 mt-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-[#3C3B32] hover:text-[#479FBE] font-medium px-2 py-1 transition-colors duration-200"
+              <div className="grid gap-3 px-1 pt-3">
+                <Button
+                  href="/contact#inquiry-form"
+                  fullWidth
+                  size="lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="flex flex-col space-y-2 pt-4 border-t border-[#E1EAE9]">
-                <Link
-                  href="/contact"
-                  className="px-4 py-2 text-white bg-gradient-to-r from-[#479FBE] to-[#9E8016] rounded-lg hover:from-[#9E8016] hover:to-[#3C3B32] transition-all duration-300 font-medium hover:shadow-lg hover:shadow-[#479FBE]/30"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact Us
-                </Link>
+                  Start an Inquiry
+                </Button>
+                <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 px-4 py-4 text-sm text-slate-600">
+                  <p className="font-semibold text-slate-900">{siteConfig.location}</p>
+                  <p>{siteConfig.email}</p>
+                  <p>{siteConfig.phone}</p>
+                </div>
               </div>
             </div>
           </div>
-        )}
-      </nav>
+        </div>
+      ) : null}
     </header>
   )
 }
-
-export default Header

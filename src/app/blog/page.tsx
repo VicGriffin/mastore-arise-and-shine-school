@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { Search, Calendar, User, ArrowRight, Clock } from 'lucide-react'
 
@@ -90,11 +90,6 @@ const categories = ['All', 'Education', 'Child Development', 'Stories', 'Communi
 export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
 
   const filteredPosts = blogPosts.filter((post) => {
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -116,7 +111,7 @@ export default function BlogPage() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className={`text-center transition-all duration-700 ${isVisible ? 'animate-fadeInDown' : 'opacity-0'}`}>
+          <div className="animate-fadeUp text-center transition-all duration-700">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Our <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Blog</span>
             </h1>
