@@ -78,9 +78,8 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  To be a leading institution in nurturing holistic development, 
-                  where every child discovers their potential, embraces excellence, 
-                  and becomes a responsible global citizen.
+                  To impact the learner with divine wisdom and connect him/her with his/her 
+                  God ordained purpose for effective societal development.
                 </p>
               </Card>
             </div>
@@ -92,8 +91,8 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  To provide quality education that empowers children to excel academically, 
-                  develop strong character, and become well-rounded contributors to society.
+                  To nurture the learner with knowledge, skill and values to produce a 
+                  responsible and independent person in the society.
                 </p>
               </Card>
             </div>
@@ -121,13 +120,13 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fadeInUp">Our School Motto</h2>
-          <p className="text-3xl md:text-4xl font-bold italic mb-4 animate-fadeInUp stagger-1">
-            &quot;Arise and Shine&quot;
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fadeInUp text-white">Our School Motto</h2>
+          <p className="text-3xl md:text-4xl font-bold italic mb-4 animate-fadeInUp stagger-1 text-white">
+            &quot;Strive to Excel&quot;
           </p>
           <p className="text-lg mt-4 text-white/90 max-w-2xl mx-auto animate-fadeInUp stagger-2">
-            Inspired by Isaiah 60:1 - encouraging every child to rise to their full potential 
-            and shine brightly in their unique way.
+            We inspire every learner to strive for excellence in all endeavors and 
+            excel in their academic, social, and spiritual development.
           </p>
         </div>
       </section>
@@ -218,8 +217,23 @@ const AboutClient = ({ timeline, coreValues, leadership }: AboutClientProps) => 
               Our <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">History</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              A journey of growth, impact, and transformation over the years.
+              A journey of growth, impact, and transformation since our establishment in May 2019.
             </p>
+          </div>
+
+          {/* History Narrative */}
+          <div className="max-w-4xl mx-auto mb-12 bg-white rounded-xl shadow-lg p-8 animate-fadeInUp">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-gray-700 leading-relaxed mb-6">
+                <strong>Our school was established in May 2019,</strong> with the aim of providing quality education and developing the children spiritually, socially and academically. The inspiration to begin the school came from the children&apos;s home that the Director, Madam Florence Kagendo and the manager Peter Murage had established earlier to support vulnerable and needy children in the community.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                <strong>The growth and success of the school</strong> has greatly been made possible through the unwavering support of the board members, who have faithfully stood with the vision since it was established. They have encouraged infrastructure development, academic improvement and learners&apos; welfare.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                <strong>Mr Joseph Kamuto,</strong> who established a strong foundation of the school, left during the COVID-19 period to the current Headteacher Betty K Njiru, who has continued to promote academic excellence and by God&apos;s grace the school has grown from kindergarten to junior school.
+              </p>
+            </div>
           </div>
 
           <div className="max-w-4xl mx-auto">
