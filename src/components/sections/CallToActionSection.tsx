@@ -35,24 +35,21 @@ export default function CallToActionSection() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/12 bg-white/8 p-6 backdrop-blur-sm">
+            <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
                 What happens next
               </p>
               <div className="mt-6 space-y-4">
                 {admissionsSteps.map((step, index) => (
-                  <div
-                    key={step}
-                    className="flex items-start gap-4 rounded-[1.4rem] border border-white/8 bg-white/7 px-4 py-4"
-                  >
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white text-slate-950">
+                  <div key={step} className="flex items-start gap-4">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white text-slate-950 font-semibold">
                       {index + 1}
                     </div>
-                    <p className="text-sm leading-7 text-slate-200">{step}</p>
+                    <p className="text-sm leading-7 text-slate-200 pt-0.5">{step}</p>
                   </div>
                 ))}
               </div>
-              <Button href="/academics" variant="ghost" size="lg" className="mt-6 text-sky-100 hover:bg-white/10 hover:text-white">
+              <Button href="/academics" variant="ghost" size="lg" className="mt-8 text-sky-100 hover:bg-white/10 hover:text-white">
                 Review academic pathways
                 <ArrowRight className="h-4 w-4" />
               </Button>

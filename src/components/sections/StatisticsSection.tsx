@@ -83,27 +83,27 @@ export default function StatisticsSection() {
   return (
     <section ref={ref} className="section-pad relative">
       <div className="page-shell">
-        <div className="grid gap-5 lg:grid-cols-[1fr_0.95fr]">
-          <div className="surface-panel p-8 sm:p-10">
+        <div className="px-8 sm:px-10">
+          <div className="max-w-3xl">
             <span className="section-kicker bg-blue-50 text-blue-700">
               By the numbers
             </span>
             <h2 className="section-title mt-5">
               Clear growth markers for a school steadily building depth and confidence.
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
+            <p className="mt-5 text-base leading-8 text-slate-600">
               From its May 2019 start to its current Junior School pathway, the school
               continues to expand its reach while maintaining attention to strong
               learner outcomes.
             </p>
 
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
+            <div className="mt-10 grid gap-8 md:grid-cols-3">
               {metrics.map((metric, index) => (
-                <article key={metric.title} className="surface-card p-6">
+                <div key={metric.title} className="flex flex-col">
                   <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
                     <metric.icon className="h-5 w-5" />
                   </div>
-                  <p className="mt-5 text-3xl font-semibold text-slate-950 sm:text-4xl">
+                  <p className="mt-4 text-3xl font-semibold text-slate-950 sm:text-4xl">
                     {metric.prefix}
                     {counts[index]}
                     {metric.suffix}
@@ -111,38 +111,22 @@ export default function StatisticsSection() {
                   <h3 className="mt-2 text-base font-semibold text-slate-950">
                     {metric.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{metric.body}</p>
-                </article>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">{metric.body}</p>
+                </div>
               ))}
             </div>
           </div>
 
-          <div className="surface-card overflow-hidden p-8 sm:p-10">
-            <div className="rounded-full bg-emerald-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">
+          <div className="mt-14 max-w-2xl">
+            <span className="inline-block rounded-full bg-emerald-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">
               Excellent KPSEA / KJSEA performance
-            </div>
+            </span>
             <h3 className="mt-5 text-3xl font-semibold text-slate-950">
               Assessment confidence grounded in real learner progress.
             </h3>
             <p className="mt-5 text-base leading-8 text-slate-600">
               {curriculumOverview.assessment}
             </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.6rem] border border-emerald-100 bg-emerald-50/70 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
-                  National assessments
-                </p>
-                <p className="mt-2 text-lg font-semibold text-slate-950">KPSEA and KJSEA</p>
-              </div>
-              <div className="rounded-[1.6rem] border border-blue-100 bg-blue-50/70 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-700">
-                  Outcome direction
-                </p>
-                <p className="mt-2 text-lg font-semibold text-slate-950">
-                  Most learners place above expectations
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

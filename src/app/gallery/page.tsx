@@ -57,9 +57,9 @@ export default function GalleryPage() {
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {galleryItems.map((item, index) => (
-              <article
+              <div
                 key={`${item.category}-${item.title}`}
-                className={`surface-card lift-hover overflow-hidden ${
+                className={`overflow-hidden rounded-[1.6rem] flex flex-col ${
                   index === 0 ? 'md:col-span-2 xl:col-span-2' : ''
                 }`}
               >
@@ -88,18 +88,18 @@ export default function GalleryPage() {
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="mt-4 flex-grow">
                   <p className="text-sm leading-7 text-slate-600">{item.description}</p>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       <section className="section-pad pt-0">
-        <div className="page-shell grid gap-5 md:grid-cols-3">
-          <article className="surface-card p-6">
+        <div className="page-shell grid gap-8 md:grid-cols-3">
+          <div className="flex flex-col">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
               <MonitorSmartphone className="h-5 w-5" />
             </div>
@@ -110,9 +110,9 @@ export default function GalleryPage() {
               The computer lab and laboratories show a learning model that values
               practical exploration alongside strong classroom teaching.
             </p>
-          </article>
+          </div>
 
-          <article className="surface-card p-6">
+          <div className="flex flex-col">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white">
               <School className="h-5 w-5" />
             </div>
@@ -123,9 +123,9 @@ export default function GalleryPage() {
               Library, classroom, and transport images reflect the routines that keep
               access, readiness, and learner support consistent every day.
             </p>
-          </article>
+          </div>
 
-          <article className="surface-card p-6">
+          <div className="flex flex-col">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
               <Sparkles className="h-5 w-5" />
             </div>
@@ -136,7 +136,7 @@ export default function GalleryPage() {
               Art and sports images highlight the co-curricular environment that helps
               learners develop creativity, discipline, and teamwork.
             </p>
-          </article>
+          </div>
         </div>
       </section>
     </>

@@ -54,26 +54,20 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Highlights Grid at Bottom */}
+            {/* Highlights List at Bottom */}
             <div className="mt-auto pt-12">
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-white/70 mb-8">
-                About Our School
-              </h2>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="flex flex-col gap-4">
                 {homeHighlights.map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-md p-6 hover:bg-white/15 transition-all"
-                  >
-                    <p className="text-xs font-semibold uppercase tracking-wider text-white/70">
-                      {item.label}
-                    </p>
-                    <p className="mt-4 text-2xl sm:text-3xl font-bold text-white">
-                      {item.value}
-                    </p>
-                    <p className="mt-3 text-sm leading-relaxed text-white/80">
-                      {item.description}
-                    </p>
+                  <div key={item.label} className="flex gap-4 items-start">
+                    <div className="flex-shrink-0 w-2 h-2 rounded-full bg-white/70 mt-2" />
+                    <div>
+                      <p className="text-sm font-semibold text-white/90">
+                        {item.label}: <span className="font-bold">{item.value}</span>
+                      </p>
+                      <p className="text-sm text-white/70 mt-1">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>

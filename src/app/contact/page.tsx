@@ -95,15 +95,15 @@ export default function ContactPage() {
       </section>
 
       <section className="section-pad relative">
-        <div className="page-shell grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="page-shell grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {contactCards.map((card) => (
-            <article key={card.title} className="surface-card p-6">
+            <div key={card.title} className="flex flex-col">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
                 {card.title}
               </p>
               <h2 className="mt-3 text-lg font-semibold text-slate-950">{card.value}</h2>
               <p className="mt-4 text-sm leading-7 text-slate-600">{card.detail}</p>
-            </article>
+            </div>
           ))}
         </div>
       </section>
@@ -117,44 +117,38 @@ export default function ContactPage() {
             <h2 id="visit-us" className="section-title mt-5">
               Friendly admissions support during official school hours.
             </h2>
-            <div className="mt-8 space-y-5">
-              <div className="surface-card p-5">
-                <div className="flex items-start gap-3">
-                  <MapPin className="mt-1 h-5 w-5 text-blue-700" />
-                  <div>
-                    <p className="font-semibold text-slate-950">Location</p>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">
-                      {siteConfig.location}
-                    </p>
+            <div className="mt-8 space-y-6">
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-1 h-5 w-5 flex-shrink-0 text-blue-700" />
+                <div>
+                  <p className="font-semibold text-slate-950">Location</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    {siteConfig.location}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock3 className="mt-1 h-5 w-5 flex-shrink-0 text-blue-700" />
+                <div>
+                  <p className="font-semibold text-slate-950">Operating hours</p>
+                  <div className="mt-2 space-y-1 text-sm leading-7 text-slate-600">
+                    {siteConfig.hours.map((hour) => (
+                      <p key={hour}>{hour}</p>
+                    ))}
                   </div>
                 </div>
               </div>
-              <div className="surface-card p-5">
-                <div className="flex items-start gap-3">
-                  <Clock3 className="mt-1 h-5 w-5 text-blue-700" />
-                  <div>
-                    <p className="font-semibold text-slate-950">Operating hours</p>
-                    <div className="mt-2 space-y-1 text-sm leading-7 text-slate-600">
-                      {siteConfig.hours.map((hour) => (
-                        <p key={hour}>{hour}</p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="surface-card p-5">
-                <div className="flex items-start gap-3">
-                  <Phone className="mt-1 h-5 w-5 text-blue-700" />
-                  <div>
-                    <p className="font-semibold text-slate-950">Direct contact</p>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">{siteConfig.phone}</p>
-                    <p className="text-sm leading-7 text-slate-600">{siteConfig.email}</p>
-                  </div>
+              <div className="flex items-start gap-3">
+                <Phone className="mt-1 h-5 w-5 flex-shrink-0 text-blue-700" />
+                <div>
+                  <p className="font-semibold text-slate-950">Direct contact</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">{siteConfig.phone}</p>
+                  <p className="text-sm leading-7 text-slate-600">{siteConfig.email}</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 rounded-[1.8rem] border border-slate-200 bg-slate-50/80 p-6">
+            <div className="mt-8 p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
                 Before your visit
               </p>
@@ -165,8 +159,8 @@ export default function ContactPage() {
             </div>
           </aside>
 
-          <div id="inquiry-form" className="surface-card p-8 sm:p-10">
-            <div className="flex items-center gap-3">
+          <div id="inquiry-form" className="p-8 sm:p-10">
+            <div className="flex items-center gap-3 mb-8">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white">
                 <Send className="h-5 w-5" />
               </div>
@@ -303,7 +297,7 @@ export default function ContactPage() {
               </div>
 
               {status === 'success' ? (
-                <div className="rounded-[1.4rem] border border-emerald-200 bg-emerald-50 px-4 py-4 text-sm text-emerald-700">
+                <div className="border border-emerald-200 bg-emerald-50 px-4 py-4 text-sm text-emerald-700">
                   <div className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5" />
                     <span>
@@ -315,7 +309,7 @@ export default function ContactPage() {
               ) : null}
 
               {status === 'error' ? (
-                <div className="rounded-[1.4rem] border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
+                <div className="border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
                   <div className="flex items-center gap-3">
                     <AlertCircle className="h-5 w-5" />
                     <span>

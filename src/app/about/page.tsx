@@ -81,8 +81,8 @@ export default function AboutPage() {
               </div>
             </article>
 
-            <div className="grid gap-5">
-              <article className="surface-card p-6">
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="flex flex-col">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
                   <Sparkles className="h-5 w-5" />
                 </div>
@@ -90,8 +90,8 @@ export default function AboutPage() {
                   Mission
                 </p>
                 <p className="mt-3 text-base leading-8 text-slate-700">{siteConfig.mission}</p>
-              </article>
-              <article className="surface-card p-6">
+              </div>
+              <div className="flex flex-col">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white">
                   <ShieldCheck className="h-5 w-5" />
                 </div>
@@ -99,7 +99,7 @@ export default function AboutPage() {
                   Vision
                 </p>
                 <p className="mt-3 text-base leading-8 text-slate-700">{siteConfig.vision}</p>
-              </article>
+              </div>
             </div>
           </div>
         </div>
@@ -123,22 +123,25 @@ export default function AboutPage() {
               </Button>
             </div>
 
-            <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            <div className="mt-10 space-y-8">
               {historyTimeline.map((item, index) => (
-                <article key={item.title} className="surface-card p-6">
-                  <div className="flex items-center gap-3">
+                <div key={item.title} className="flex gap-4">
+                  <div className="flex flex-col items-center">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-700 text-sm font-semibold text-white">
                       {index + 1}
                     </div>
-                    <div>
-                      <p className="text-sm font-semibold text-blue-700">{item.period}</p>
-                      <h3 className="text-xl font-semibold text-slate-950">{item.title}</h3>
-                    </div>
+                    {index < historyTimeline.length - 1 && (
+                      <div className="mt-2 w-1 flex-grow bg-blue-200" style={{ minHeight: '80px' }} />
+                    )}
                   </div>
-                  <p className="mt-4 text-sm leading-7 text-slate-600">
-                    {item.description}
-                  </p>
-                </article>
+                  <div className="pb-4">
+                    <p className="text-sm font-semibold text-blue-700">{item.period}</p>
+                    <h3 className="mt-1 text-xl font-semibold text-slate-950">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -154,9 +157,9 @@ export default function AboutPage() {
             <h2 className="section-title mt-5">
               The people who shaped the school&apos;s direction and continuity.
             </h2>
-            <div className="mt-8 grid gap-5 md:grid-cols-2">
+            <div className="mt-8 grid gap-8 md:grid-cols-2">
               {founders.map((leader) => (
-                <article key={leader.name} className="surface-card p-6">
+                <div key={leader.name} className="flex flex-col">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white">
                     <HeartHandshake className="h-5 w-5" />
                   </div>
@@ -165,12 +168,12 @@ export default function AboutPage() {
                   <p className="mt-4 text-sm leading-7 text-slate-600">
                     {leader.description}
                   </p>
-                </article>
+                </div>
               ))}
             </div>
           </article>
 
-          <aside className="surface-card p-8 sm:p-10">
+          <aside className="max-w-xl">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
               <Landmark className="h-5 w-5" />
             </div>
@@ -182,10 +185,7 @@ export default function AboutPage() {
             </h2>
             <div className="mt-8 space-y-4">
               {boardMembers.map((member) => (
-                <div
-                  key={member.name}
-                  className="rounded-[1.5rem] border border-slate-200 bg-slate-50/70 px-5 py-4"
-                >
+                <div key={member.name} className="flex flex-col">
                   <p className="font-semibold text-slate-950">{member.name}</p>
                   <p className="text-sm text-blue-700">{member.role}</p>
                 </div>
