@@ -75,8 +75,8 @@ export default function AcademicsPage() {
             <p className="mt-5 text-base leading-8 text-slate-600">
               {curriculumOverview.scope}
             </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="surface-card p-5">
+            <div className="mt-8 grid gap-8 md:grid-cols-2">
+              <div className="flex flex-col">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
                   Focus areas
                 </p>
@@ -85,7 +85,7 @@ export default function AcademicsPage() {
                   rather than in isolation.
                 </p>
               </div>
-              <div className="surface-card p-5">
+              <div className="flex flex-col">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
                   Teacher-parent partnership
                 </p>
@@ -97,8 +97,8 @@ export default function AcademicsPage() {
             </div>
           </article>
 
-          <article className="surface-card overflow-hidden">
-            <div className="relative aspect-[16/10]">
+          <div className="flex flex-col">
+            <div className="relative aspect-[16/10] rounded-[1.6rem] overflow-hidden">
               <Image
                 src="/images/library.jfif"
                 alt="Learners in the library"
@@ -107,7 +107,7 @@ export default function AcademicsPage() {
                 className="object-cover"
               />
             </div>
-            <div className="p-8">
+            <div className="mt-6">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
                 Academic culture
               </p>
@@ -120,7 +120,7 @@ export default function AcademicsPage() {
                 performance and long-term growth.
               </p>
             </div>
-          </article>
+          </div>
         </div>
       </section>
 
@@ -135,9 +135,9 @@ export default function AcademicsPage() {
               School readiness.
             </h2>
 
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            <div className="mt-10 grid gap-8 lg:grid-cols-3">
               {academicPhases.map((phase) => (
-                <article key={phase.level} className="surface-card p-6">
+                <div key={phase.level} className="flex flex-col">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
                     {phase.level}
                   </p>
@@ -147,7 +147,7 @@ export default function AcademicsPage() {
                   <p className="mt-4 text-sm leading-7 text-slate-600">
                     {phase.description}
                   </p>
-                </article>
+                </div>
               ))}
             </div>
           </div>
@@ -156,12 +156,12 @@ export default function AcademicsPage() {
 
       <section className="section-pad pt-0">
         <div className="page-shell">
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {learningTracks.map((track, index) => {
               const Icon = icons[index]
 
               return (
-                <article key={track.title} className="surface-card p-6">
+                <div key={track.title} className="flex flex-col">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white">
                     <Icon className="h-5 w-5" />
                   </div>
@@ -169,7 +169,7 @@ export default function AcademicsPage() {
                   <p className="mt-4 text-sm leading-7 text-slate-600">
                     {track.description}
                   </p>
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <div className="mt-4 flex flex-wrap gap-2">
                     {track.subjects.map((subject) => (
                       <span
                         key={subject}
@@ -179,7 +179,7 @@ export default function AcademicsPage() {
                       </span>
                     ))}
                   </div>
-                </article>
+                </div>
               )
             })}
           </div>
@@ -196,9 +196,9 @@ export default function AcademicsPage() {
               Creativity, logic, teamwork, and communication are built into daily
               learning.
             </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
               {learnerSkills.map((skill) => (
-                <article key={skill.title} className="surface-card p-5">
+                <div key={skill.title} className="flex flex-col">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-blue-700">
                       <BrainCircuit className="h-4 w-4" />
@@ -208,13 +208,13 @@ export default function AcademicsPage() {
                   <p className="mt-4 text-sm leading-7 text-slate-600">
                     {skill.description}
                   </p>
-                </article>
+                </div>
               ))}
             </div>
           </article>
 
-          <article className="surface-card p-8 sm:p-10">
-            <div className="rounded-full bg-emerald-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">
+          <div className="flex flex-col">
+            <div className="rounded-full bg-emerald-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700 w-fit">
               French programme and assessments
             </div>
             <h2 className="mt-5 text-3xl font-semibold text-slate-950">
@@ -236,16 +236,14 @@ export default function AcademicsPage() {
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
-            <div className="mt-8 rounded-[1.6rem] border border-slate-200 bg-slate-50/80 p-5">
-              <div className="flex items-start gap-3">
-                <Users2 className="mt-1 h-5 w-5 text-blue-700" />
-                <p className="text-sm leading-7 text-slate-600">
-                  Parents are key partners in the academic process, helping teachers
-                  reinforce values, routines, and learner confidence at every stage.
-                </p>
-              </div>
+            <div className="mt-8 flex items-start gap-3 p-5">
+              <Users2 className="mt-1 h-5 w-5 flex-shrink-0 text-blue-700" />
+              <p className="text-sm leading-7 text-slate-600">
+                Parents are key partners in the academic process, helping teachers
+                reinforce values, routines, and learner confidence at every stage.
+              </p>
             </div>
-          </article>
+          </div>
         </div>
       </section>
     </>
