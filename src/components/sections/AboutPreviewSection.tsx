@@ -28,14 +28,14 @@ export default function AboutPreviewSection() {
     <section className="section-pad relative">
       <div className="absolute inset-x-0 top-20 -z-10 h-72 bg-[radial-gradient(circle,rgba(125,211,252,0.2),transparent_60%)]" />
       <div className="page-shell">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
-          <div>
+        <div>
+          <div className="max-w-4xl">
             <span className="section-kicker">Mission, vision, and identity</span>
             <h2 className="section-title mt-5">
               The school story is anchored in purpose, compassion, and a clear sense of
               direction.
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-8 text-slate-600">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
               Since {siteConfig.established}, the school has combined spiritual,
               social, and academic development into one clear learning journey for
               every child.
@@ -48,18 +48,18 @@ export default function AboutPreviewSection() {
             </div>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="mt-12 grid gap-10 lg:grid-cols-3">
             {pillars.map((item) => (
-              <article key={item.label} className="surface-card lift-hover p-6">
+              <div key={item.label} className="flex flex-col">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
                   <item.icon className="h-5 w-5" />
                 </div>
                 <p className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
                   {item.label}
                 </p>
-                <h3 className="mt-3 text-xl font-semibold text-slate-950">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-slate-600">{item.body}</p>
-              </article>
+                <h3 className="mt-3 text-lg font-semibold text-slate-950">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.body}</p>
+              </div>
             ))}
           </div>
         </div>
