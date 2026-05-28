@@ -9,25 +9,30 @@ import Button from '@/components/common/Button'
 import { navigationLinks, siteConfig } from '@/lib/site-content'
 
 export default function Header() {
-  const pathname = usePathname()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 18)
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    setMounted(true);
+    const onScroll = () => setIsScrolled(window.scrollY > 18);
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? 'hidden' : ''
-
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
     return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isMenuOpen])
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
+  // Prevent hydration mismatch by rendering only after mount
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 py-3 sm:px-5">
@@ -60,7 +65,7 @@ export default function Header() {
             <Link href="/" className="flex min-w-0 items-center gap-3">
               <div className="soft-ring relative h-[3.25rem] w-[3.25rem] overflow-hidden rounded-2xl border border-white/80 bg-white">
                 <Image
-                  src="/LOGO/SCHOOL LOGO.jpg"
+                  src="/images/SCHOOL LOG.webp"
                   alt={`${siteConfig.name} logo`}
                   fill
                   sizes="52px"

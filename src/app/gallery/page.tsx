@@ -17,8 +17,8 @@ export default function GalleryPage() {
       <section className="relative overflow-hidden px-3 pt-2 sm:px-5">
         <div className="page-shell relative overflow-hidden rounded-[2.4rem] border border-white/70 bg-slate-950">
           <Image
-            src="/images/mastore school bus2.jfif"
-            alt="School transport at Mastore Arise and Shine School"
+            src={galleryItems[0]?.image || '/images/1215.jpg'}
+            alt={galleryItems[0]?.title || 'School Gallery'}
             fill
             priority
             sizes="(min-width: 1280px) 1200px, 100vw"

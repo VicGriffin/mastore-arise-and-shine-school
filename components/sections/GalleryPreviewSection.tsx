@@ -1,41 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from '../Button';
 import { ArrowRight } from 'lucide-react';
+import { galleryItems } from '../../src/lib/site-content';
 
 const GalleryPreviewSection = () => {
-  const galleryItems = [
-    {
-      title: 'Computer Lab',
-      description: 'Modern ICT facilities for digital literacy',
-      bgColor: 'from-blue-400 to-blue-600',
-    },
-    {
-      title: 'Library',
-      description: 'Extensive resources for research and learning',
-      bgColor: 'from-green-400 to-green-600',
-    },
-    {
-      title: 'Science Laboratory',
-      description: 'Well-equipped for practical experiments',
-      bgColor: 'from-purple-400 to-purple-600',
-    },
-    {
-      title: 'Sports Facilities',
-      description: 'Fields and courts for athletic development',
-      bgColor: 'from-orange-400 to-orange-600',
-    },
-    {
-      title: 'School Transport',
-      description: 'Safe and reliable transportation services',
-      bgColor: 'from-red-400 to-red-600',
-    },
-    {
-      title: 'Creative Studios',
-      description: 'Spaces for arts and cultural expression',
-      bgColor: 'from-pink-400 to-pink-600',
-    },
-  ];
+  // Show only the first 6 images for preview
+  const previewItems = galleryItems.slice(0, 6);
 
   return (
     <section className="section-padding bg-white">
@@ -53,28 +25,24 @@ const GalleryPreviewSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {galleryItems.map((item, index) => (
+          {previewItems.map((item, index) => (
             <div
               key={index}
-              className={`relative h-64 rounded-xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300`}
+              className="relative h-64 rounded-xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300"
             >
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.bgColor} opacity-90 group-hover:opacity-100 transition-opacity`} />
-
-              {/* Content */}
-              <div className="relative h-full flex flex-col justify-end p-6 text-white">
-                <div className="transform group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-2xl font-bold mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-white/90 text-sm">
-                    {item.description}
-                  </p>
-                </div>
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover object-center"
+                sizes="(min-width: 1024px) 400px, 100vw"
+                priority={index === 0}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 className="text-xl font-bold mb-1">{item.title}</h3>
+                <p className="text-white/90 text-sm line-clamp-2">{item.description}</p>
               </div>
-
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
             </div>
           ))}
         </div>
