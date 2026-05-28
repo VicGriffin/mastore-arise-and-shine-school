@@ -2,6 +2,7 @@
 
 import type { Metadata } from 'next';
 import { useState } from 'react';
+import Image from 'next/image';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import Button from '@/components/Button';
 
@@ -46,8 +47,18 @@ export default function ContactPage() {
   return (
     <main>
       {/* Page Header */}
-      <section className="bg-gradient-to-br from-primary to-blue-900 text-white py-20">
-        <div className="container-max">
+      <section className="relative bg-blue-955 text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/mastore/WhatsApp Image 2026-05-28 at 10.54.25.jpeg"
+            alt="Mastore Arise & Shine School Administration Block"
+            fill
+            priority
+            className="object-cover object-center brightness-[0.35]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-955 via-slate-900/80 to-transparent" />
+        </div>
+        <div className="relative z-10 container-max">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Get In Touch</h1>
           <p className="text-xl text-blue-100 max-w-2xl">
             Have questions about admissions? Ready to visit our school? We&apos;d love to hear from you.

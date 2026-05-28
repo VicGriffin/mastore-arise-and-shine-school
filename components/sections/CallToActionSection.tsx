@@ -1,14 +1,27 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from '../Button';
 import { Calendar, Mail, Phone } from 'lucide-react';
 
 const CallToActionSection = () => {
   return (
-    <section className="section-padding bg-gradient-to-r from-primary to-blue-900 text-white relative overflow-hidden">
+    <section className="section-padding text-white relative overflow-hidden bg-blue-950">
+      {/* Background Image with Dark Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/mastore/WhatsApp Image 2026-05-28 at 10.55.08.jpeg"
+          alt="Mastore Arise & Shine School Activity"
+          fill
+          className="object-cover object-center brightness-[0.25]"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-slate-900/95 to-black/95" />
+      </div>
+
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -mr-48 -mt-24" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -ml-48 -mb-24" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -mr-48 -mt-24 z-0" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -ml-48 -mb-24 z-0" />
 
       <div className="container-max relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -23,30 +36,30 @@ const CallToActionSection = () => {
           {/* Contact Methods */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
             <a
-              href="tel:+254123456789"
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/15 transition-all duration-300"
+              href="tel:+254113634661"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5 hover:bg-white/25 hover:border-white/40 transition-all duration-300 flex flex-col justify-center"
             >
-              <Phone className="w-6 h-6 mx-auto mb-2" />
+              <Phone className="w-6 h-6 mx-auto mb-2 text-blue-300" />
               <div className="text-sm font-semibold">Call Us</div>
-              <div className="text-xs text-blue-100">+254 (0) 123 456 789</div>
+              <div className="text-xs text-blue-100 mt-1">+254 113 634 661</div>
             </a>
 
             <a
-              href="mailto:info@mastore.ac.ke"
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/15 transition-all duration-300"
+              href="mailto:mariseshine4@gmail.com"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5 hover:bg-white/25 hover:border-white/40 transition-all duration-300 flex flex-col justify-center"
             >
-              <Mail className="w-6 h-6 mx-auto mb-2" />
+              <Mail className="w-6 h-6 mx-auto mb-2 text-blue-300" />
               <div className="text-sm font-semibold">Email Us</div>
-              <div className="text-xs text-blue-100">info@mastore.ac.ke</div>
+              <div className="text-xs text-blue-100 mt-1">mariseshine4@gmail.com</div>
             </a>
 
             <Link
               href="/contact"
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/15 transition-all duration-300"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5 hover:bg-white/25 hover:border-white/40 transition-all duration-300 flex flex-col justify-center"
             >
-              <Calendar className="w-6 h-6 mx-auto mb-2" />
+              <Calendar className="w-6 h-6 mx-auto mb-2 text-blue-300" />
               <div className="text-sm font-semibold">Schedule Tour</div>
-              <div className="text-xs text-blue-100">Book a campus visit</div>
+              <div className="text-xs text-blue-100 mt-1">Book a campus visit</div>
             </Link>
           </div>
 

@@ -3,11 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Button from '../Button';
 import { ArrowRight } from 'lucide-react';
-import { galleryItems } from '../../src/lib/site-content';
+import { mastoreGalleryItems } from '../../src/lib/site-content';
 
 const GalleryPreviewSection = () => {
-  // Show only the first 6 images for preview
-  const previewItems = galleryItems.slice(0, 6);
+  // Show only the first 6 real images for preview
+  const previewItems = mastoreGalleryItems.slice(0, 6);
 
   return (
     <section className="section-padding bg-white">

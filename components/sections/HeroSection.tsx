@@ -1,16 +1,26 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from '../Button';
 
 const HeroSection = () => {
   return (
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-slate-900" />
+      {/* Background Image with Dark Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/mastore/WhatsApp Image 2026-05-28 at 10.54.57.jpeg"
+          alt="Mastore Arise & Shine School Campus"
+          fill
+          priority
+          className="object-cover object-center animate-pulse-slow"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-slate-900/85 to-black/90" />
+      </div>
       
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -mr-48 -mt-24" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-400/10 rounded-full blur-3xl -ml-48 -mb-24" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl -mr-48 -mt-24 z-0" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-400/10 rounded-full blur-3xl -ml-48 -mb-24 z-0" />
 
       {/* Content */}
       <div className="relative z-10 container-max text-center text-white">

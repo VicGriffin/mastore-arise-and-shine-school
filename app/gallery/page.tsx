@@ -1,28 +1,15 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Cpu, BookOpen, Beaker, Trophy, Bus, Palette } from 'lucide-react';
+import { Cpu, BookOpen, Beaker, Trophy, Bus, Palette, Image as ImageIcon } from 'lucide-react';
+import { mastoreGalleryItems } from '@/src/lib/site-content';
+import GalleryGrid from '@/components/sections/GalleryGrid';
 
 export const metadata: Metadata = {
   title: 'Gallery | Mastore Arise & Shine School',
-  description: 'Explore our state-of-the-art facilities including computer lab, library, science laboratory, sports facilities, and more.',
+  description: 'Explore our state-of-the-art facilities including computer lab, library, science laboratory, sports facilities, and more with our school moments catalog.',
 };
 
 export default function GalleryPage() {
-  const galleryImages = [
-    { id: 1, src: '/images/1215.jpg', alt: 'School Campus View' },
-    { id: 2, src: '/images/1221.jpg', alt: 'Student Activities' },
-    { id: 3, src: '/images/323.jpg', alt: 'Classroom Learning' },
-    { id: 4, src: '/images/324.jpg', alt: 'Sports Event' },
-    { id: 5, src: '/images/328.jpg', alt: 'School Facilities' },
-    { id: 6, src: '/images/332.jpg', alt: 'Student Engagement' },
-    { id: 7, src: '/images/355.jpg', alt: 'Campus View' },
-    { id: 8, src: '/images/400.jpg', alt: 'School Building' },
-    { id: 9, src: '/images/403.jpg', alt: 'Events & Activities' },
-    { id: 10, src: '/images/460.jpg', alt: 'Student Programs' },
-    { id: 11, src: '/images/480.jpg', alt: 'School Life' },
-    { id: 12, src: '/images/493.jpg', alt: 'Learning Environment' },
-  ];
-
   const facilities = [
     {
       title: 'Computer Lab',
@@ -69,113 +56,95 @@ export default function GalleryPage() {
   ];
 
   return (
-    <main>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-primary to-blue-900 text-white py-20">
-        <div className="container-max">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">School Gallery</h1>
-          <p className="text-xl text-blue-100 max-w-2xl">
-            Explore our state-of-the-art facilities designed to support quality education and student development.
+    <main className="bg-slate-50/50">
+      {/* Page Header with Real School Campus Background */}
+      <section className="relative bg-blue-955 text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/mastore/WhatsApp Image 2026-05-28 at 10.54.57.jpeg"
+            alt="Mastore Arise & Shine School Campus View"
+            fill
+            priority
+            className="object-cover object-center brightness-[0.35]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-955 via-slate-900/80 to-transparent" />
+        </div>
+        <div className="relative z-10 container-max">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 flex items-center gap-3">
+            <ImageIcon className="w-12 h-12" /> School Gallery
+          </h1>
+          <p className="text-xl text-blue-100 max-w-2xl leading-relaxed">
+            Explore our actual campus, learning moments, physical activities, and facilities supporting quality holistic education.
           </p>
         </div>
       </section>
 
       {/* Photo Gallery Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white relative">
         <div className="container-max">
-          <div className="mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Campus Moments</h2>
-            <p className="text-lg text-muted-foreground">
-              A visual journey through the vibrant life and exceptional facilities at Mastore Arise & Shine School.
+          <div className="mb-12 text-center max-w-3xl mx-auto space-y-4">
+            <span className="text-primary font-semibold uppercase tracking-wider text-sm">
+              Visual Journey
+            </span>
+            <h2 className="text-4xl font-bold text-foreground">Campus Moments</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Explore actual daily life at Mastore Arise & Shine School through our updated collection of student actions, studies, sports, and celebrations. Click any photo to see it in high definition.
             </p>
           </div>
 
-          {/* Image Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-            {galleryImages.map((image) => (
-              <div
-                key={image.id}
-                className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
-              >
-                <div className="relative w-full h-64 sm:h-72 overflow-hidden">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Additional showcase images */}
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Large showcase images */}
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <div className="relative w-full h-96 overflow-hidden">
-                <Image
-                  src="/images/20220908_124649.jpg"
-                  alt="School Event"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <div className="relative w-full h-96 overflow-hidden">
-                <Image
-                  src="/images/20220908_125140.jpg"
-                  alt="School Activities"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-          </div>
+          {/* Dynamic Gallery Grid (31 items with categories, state, lightbox, etc.) */}
+          <GalleryGrid items={mastoreGalleryItems} />
         </div>
       </section>
 
-      {/* Facilities Grid */}
-      <section className="section-padding bg-white">
+      {/* Facilities Quick Grid */}
+      <section className="section-padding bg-slate-50/70 border-t border-slate-100">
         <div className="container-max">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="text-center mb-16 space-y-4 max-w-2xl mx-auto">
+            <span className="text-primary font-semibold uppercase tracking-wider text-sm">
+              Our Infrastructure
+            </span>
+            <h2 className="text-4xl font-bold text-foreground">Supportive Learning Facilities</h2>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              We provide state-of-the-art facilities that serve as critical tools for standard educational growth and pupil welfare.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {facilities.map((facility, index) => {
               const Icon = facility.icon;
               return (
                 <div
                   key={index}
-                  className="group overflow-hidden rounded-xl border border-border hover:shadow-xl transition-all duration-300"
+                  className="group overflow-hidden rounded-2xl border border-slate-200 bg-white hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between"
                 >
-                  {/* Image Area */}
-                  <div className={`relative h-64 bg-gradient-to-br ${facility.color} overflow-hidden`}>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Icon className="w-24 h-24 text-white/30" />
+                  <div>
+                    {/* Image Area */}
+                    <div className={`relative h-56 bg-gradient-to-br ${facility.color} overflow-hidden`}>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Icon className="w-20 h-20 text-white/30 group-hover:scale-110 transition-transform duration-500" />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+
+                    {/* Content */}
+                    <div className="p-6 space-y-3">
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                        {facility.title}
+                      </h3>
+                      <p className="text-muted-foreground text-xs leading-relaxed">
+                        {facility.description}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="bg-white p-6">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">
-                      {facility.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                      {facility.description}
-                    </p>
-
-                    {/* Highlights */}
-                    <div className="flex flex-wrap gap-2">
+                  {/* Highlights */}
+                  <div className="px-6 pb-6 pt-2">
+                    <div className="flex flex-wrap gap-1.5">
                       {facility.highlights.map((highlight, idx) => (
                         <span
                           key={idx}
-                          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-primary"
+                          className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-blue-50 text-primary border border-blue-100"
                         >
                           {highlight}
                         </span>
@@ -189,211 +158,111 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Facility Details Section */}
-      <section className="section-padding bg-slate-50">
+      {/* Facility Details Section - Featuring Actual School Images */}
+      <section className="section-padding bg-white border-t border-slate-100">
         <div className="container-max">
-          <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
-            Facility Highlights
+          <h2 className="text-4xl font-bold text-foreground mb-16 text-center">
+            Detailed Facility Highlights
           </h2>
 
-          <div className="space-y-12">
+          <div className="space-y-20 max-w-5xl mx-auto">
             {/* Computer Lab Detail */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-3xl font-bold text-foreground mb-4">Computer Lab</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <h3 className="text-3xl font-bold text-foreground">Computer Laboratory</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   Our modern computer laboratory is equipped with high-performance computers running licensed software for programming, design, and digital literacy. Students from Grade 1 onwards develop essential ICT skills including coding, web design, and digital citizenship.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span className="text-foreground">20+ Modern Computers</span>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                    <span className="text-sm font-semibold text-foreground">20+ Modern Computers</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span className="text-foreground">High-Speed Internet Connection</span>
+                  <li className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                    <span className="text-sm font-semibold text-foreground">High-Speed Internet Connection</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span className="text-foreground">Professional ICT Instructor</span>
+                  <li className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                    <span className="text-sm font-semibold text-foreground">Professional ICT Instructor</span>
                   </li>
                 </ul>
               </div>
-              <div className="h-64 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
-                <Cpu className="w-32 h-32 text-white/40" />
+              <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl border-4 border-slate-50 group">
+                <Image
+                  src="/images/mastore/WhatsApp Image 2026-05-28 at 10.48.023.jpeg"
+                  alt="Actual Computer Lab Session at Mastore Arise & Shine"
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                  sizes="(min-width: 1024px) 500px, 100vw"
+                />
               </div>
             </div>
 
             {/* Library Detail */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="h-64 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center order-2 md:order-1">
-                <BookOpen className="w-32 h-32 text-white/40" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl border-4 border-slate-50 group order-2 lg:order-1">
+                <Image
+                  src="/images/mastore/WhatsApp Image 2026-05-28 at 10.48.03.jpeg"
+                  alt="Actual School Library at Mastore Arise & Shine"
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                  sizes="(min-width: 1024px) 500px, 100vw"
+                />
               </div>
-              <div className="order-1 md:order-2">
-                <h3 className="text-3xl font-bold text-foreground mb-4">Library</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
+              <div className="space-y-6 order-1 lg:order-2">
+                <h3 className="text-3xl font-bold text-foreground">School Library</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   Our well-stocked library provides a comprehensive collection of educational resources including reference books, novels, digital databases, and multimedia materials. It serves as a hub for research, quiet study, and independent learning.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span className="text-foreground">1000+ Books & Resources</span>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                    <span className="text-sm font-semibold text-foreground">1000+ Books & Resources</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span className="text-foreground">Digital Research Databases</span>
+                  <li className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                    <span className="text-sm font-semibold text-foreground">Digital Research Databases</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span className="text-foreground">Qualified Librarian</span>
+                  <li className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                    <span className="text-sm font-semibold text-foreground">Qualified Librarian</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* Science Lab Detail */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-3xl font-bold text-foreground mb-4">Science Laboratory</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <h3 className="text-3xl font-bold text-foreground">Science Laboratory</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   Our science laboratory is equipped with apparatus for chemistry, physics, and biology experiments. Students engage in hands-on learning, conducting investigations and validating scientific concepts through practical work.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span className="text-foreground">Complete Lab Equipment</span>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                    <span className="text-sm font-semibold text-foreground">Complete Lab Equipment</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span className="text-foreground">Safety Equipment & Protocols</span>
+                  <li className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                    <span className="text-sm font-semibold text-foreground">Safety Equipment & Protocols</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span className="text-foreground">Experienced Science Teachers</span>
+                  <li className="flex items-center gap-3">
+                    <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                    <span className="text-sm font-semibold text-foreground">Experienced Science Teachers</span>
                   </li>
                 </ul>
               </div>
-              <div className="h-64 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
-                <Beaker className="w-32 h-32 text-white/40" />
+              <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl border-4 border-slate-50 group">
+                <Image
+                  src="/images/mastore/WhatsApp Image 2026-05-28 at 10.48.02.jpeg"
+                  alt="Actual Science Lab Practical at Mastore Arise & Shine"
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                  sizes="(min-width: 1024px) 500px, 100vw"
+                />
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sports & Activities */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
-            Sports & Physical Development
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl border border-orange-200 p-6">
-              <Trophy className="w-8 h-8 text-orange-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Athletics</h3>
-              <p className="text-sm text-muted-foreground">
-                Track and field programs developing speed, endurance, and athletic skills.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl border border-orange-200 p-6">
-              <Trophy className="w-8 h-8 text-orange-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Ball Games</h3>
-              <p className="text-sm text-muted-foreground">
-                Basketball, volleyball, and football promoting teamwork and coordination.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl border border-orange-200 p-6">
-              <Trophy className="w-8 h-8 text-orange-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Swimming</h3>
-              <p className="text-sm text-muted-foreground">
-                Water safety and swimming lessons for all learners.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl border border-orange-200 p-6">
-              <Trophy className="w-8 h-8 text-orange-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Gymnastics</h3>
-              <p className="text-sm text-muted-foreground">
-                Flexibility and strength training through structured gymnastics programs.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl border border-orange-200 p-6">
-              <Trophy className="w-8 h-8 text-orange-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Martial Arts</h3>
-              <p className="text-sm text-muted-foreground">
-                Discipline, focus, and self-defense skills through martial arts training.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl border border-orange-200 p-6">
-              <Trophy className="w-8 h-8 text-orange-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Sports Days</h3>
-              <p className="text-sm text-muted-foreground">
-                Regular inter-house competitions and annual sports festivals.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Creative & Cultural Activities */}
-      <section className="section-padding bg-slate-50">
-        <div className="container-max">
-          <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
-            Creative & Cultural Programs
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl border border-pink-200 p-6">
-              <Palette className="w-8 h-8 text-pink-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Visual Arts</h3>
-              <p className="text-sm text-muted-foreground">
-                Painting, drawing, sculpture, and mixed media for creative expression.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl border border-pink-200 p-6">
-              <Palette className="w-8 h-8 text-pink-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Music</h3>
-              <p className="text-sm text-muted-foreground">
-                Instrumental training, choir, and music theory for all learners.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl border border-pink-200 p-6">
-              <Palette className="w-8 h-8 text-pink-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Drama & Theatre</h3>
-              <p className="text-sm text-muted-foreground">
-                Acting, playwriting, and theatre productions for confidence building.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl border border-pink-200 p-6">
-              <Palette className="w-8 h-8 text-pink-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Dance</h3>
-              <p className="text-sm text-muted-foreground">
-                Contemporary and traditional dance forms for cultural expression.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl border border-pink-200 p-6">
-              <Palette className="w-8 h-8 text-pink-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Film & Media</h3>
-              <p className="text-sm text-muted-foreground">
-                Video production and media literacy for the digital age.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl border border-pink-200 p-6">
-              <Palette className="w-8 h-8 text-pink-600 mb-3" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Crafts & Design</h3>
-              <p className="text-sm text-muted-foreground">
-                Woodwork, textiles, and design projects combining art with functionality.
-              </p>
             </div>
           </div>
         </div>

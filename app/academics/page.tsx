@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { CheckCircle2, BookOpen, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -75,8 +76,18 @@ export default function AcademicsPage() {
   return (
     <main>
       {/* Page Header */}
-      <section className="bg-gradient-to-br from-primary to-blue-900 text-white py-20">
-        <div className="container-max">
+      <section className="relative bg-blue-950 text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/mastore/WhatsApp Image 2026-05-28 at 10.47.57.jpeg"
+            alt="Mastore Arise & Shine School Classroom"
+            fill
+            priority
+            className="object-cover object-center brightness-[0.35]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-950 via-slate-900/80 to-transparent" />
+        </div>
+        <div className="relative z-10 container-max">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Academics</h1>
           <p className="text-xl text-blue-100 max-w-2xl">
             KICD Competency-Based Curriculum focused on talents, abilities, values, and practical skills.
@@ -123,37 +134,71 @@ export default function AcademicsPage() {
         <div className="container-max">
           <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Grade Levels</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl border border-border p-8 text-center">
-              <div className="text-4xl font-bold text-primary mb-2">PP1-2</div>
-              <h3 className="text-xl font-bold text-foreground mb-2">Pre-Primary</h3>
-              <p className="text-sm text-muted-foreground">
-                Foundation in literacy, numeracy, and social-emotional development with play-based learning.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* PP1-2 Card */}
+            <div className="bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="/images/mastore/WhatsApp Image 2026-05-28 at 10.55.13.jpeg"
+                  alt="Pre-Primary Pupils Activity"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 30vw"
+                />
+              </div>
+              <div className="p-6 text-center flex-grow flex flex-col justify-between">
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">PP1-2</div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Pre-Primary</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Foundation in literacy, numeracy, and social-emotional development with play-based learning and creative expression.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white rounded-xl border border-border p-8 text-center">
-              <div className="text-4xl font-bold text-primary mb-2">Grades 1-3</div>
-              <h3 className="text-xl font-bold text-foreground mb-2">Lower Primary</h3>
-              <p className="text-sm text-muted-foreground">
-                Strengthening core competencies in languages, math, sciences, and social studies.
-              </p>
+            {/* Grades 1-6 Card */}
+            <div className="bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="/images/mastore/WhatsApp Image 2026-05-28 at 10.48.01.jpeg"
+                  alt="Primary School Classroom Learning"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 30vw"
+                />
+              </div>
+              <div className="p-6 text-center flex-grow flex flex-col justify-between">
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">Grades 1-6</div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Primary School</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Strengthening core competencies in languages, mathematics, sciences, social studies, and agricultural nutrition under the CBC framework.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white rounded-xl border border-border p-8 text-center">
-              <div className="text-4xl font-bold text-primary mb-2">Grades 4-6</div>
-              <h3 className="text-xl font-bold text-foreground mb-2">Upper Primary</h3>
-              <p className="text-sm text-muted-foreground">
-                Advanced academics with increased focus on science, technology, and practical skills.
-              </p>
-            </div>
-
-            <div className="col-span-1 md:col-span-3 bg-white rounded-xl border border-border p-8 text-center">
-              <div className="text-4xl font-bold text-primary mb-2">Grades 7-9</div>
-              <h3 className="text-xl font-bold text-foreground mb-2">Junior Secondary</h3>
-              <p className="text-sm text-muted-foreground">
-                Specialized subject combinations with deeper exploration of sciences, humanities, and technical studies.
-              </p>
+            {/* Grades 7-9 Card */}
+            <div className="bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="/images/mastore/WhatsApp Image 2026-05-28 at 10.48.031.jpeg"
+                  alt="Junior Secondary Science Lab Study"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 30vw"
+                />
+              </div>
+              <div className="p-6 text-center flex-grow flex flex-col justify-between">
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">Grades 7-9</div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Junior Secondary</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Specialized subject combinations with deeper exploration of integrated sciences, humanities, ICT studies, pre-technical, and creative arts.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
