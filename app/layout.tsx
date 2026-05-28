@@ -10,7 +10,7 @@ const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-heading' }
 
 export const metadata: Metadata = {
   title: 'Mastore Arise & Shine School | Quality Education',
-  description: 'Excellence in education with holistic development from PP1 to Grade 9. We nurture learners spiritually, socially, and academically since 2019.',
+  description: 'Excellence in education with holistic development from Play Group to Grade 9. We nurture learners spiritually, socially, and academically since 2019.',
   keywords: ['school', 'education', 'Kenya', 'junior school', 'admissions', 'quality education'],
   authors: [{ name: 'Mastore Arise & Shine School' }],
   creator: 'Mastore Arise & Shine School',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: 'https://mastore.ac.ke',
     siteName: 'Mastore Arise & Shine School',
     title: 'Mastore Arise & Shine School | Quality Education',
-    description: 'Excellence in education with holistic development from PP1 to Grade 9.',
+    description: 'Excellence in education with holistic development from Play Group to Grade 9.',
   },
 };
 

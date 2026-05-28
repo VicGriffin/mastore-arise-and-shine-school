@@ -11,7 +11,7 @@ const StatisticsSection = () => {
     },
     {
       icon: Users,
-      number: 'PP1-9',
+      number: 'Play Group - G9',
       label: 'Grade Coverage',
       description: 'Comprehensive education from pre-primary through junior secondary',
     },

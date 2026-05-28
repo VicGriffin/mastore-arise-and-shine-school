@@ -135,7 +135,7 @@ export default function AcademicsPage() {
           <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Grade Levels</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* PP1-2 Card */}
+            {/* Play Group - PP2 Card */}
             <div className="bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
               <div className="relative h-48 w-full">
                 <Image
@@ -148,8 +148,8 @@ export default function AcademicsPage() {
               </div>
               <div className="p-6 text-center flex-grow flex flex-col justify-between">
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">PP1-2</div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">Pre-Primary</h3>
+                  <div className="text-3xl font-bold text-primary mb-2">Play Group - PP2</div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Play Group & Pre-Primary</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Foundation in literacy, numeracy, and social-emotional development with play-based learning and creative expression.
                   </p>

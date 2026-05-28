@@ -19,7 +19,7 @@ const metrics = [
     prefix: 'Grade ',
     suffix: '',
     title: 'Current learning cap',
-    body: 'Learner-centered growth from PP1 through Grade 9.',
+    body: 'Learner-centered growth from Play Group through Grade 9.',
   },
   {
     icon: BarChart3,

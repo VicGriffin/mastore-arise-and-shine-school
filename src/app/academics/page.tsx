@@ -128,7 +128,7 @@ export default function AcademicsPage() {
         <div className="page-shell">
           <div className="surface-panel p-8 sm:p-10">
             <span className="section-kicker bg-blue-50 text-blue-700">
-              Scope from PP1 to Grade 9
+              Scope from Play Group to Grade 9
             </span>
             <h2 className="section-title mt-5">
               Structured phases that carry learners from early foundations to Junior

@@ -66,7 +66,7 @@ const HeroSection = () => {
               <div className="text-sm text-blue-100">Years Strong</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold">PP1-9</div>
+              <div className="text-3xl font-bold">Play Group - G9</div>
               <div className="text-sm text-blue-100">All Grade Levels</div>
             </div>
             <div className="text-center">

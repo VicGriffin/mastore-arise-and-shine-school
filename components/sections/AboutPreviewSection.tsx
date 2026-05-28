@@ -19,7 +19,7 @@ const AboutPreviewSection = () => {
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Mastore Arise and Shine School was established in May 2019 with a vision to provide quality education while developing learners spiritually, socially, and academically. We grew from humble roots to a comprehensive institution serving students from PP1 to Grade 9.
+              Mastore Arise and Shine School was established in May 2019 with a vision to provide quality education while developing learners spiritually, socially, and academically. We grew from humble roots to a comprehensive institution serving students from Play Group to Grade 9.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -92,7 +92,7 @@ const AboutPreviewSection = () => {
 
           <div className="bg-gradient-to-br from-slate-50 to-slate-100/50 p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
             <CheckCircle2 className="w-6 h-6 text-primary mb-3" />
-            <h4 className="font-bold text-foreground mb-2">Grades PP1 - 9</h4>
+            <h4 className="font-bold text-foreground mb-2">Play Group - G9</h4>
             <p className="text-xs text-muted-foreground">
               Comprehensive coverage from pre-primary through junior secondary levels.
             </p>

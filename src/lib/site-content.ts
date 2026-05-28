@@ -237,7 +237,7 @@ export const mastoreGalleryItems = [
     image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.53.59.jpeg',
     title: 'Pre-Primary Recreation Field',
     category: 'Campus',
-    description: 'A beautiful dedicated playground for our youngest learners in PP1 and PP2.'
+    description: 'A beautiful dedicated playground for our youngest learners in Play Group and Pre-Primary.'
   },
   {
     image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.54.00.jpeg',

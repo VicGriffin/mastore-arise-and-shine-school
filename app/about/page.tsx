@@ -4,7 +4,7 @@ import { Users, Award, Briefcase, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us | Mastore Arise & Shine School',
-  description: 'Learn about our history, leadership, and values. Established in 2019, we serve learners from PP1 to Grade 9 with excellence and holistic development.',
+  description: 'Learn about our history, leadership, and values. Established in 2019, we serve learners from Play Group to Grade 9 with excellence and holistic development.',
 };
 
 export default function AboutPage() {
@@ -148,7 +148,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">Expansion to Excellence</h3>
                   <p className="text-muted-foreground leading-relaxed mb-2 text-sm">
-                    Under Madam Betty K. Njiru's leadership, the school has grown from a kindergarten into a comprehensive junior school serving students from PP1 to Grade 9. We now register excellent performance in both KPSEA and KJSEA assessments.
+                    Under Madam Betty K. Njiru's leadership, the school has grown from a kindergarten into a comprehensive junior school serving students from Play Group to Grade 9. We now register excellent performance in both KPSEA and KJSEA assessments.
                   </p>
                   <p className="text-xs text-primary font-semibold uppercase tracking-wider">2022-Present</p>
                 </div>

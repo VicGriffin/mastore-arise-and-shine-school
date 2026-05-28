@@ -231,6 +231,7 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                     >
                       <option value="">Select grade level</option>
+                      <option value="Play Group">Play Group</option>
                       <option value="PP1">PP1</option>
                       <option value="PP2">PP2</option>
                       <option value="Grade 1">Grade 1</option>
