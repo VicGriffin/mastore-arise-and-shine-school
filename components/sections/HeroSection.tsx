@@ -27,13 +27,6 @@ const HeroSection = () => {
             Strive to Excel. Quality education that develops learners spiritually, socially, and academically since 2019.
           </p>
 
-          {/* Tagline */}
-          <div className="pt-4">
-            <p className="text-sm uppercase tracking-widest font-bold text-blue-200">
-              Inclusive Systems. Scalable Impact.
-            </p>
-          </div>
-
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <Link href="/academics">
