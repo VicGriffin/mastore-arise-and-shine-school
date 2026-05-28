@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Cpu, BookOpen, Beaker, Trophy, Bus, Palette } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -7,6 +8,21 @@ export const metadata: Metadata = {
 };
 
 export default function GalleryPage() {
+  const galleryImages = [
+    { id: 1, src: '/images/1215.jpg', alt: 'School Campus View' },
+    { id: 2, src: '/images/1221.jpg', alt: 'Student Activities' },
+    { id: 3, src: '/images/323.jpg', alt: 'Classroom Learning' },
+    { id: 4, src: '/images/324.jpg', alt: 'Sports Event' },
+    { id: 5, src: '/images/328.jpg', alt: 'School Facilities' },
+    { id: 6, src: '/images/332.jpg', alt: 'Student Engagement' },
+    { id: 7, src: '/images/355.jpg', alt: 'Campus View' },
+    { id: 8, src: '/images/400.jpg', alt: 'School Building' },
+    { id: 9, src: '/images/403.jpg', alt: 'Events & Activities' },
+    { id: 10, src: '/images/460.jpg', alt: 'Student Programs' },
+    { id: 11, src: '/images/480.jpg', alt: 'School Life' },
+    { id: 12, src: '/images/493.jpg', alt: 'Learning Environment' },
+  ];
+
   const facilities = [
     {
       title: 'Computer Lab',
@@ -61,6 +77,68 @@ export default function GalleryPage() {
           <p className="text-xl text-blue-100 max-w-2xl">
             Explore our state-of-the-art facilities designed to support quality education and student development.
           </p>
+        </div>
+      </section>
+
+      {/* Photo Gallery Section */}
+      <section className="section-padding bg-white">
+        <div className="container-max">
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Campus Moments</h2>
+            <p className="text-lg text-muted-foreground">
+              A visual journey through the vibrant life and exceptional facilities at Mastore Arise & Shine School.
+            </p>
+          </div>
+
+          {/* Image Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            {galleryImages.map((image) => (
+              <div
+                key={image.id}
+                className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+              >
+                <div className="relative w-full h-64 sm:h-72 overflow-hidden">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Additional showcase images */}
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Large showcase images */}
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative w-full h-96 overflow-hidden">
+                <Image
+                  src="/images/20220908_124649.jpg"
+                  alt="School Event"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative w-full h-96 overflow-hidden">
+                <Image
+                  src="/images/20220908_125140.jpg"
+                  alt="School Activities"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

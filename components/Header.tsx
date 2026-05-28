@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import Button from './Button';
 
@@ -22,8 +23,15 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo & Branding */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-primary text-white flex items-center justify-center font-bold text-lg group-hover:bg-blue-700 transition-colors">
-              M
+            <div className="w-14 h-14 rounded-lg overflow-hidden flex items-center justify-center hover:shadow-md transition-shadow">
+              <Image
+                src="/images/SCHOOL LOG.webp"
+                alt="Mastore Arise & Shine School Logo"
+                width={56}
+                height={56}
+                className="object-contain"
+                priority
+              />
             </div>
             <div className="hidden sm:flex flex-col">
               <span className="text-sm font-bold text-primary">MASTORE ARISE</span>
