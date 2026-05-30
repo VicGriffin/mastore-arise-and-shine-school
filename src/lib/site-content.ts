@@ -132,189 +132,189 @@ export const galleryItems = [
 
 export const mastoreGalleryItems = [
   {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.47.52.jpeg',
-    title: 'School Main Campus',
+    image: '/images/mastore/school premise.jpeg',
+    title: 'School Premise',
     category: 'Campus',
-    description: 'A beautiful scenic view of the Mastore Arise & Shine School campus environment.'
+    description: 'A comprehensive view of the Mastore Arise & Shine School campus showcasing our modern infrastructure, well-maintained grounds, and secure learning environment.'
   },
   {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.47.55.jpeg',
-    title: 'School Bus Fleet',
-    category: 'Transport',
-    description: 'Our reliable school bus fleet ensuring safe transport for all learners.'
+    image: '/images/mastore/About Us  Our Staff.jpeg',
+    title: 'Our Staff',
+    category: 'Campus',
+    description: 'Dedicated educators and administrators who are committed to nurturing student success and providing quality education at Mastore Arise & Shine School.'
   },
   {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.47.56.jpeg',
-    title: 'School Transport Service',
-    category: 'Transport',
-    description: 'Safe and well-maintained school transport services covering our community.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.47.57.jpeg',
-    title: 'Modern Classroom Setting',
-    category: 'Academics',
-    description: 'Spacious and fully-equipped classroom setting designed for effective learning.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.01.jpeg',
-    title: 'Classroom Interactive Session',
-    category: 'Academics',
-    description: 'Pupils actively engaged in collaborative and interactive classroom learning exercises.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.02.jpeg',
-    title: 'Science Practical Experiments',
+    image: '/images/mastore/Administration.jpeg',
+    title: 'Administration',
     category: 'Facilities',
-    description: 'Hands-on learning and scientific exploration in our fully-equipped science laboratory.'
+    description: 'Professional administration facilities ensuring efficient school operations, student support services, and seamless parent-school communication.'
   },
   {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.023.jpeg',
-    title: 'Computer Lab Session',
-    category: 'Facilities',
-    description: 'Students building modern computer skills and digital literacy in our IT laboratory.'
+    image: '/images/mastore/Event.jpeg',
+    title: 'School Event',
+    category: 'Campus',
+    description: 'Celebration of school activities and events bringing together students, staff, and community in meaningful educational experiences.'
+  },
+  {
+    image: '/images/mastore/Female Teaching & Administration Staff.jpeg',
+    title: 'Female Teaching & Administration Staff',
+    category: 'Campus',
+    description: 'Our capable female educators and administrators who play vital roles in student development and school management.'
+  },
+  {
+    image: '/images/mastore/Group Photo (Students & Staff).jpeg',
+    title: 'Group Photo - Students & Staff',
+    category: 'Campus',
+    description: 'A unified school community representing our diverse student body and supportive teaching staff working together for educational excellence.'
+  },
+  {
+    image: '/images/mastore/Our Faculty.jpeg',
+    title: 'Our Faculty',
+    category: 'Campus',
+    description: 'Highly qualified faculty members with expertise across diverse subject areas and commitment to student-centered learning methodologies.'
+  },
+  {
+    image: '/images/mastore/Senior Students & Administration.jpeg',
+    title: 'Senior Students & Administration',
+    category: 'Campus',
+    description: 'Senior students demonstrating leadership and responsibility alongside school administration, fostering positive school culture and values.'
+  },
+  {
+    image: '/images/mastore/Student Life.jpeg',
+    title: 'Student Life',
+    category: 'Academics',
+    description: 'A glimpse into the vibrant daily life of students at Mastore, showcasing academic engagement, social interaction, and personal growth.'
+  },
+  {
+    image: '/images/mastore/about us faculty.jpeg',
+    title: 'About Us - Faculty',
+    category: 'Campus',
+    description: 'Our teaching faculty dedicated to delivering quality instruction and supporting the holistic development of each student.'
+  },
+  {
+    image: '/images/mastore/award.jpeg',
+    title: 'Award Recognition',
+    category: 'Campus',
+    description: 'Student and school achievements, recognizing excellence in academics, sports, arts, and character development across our community.'
+  },
+  {
+    image: '/images/mastore/award1.jpeg',
+    title: 'Award Recognition 1',
+    category: 'Campus',
+    description: 'Celebrating outstanding student accomplishments and the value we place on recognition of merit and excellence.'
+  },
+  {
+    image: '/images/mastore/base ball.jpeg',
+    title: 'Baseball Activity',
+    category: 'Sports',
+    description: 'Students engaging in baseball sports, developing teamwork, athletic skills, and healthy physical activity as part of our sports program.'
+  },
+  {
+    image: '/images/mastore/cerification.jpeg',
+    title: 'Certification',
+    category: 'Academics',
+    description: 'Official school certification and accreditation affirming our commitment to quality education and professional standards.'
+  },
+  {
+    image: '/images/mastore/certification2.jpeg',
+    title: 'Certification 2',
+    category: 'Academics',
+    description: 'Additional professional certifications and recognitions validating our educational practices and institutional quality.'
+  },
+  {
+    image: '/images/mastore/certifications.jpeg',
+    title: 'Certifications',
+    category: 'Academics',
+    description: 'Multiple institutional certifications demonstrating Mastore Arise & Shine School\'s adherence to educational standards and regulatory requirements.'
+  },
+  {
+    image: '/images/mastore/faculty.jpeg',
+    title: 'Faculty Members',
+    category: 'Campus',
+    description: 'Experienced and passionate faculty members committed to creating engaging learning experiences and mentoring student development.'
+  },
+  {
+    image: '/images/mastore/faculty2.jpeg',
+    title: 'Faculty Members 2',
+    category: 'Campus',
+    description: 'Additional faculty showcase displaying our diverse teaching team\'s expertise and dedication to educational excellence.'
+  },
+  {
+    image: '/images/mastore/fuculty and pupils.jpeg',
+    title: 'Faculty & Pupils',
+    category: 'Academics',
+    description: 'Positive teacher-student relationships demonstrating the supportive and nurturing educational environment at Mastore.'
+  },
+  {
+    image: '/images/mastore/kungfu demonstration.jpeg',
+    title: 'Kung Fu Demonstration',
+    category: 'Sports',
+    description: 'Students showcasing martial arts skills through kung fu demonstrations, promoting discipline, focus, and physical wellness.'
+  },
+  {
+    image: '/images/mastore/more swimming.jpeg',
+    title: 'Swimming Activity',
+    category: 'Sports',
+    description: 'Students enjoying swimming lessons and activities, developing aquatic skills, water safety, and physical fitness.'
+  },
+  {
+    image: '/images/mastore/planting.jpeg',
+    title: 'Environmental Planting Activity',
+    category: 'Co-curricular',
+    description: 'Students engaged in environmental conservation through tree planting and gardening, fostering ecological awareness and community responsibility.'
+  },
+  {
+    image: '/images/mastore/play group graduation (2).jpeg',
+    title: 'Play Group Graduation 2',
+    category: 'Campus',
+    description: 'Celebration of pre-primary students\' graduation milestone, marking their transition and early childhood educational achievements.'
+  },
+  {
+    image: '/images/mastore/play group graduation.jpeg',
+    title: 'Play Group Graduation',
+    category: 'Campus',
+    description: 'Joy and pride of young learners graduating from play group, celebrating their early learning success and readiness for primary school.'
+  },
+  {
+    image: '/images/mastore/play team.jpeg',
+    title: 'Play Team Activity',
+    category: 'Sports',
+    description: 'Students participating in organized team games and recreational activities, building camaraderie and physical health.'
+  },
+  {
+    image: '/images/mastore/scouting Youth Movement Club.jpeg',
+    title: 'Scouting Youth Movement Club',
+    category: 'Co-curricular',
+    description: 'School scouting program developing leadership, civic responsibility, outdoor skills, and character education through structured youth movement activities.'
+  },
+  {
+    image: '/images/mastore/swimming.jpeg',
+    title: 'Swimming Lessons',
+    category: 'Sports',
+    description: 'Professional swimming instruction building water confidence, life-saving skills, and aquatic competency in a safe environment.'
+  },
+  {
+    image: '/images/mastore/swimming1.jpeg',
+    title: 'Swimming Practice 1',
+    category: 'Sports',
+    description: 'Students practicing swimming techniques and strokes under professional guidance, promoting physical development and water safety awareness.'
+  },
+  {
+    image: '/images/mastore/swimming2.jpeg',
+    title: 'Swimming Practice 2',
+    category: 'Sports',
+    description: 'Continuing swimming program showcasing student progress and dedication to aquatic skill development and fitness.'
+  },
+  {
+    image: '/images/mastore/teachers.jpeg',
+    title: 'Teachers Group',
+    category: 'Campus',
+    description: 'Our collective teaching team united in their mission to provide quality education and positive mentoring for all students at Mastore.'
   },
   {
     image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.03.jpeg',
-    title: 'School Library and Resource Hub',
-    category: 'Facilities',
-    description: 'A quiet, research-friendly space with rich educational resources for all grade levels.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.031.jpeg',
-    title: 'Junior Secondary Science Study',
-    category: 'Academics',
-    description: 'Junior Secondary School learners conducting advanced educational laboratory science trials.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.032.jpeg',
-    title: 'Primary School Classroom Learning',
-    category: 'Academics',
-    description: 'Nurturing early education with creative and student-focused instructional environments.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.04.jpeg',
-    title: 'Outdoor Sports Day Event',
-    category: 'Sports',
-    description: 'Students expressing sportsmanship, team spirit, and physical health during sports events.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.041.jpeg',
-    title: 'School Soccer Tournament',
-    category: 'Sports',
-    description: 'Active physical education programs building athletic skills and peer collaboration.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.05.jpeg',
-    title: 'Music & Instrumental Lessons',
-    category: 'Co-curricular',
-    description: 'Developing musical talent and creative arts coordination through expert mentorship.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.051.jpeg',
-    title: 'Performing & Drama Arts',
-    category: 'Co-curricular',
-    description: 'Drama practice sessions building communication skills and dramatic arts appreciation.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.052.jpeg',
-    title: 'Student Creative Crafts & Art',
-    category: 'Co-curricular',
-    description: 'Exquisite painting, sketching, and manual craftsmanship on display by our pupils.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.061.jpeg',
-    title: 'Pupil Playtime Activities',
+    title: 'Additional Campus View',
     category: 'Campus',
-    description: 'Safe, interactive recreation for lower primary pupils in our active play zones.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.062.jpeg',
-    title: 'Morning School Assembly',
-    category: 'Campus',
-    description: 'Fostering unity, school values, spiritual devotion, and administrative guidance.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.53.59.jpeg',
-    title: 'Pre-Primary Recreation Field',
-    category: 'Campus',
-    description: 'A beautiful dedicated playground for our youngest learners in Play Group and Pre-Primary.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.54.00.jpeg',
-    title: 'School Main Office Front',
-    category: 'Campus',
-    description: 'Welcoming front architecture of the main Mastore Arise & Shine administration building.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.54.25.jpeg',
-    title: 'Administration Lobby Area',
-    category: 'Facilities',
-    description: 'Highly professional administrative spaces designed to welcome guests and parents.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.54.28.jpeg',
-    title: 'School Dining Hall Infrastructure',
-    category: 'Facilities',
-    description: 'Clean, spacious, and highly hygienic cafeteria serving hot and healthy daily diets.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.54.29.jpeg',
-    title: 'Modern Hygienic Kitchen',
-    category: 'Facilities',
-    description: 'Sanitary kitchen facilities with catering professionals preparing meals under strict hygiene standards.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.54.30.jpeg',
-    title: 'Classroom Group Portrait',
-    category: 'Academics',
-    description: 'Happy and bright learners displaying focus and academic enthusiasm in class.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.54.34.jpeg',
-    title: 'Junior Secondary School Block',
-    category: 'Campus',
-    description: 'Modern classrooms built to facilitate Grade 7, Grade 8, and Grade 9 Competency-Based Curriculum.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.54.45.jpeg',
-    title: 'Teacher Mentorship Consultation',
-    category: 'Academics',
-    description: 'One-on-one personal guidance supporting student growth and continuous evaluation.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.54.47.jpeg',
-    title: 'Scouting & Leadership Co-Curricular',
-    category: 'Co-curricular',
-    description: 'Students developing responsibility, citizenship, and first aid skills as part of the school scouts troop.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.54.54.jpeg',
-    title: 'Annual Science Fair Exhibition',
-    category: 'Academics',
-    description: 'Students proudly presenting their science discoveries and practical technology innovations.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.54.57.jpeg',
-    title: 'Mastore School Campus Overview',
-    category: 'Campus',
-    description: 'A spacious and secure educational environment located in Nairobi, Kenya.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.55.08.jpeg',
-    title: 'Evening Bus Drop-off Session',
-    category: 'Transport',
-    description: 'Organized and well-monitored student transitions after school classes.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.55.13.jpeg',
-    title: 'Kindergarten Craft & Activity',
-    category: 'Academics',
-    description: 'Play-based activities designed to build fine motor skills and creative development in pre-primary children.'
-  },
-  {
-    image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.55.14.jpeg',
-    title: 'School Graduation & Celebrations',
-    category: 'Campus',
-    description: 'Celebrating student excellence and transitions across their educational levels.'
+    description: 'Another perspective of our school facilities and campus environment showcasing educational infrastructure and amenities.'
   }
 ];

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Camera, MonitorSmartphone, School, Sparkles } from 'lucide-react'
-import { galleryItems } from '@/lib/site-content'
+import { mastoreGalleryItems } from '@/lib/site-content'
 
-const categories = Array.from(new Set(galleryItems.map((item) => item.category)))
+const categories = Array.from(new Set(mastoreGalleryItems.map((item) => item.category)))
 
 export const metadata: Metadata = {
   title: 'Gallery',
@@ -17,8 +17,8 @@ export default function GalleryPage() {
       <section className="relative overflow-hidden px-3 pt-2 sm:px-5">
         <div className="page-shell relative overflow-hidden rounded-[2.4rem] border border-white/70 bg-slate-950">
           <Image
-            src={galleryItems[0]?.image || '/images/1215.jpg'}
-            alt={galleryItems[0]?.title || 'School Gallery'}
+            src={mastoreGalleryItems[0]?.image || '/images/mastore/WhatsApp Image 2026-05-28 at 10.47.52.jpeg'}
+            alt={mastoreGalleryItems[0]?.title || 'Mastore School Gallery'}
             fill
             priority
             sizes="(min-width: 1280px) 1200px, 100vw"
@@ -56,7 +56,7 @@ export default function GalleryPage() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {galleryItems.map((item, index) => (
+            {mastoreGalleryItems.map((item, index) => (
               <div
                 key={`${item.category}-${item.title}`}
                 className={`overflow-hidden rounded-[1.6rem] flex flex-col ${
