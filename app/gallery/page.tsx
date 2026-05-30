@@ -74,7 +74,7 @@ export default function GalleryPage() {
             <ImageIcon className="w-12 h-12" /> School Gallery
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl leading-relaxed">
-            Explore our actual campus, learning moments, physical activities, and facilities supporting quality holistic education.
+            Explore our actual school, learning moments, physical activities, and facilities supporting quality holistic education.
           </p>
         </div>
       </section>
@@ -86,7 +86,7 @@ export default function GalleryPage() {
             <span className="text-primary font-semibold uppercase tracking-wider text-sm">
               Visual Journey
             </span>
-            <h2 className="text-4xl font-bold text-foreground">Campus Moments</h2>
+            <h2 className="text-4xl font-bold text-foreground">School Moments</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Explore actual daily life at Mastore Arise & Shine School through our updated collection of student actions, studies, sports, and celebrations. Click any photo to see it in high definition.
             </p>

@@ -59,7 +59,7 @@ const CallToActionSection = () => {
             >
               <Calendar className="w-6 h-6 mx-auto mb-2 text-blue-300" />
               <div className="text-sm font-semibold">Schedule Tour</div>
-              <div className="text-xs text-blue-100 mt-1">Book a campus visit</div>
+              <div className="text-xs text-blue-100 mt-1">Book a school visit</div>
             </Link>
           </div>
 
