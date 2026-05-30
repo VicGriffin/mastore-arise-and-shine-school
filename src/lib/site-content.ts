@@ -134,13 +134,13 @@ export const mastoreGalleryItems = [
   {
     image: '/images/mastore/school premise.jpeg',
     title: 'School Premise',
-    category: 'Campus',
-    description: 'A comprehensive view of the Mastore Arise & Shine School campus showcasing our modern infrastructure, well-maintained grounds, and secure learning environment.'
+    category: 'School',
+    description: 'A comprehensive view of the Mastore Arise & Shine School grounds showcasing our modern infrastructure, well-maintained facilities, and secure learning environment.'
   },
   {
     image: '/images/mastore/About Us  Our Staff.jpeg',
     title: 'Our Staff',
-    category: 'Campus',
+    category: 'School',
     description: 'Dedicated educators and administrators who are committed to nurturing student success and providing quality education at Mastore Arise & Shine School.'
   },
   {
@@ -152,31 +152,31 @@ export const mastoreGalleryItems = [
   {
     image: '/images/mastore/Event.jpeg',
     title: 'School Event',
-    category: 'Campus',
+    category: 'School',
     description: 'Celebration of school activities and events bringing together students, staff, and community in meaningful educational experiences.'
   },
   {
     image: '/images/mastore/Female Teaching & Administration Staff.jpeg',
     title: 'Female Teaching & Administration Staff',
-    category: 'Campus',
+    category: 'School',
     description: 'Our capable female educators and administrators who play vital roles in student development and school management.'
   },
   {
     image: '/images/mastore/Group Photo (Students & Staff).jpeg',
     title: 'Group Photo - Students & Staff',
-    category: 'Campus',
+    category: 'School',
     description: 'A unified school community representing our diverse student body and supportive teaching staff working together for educational excellence.'
   },
   {
     image: '/images/mastore/Our Faculty.jpeg',
     title: 'Our Faculty',
-    category: 'Campus',
+    category: 'School',
     description: 'Highly qualified faculty members with expertise across diverse subject areas and commitment to student-centered learning methodologies.'
   },
   {
     image: '/images/mastore/Senior Students & Administration.jpeg',
     title: 'Senior Students & Administration',
-    category: 'Campus',
+    category: 'School',
     description: 'Senior students demonstrating leadership and responsibility alongside school administration, fostering positive school culture and values.'
   },
   {
@@ -188,19 +188,19 @@ export const mastoreGalleryItems = [
   {
     image: '/images/mastore/about us faculty.jpeg',
     title: 'About Us - Faculty',
-    category: 'Campus',
+    category: 'School',
     description: 'Our teaching faculty dedicated to delivering quality instruction and supporting the holistic development of each student.'
   },
   {
     image: '/images/mastore/award.jpeg',
     title: 'Award Recognition',
-    category: 'Campus',
+    category: 'School',
     description: 'Student and school achievements, recognizing excellence in academics, sports, arts, and character development across our community.'
   },
   {
     image: '/images/mastore/award1.jpeg',
     title: 'Award Recognition 1',
-    category: 'Campus',
+    category: 'School',
     description: 'Celebrating outstanding student accomplishments and the value we place on recognition of merit and excellence.'
   },
   {
@@ -230,13 +230,13 @@ export const mastoreGalleryItems = [
   {
     image: '/images/mastore/faculty.jpeg',
     title: 'Faculty Members',
-    category: 'Campus',
+    category: 'School',
     description: 'Experienced and passionate faculty members committed to creating engaging learning experiences and mentoring student development.'
   },
   {
     image: '/images/mastore/faculty2.jpeg',
     title: 'Faculty Members 2',
-    category: 'Campus',
+    category: 'School',
     description: 'Additional faculty showcase displaying our diverse teaching team\'s expertise and dedication to educational excellence.'
   },
   {
@@ -266,13 +266,13 @@ export const mastoreGalleryItems = [
   {
     image: '/images/mastore/play group graduation (2).jpeg',
     title: 'Play Group Graduation 2',
-    category: 'Campus',
+    category: 'School',
     description: 'Celebration of pre-primary students\' graduation milestone, marking their transition and early childhood educational achievements.'
   },
   {
     image: '/images/mastore/play group graduation.jpeg',
     title: 'Play Group Graduation',
-    category: 'Campus',
+    category: 'School',
     description: 'Joy and pride of young learners graduating from play group, celebrating their early learning success and readiness for primary school.'
   },
   {
@@ -308,13 +308,13 @@ export const mastoreGalleryItems = [
   {
     image: '/images/mastore/teachers.jpeg',
     title: 'Teachers Group',
-    category: 'Campus',
+    category: 'School',
     description: 'Our collective teaching team united in their mission to provide quality education and positive mentoring for all students at Mastore.'
   },
   {
     image: '/images/mastore/WhatsApp Image 2026-05-28 at 10.48.03.jpeg',
-    title: 'Additional Campus View',
-    category: 'Campus',
-    description: 'Another perspective of our school facilities and campus environment showcasing educational infrastructure and amenities.'
+    title: 'Additional School View',
+    category: 'School',
+    description: 'Another perspective of our school facilities and school environment showcasing educational infrastructure and amenities.'
   }
 ];

@@ -112,7 +112,7 @@ export default function ContactPage() {
         <div className="page-shell grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
           <aside className="surface-panel p-8 sm:p-10">
             <span className="section-kicker bg-blue-50 text-blue-700">
-              Visit the campus
+              Visit the school
             </span>
             <h2 id="visit-us" className="section-title mt-5">
               Friendly admissions support during official school hours.
