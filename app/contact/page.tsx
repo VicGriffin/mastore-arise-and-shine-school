@@ -47,20 +47,21 @@ export default function ContactPage() {
   return (
     <main>
       {/* Page Header */}
-      <section className="relative bg-blue-955 text-white py-24 overflow-hidden">
+      <section className="relative bg-blue-955 text-white py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/mastore/WhatsApp Image 2026-05-28 at 10.54.25.jpeg"
             alt="Mastore Arise & Shine School Administration Block"
             fill
             priority
+            sizes="100vw"
             className="object-cover object-center brightness-[0.35]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-955 via-slate-900/80 to-transparent" />
         </div>
-        <div className="relative z-10 container-max">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Get In Touch</h1>
-          <p className="text-xl text-blue-100 max-w-2xl">
+        <div className="relative z-10 container-max px-4 sm:px-0">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6">Get In Touch</h1>
+          <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-2xl">
             Have questions about admissions? Ready to visit our school? We&apos;d love to hear from you.
           </p>
         </div>
@@ -68,56 +69,56 @@ export default function ContactPage() {
 
       {/* Contact Information */}
       <section className="section-padding bg-white">
-        <div className="container-max">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="container-max px-4 sm:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12 md:mb-16">
             {/* Phone */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border border-blue-200 p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-6 h-6 text-primary" />
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg md:rounded-xl border border-blue-200 p-5 sm:p-6 md:p-8 text-center h-full flex flex-col">
+              <div className="w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-3 sm:mb-4 flex-shrink-0">
+                <Phone className="w-5 sm:w-6 md:w-7 h-5 sm:h-6 md:h-7 text-primary" />
               </div>
-              <h3 className="font-bold text-foreground mb-2">Phone</h3>
+              <h3 className="font-bold text-foreground mb-2 sm:mb-3 text-sm sm:text-base md:text-lg">Phone</h3>
               <a
                 href="tel:+254113634661"
-                className="text-primary hover:text-blue-700 font-semibold"
+                className="text-primary hover:text-blue-700 font-semibold text-xs sm:text-sm md:text-base break-all"
               >
                 +254113634661
               </a>
-              <p className="text-xs text-muted-foreground mt-2">Mon-Fri, 8:00 AM - 5:00 PM</p>
+              <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-2 sm:mt-3">Mon-Fri, 8:00 AM - 5:00 PM</p>
             </div>
 
             {/* Email */}
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl border border-green-200 p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-6 h-6 text-green-600" />
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg md:rounded-xl border border-green-200 p-5 sm:p-6 md:p-8 text-center h-full flex flex-col">
+              <div className="w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-3 sm:mb-4 flex-shrink-0">
+                <Mail className="w-5 sm:w-6 md:w-7 h-5 sm:h-6 md:h-7 text-green-600" />
               </div>
-              <h3 className="font-bold text-foreground mb-2">Email</h3>
+              <h3 className="font-bold text-foreground mb-2 sm:mb-3 text-sm sm:text-base md:text-lg">Email</h3>
               <a
                 href="mailto:mariseshine4@gmail.com"
-                className="text-green-600 hover:text-green-700 font-semibold break-all"
+                className="text-green-600 hover:text-green-700 font-semibold break-all text-xs sm:text-sm md:text-base"
               >
                 mariseshine4@gmail.com
               </a>
-              <p className="text-xs text-muted-foreground mt-2">We respond within 24 hours</p>
+              <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-2 sm:mt-3">We respond within 24 hours</p>
             </div>
 
             {/* Location */}
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl border border-purple-200 p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-6 h-6 text-purple-600" />
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg md:rounded-xl border border-purple-200 p-5 sm:p-6 md:p-8 text-center h-full flex flex-col">
+              <div className="w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-3 sm:mb-4 flex-shrink-0">
+                <MapPin className="w-5 sm:w-6 md:w-7 h-5 sm:h-6 md:h-7 text-purple-600" />
               </div>
-              <h3 className="font-bold text-foreground mb-2">Location</h3>
-              <p className="text-purple-600 font-semibold text-sm">
+              <h3 className="font-bold text-foreground mb-2 sm:mb-3 text-sm sm:text-base md:text-lg">Location</h3>
+              <p className="text-purple-600 font-semibold text-xs sm:text-sm md:text-base">
                 Nairobi, Kenya
               </p>
-              <p className="text-xs text-muted-foreground mt-2">School directions available</p>
+              <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-2 sm:mt-3">School directions available</p>
             </div>
 
             {/* Hours */}
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl border border-orange-200 p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-6 h-6 text-orange-600" />
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg md:rounded-xl border border-orange-200 p-5 sm:p-6 md:p-8 text-center h-full flex flex-col">
+              <div className="w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 rounded-full bg-white shadow-md flex items-center justify-center mx-auto mb-3 sm:mb-4 flex-shrink-0">
+                <Clock className="w-5 sm:w-6 md:w-7 h-5 sm:h-6 md:h-7 text-orange-600" />
               </div>
-              <h3 className="font-bold text-foreground mb-2">Hours</h3>
+              <h3 className="font-bold text-foreground mb-2 sm:mb-3 text-sm sm:text-base md:text-lg">Hours</h3>
               <div className="text-sm text-orange-600 font-semibold">
                 <p>7:30 AM - 4:00 PM</p>
                 <p className="text-xs text-muted-foreground mt-1">School days only</p>

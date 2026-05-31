@@ -131,22 +131,27 @@
   }
   
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
     font-weight: 700;
   }
   
   h2 {
-    @apply text-3xl md:text-4xl;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
     font-weight: 700;
   }
   
   h3 {
-    @apply text-2xl md:text-3xl;
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+    font-weight: 600;
+  }
+  
+  h4 {
+    @apply text-lg sm:text-xl md:text-2xl;
     font-weight: 600;
   }
   
   p {
-    @apply text-base md:text-lg leading-relaxed;
+    @apply text-sm sm:text-base md:text-lg leading-relaxed;
     color: var(--foreground);
   }
   
@@ -162,6 +167,19 @@
   
   button {
     @apply transition-all duration-200;
+    outline: none;
+  }
+  
+  button:focus-visible {
+    @apply ring-2 ring-offset-2 ring-ring;
+  }
+  
+  a:focus-visible {
+    @apply ring-2 ring-offset-2 ring-ring rounded-sm;
+  }
+  
+  input, textarea, select {
+    @apply focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring;
   }
   
   html {
@@ -171,26 +189,56 @@
 
 @layer components {
   .container-max {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8 2xl:px-12;
   }
   
   .btn-primary {
-    @apply px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 shadow-sm hover:shadow-md;
+    @apply px-6 py-3 md:h-14 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 shadow-sm hover:shadow-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring;
   }
   
   .btn-secondary {
-    @apply px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:bg-slate-700 transition-all duration-200;
+    @apply px-6 py-3 md:h-14 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:bg-slate-700 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring;
   }
   
   .btn-outline {
-    @apply px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200;
+    @apply px-6 py-3 md:h-14 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring;
   }
   
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-12 sm:py-16 md:py-24 lg:py-32 2xl:py-40;
   }
   
   .gradient-overlay {
     @apply absolute inset-0 bg-gradient-to-r from-slate-900/40 to-slate-900/20;
+  }
+  
+  /* Form elements */
+  .form-input {
+    @apply h-12 sm:h-14 px-4 rounded-lg border border-input bg-input text-foreground placeholder-muted-foreground transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring;
+  }
+  
+  .form-textarea {
+    @apply min-h-40 px-4 py-3 rounded-lg border border-input bg-input text-foreground placeholder-muted-foreground transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring resize-none;
+  }
+  
+  .card-responsive {
+    @apply rounded-lg md:rounded-xl border border-border bg-card p-4 sm:p-6 md:p-8 transition-all duration-200;
+  }
+  
+  /* Responsive grid helpers */
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8;
+  }
+  
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8;
+  }
+  
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8;
+  }
+  
+  .grid-responsive-5 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 md:gap-8;
   }
 }
