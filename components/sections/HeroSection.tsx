@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '../Button';
-import { Sparkles, BookOpen, Users } from 'lucide-react';
+import { BookOpen, Users } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -34,11 +34,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container-max text-center text-white w-full">
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 md:space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-1000 px-4 sm:px-6">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-white/15 backdrop-blur-xl border border-white/30 text-sm font-medium">
-            <Sparkles className="w-4 h-4" />
-            <span>Excellence in Education Since 2019</span>
-          </div>
+
 
           {/* Main Headline */}
           <div className="space-y-4">
