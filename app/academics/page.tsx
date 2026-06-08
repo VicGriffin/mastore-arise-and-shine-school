@@ -347,6 +347,58 @@ export default function AcademicsPage() {
           </div>
         </div>
       </section>
+
+      {/* Fee Structure Section */}
+      <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="container-max">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-foreground mb-6">Fee Structure</h2>
+            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+              Our comprehensive fee structure is designed to reflect the quality education and facilities we provide. 
+              For detailed information about tuition, boarding, activities, and available payment plans, 
+              we encourage you to contact our admissions team directly.
+            </p>
+
+            <div className="bg-white border-2 border-primary rounded-2xl shadow-lg p-10 md:p-12">
+              <h3 className="text-2xl font-bold text-foreground mb-4">Contact For More Information</h3>
+              <p className="text-muted-foreground mb-8 leading-relaxed">
+                Our admissions team is ready to provide you with comprehensive information about all fee structures, 
+                available scholarships, and payment options tailored to your family&apos;s needs.
+              </p>
+              
+              <div className="space-y-4 md:space-y-6">
+                <a
+                  href="tel:+254113634661"
+                  className="inline-block bg-primary text-primary-foreground hover:bg-blue-800 px-8 py-3 rounded-lg font-semibold transition-all duration-300 mr-4"
+                >
+                  Call +254 113 634 661
+                </a>
+                <a
+                  href="mailto:mariseshine4@gmail.com"
+                  className="inline-block bg-accent text-accent-foreground hover:bg-orange-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+                >
+                  Email Us
+                </a>
+              </div>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-xl p-6 border border-border">
+                <h4 className="font-bold text-foreground mb-2">Flexible Payment</h4>
+                <p className="text-sm text-muted-foreground">Multiple payment plan options available</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 border border-border">
+                <h4 className="font-bold text-foreground mb-2">Scholarships</h4>
+                <p className="text-sm text-muted-foreground">Merit and need-based scholarships offered</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 border border-border">
+                <h4 className="font-bold text-foreground mb-2">Transparent Pricing</h4>
+                <p className="text-sm text-muted-foreground">No hidden charges - all fees clearly outlined</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
