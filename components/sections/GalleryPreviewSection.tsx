@@ -14,13 +14,13 @@ const GalleryPreviewSection = () => {
       <div className="container-max px-4 sm:px-0">
         <div className="text-center mb-12 sm:mb-16 md:mb-20 space-y-3 sm:space-y-4">
           <span className="text-primary font-semibold uppercase tracking-wider text-xs sm:text-sm">
-            School Resources
+            Learning Environment
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-            Explore Our School
+            Supportive Learning Facilities
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            State-of-the-art facilities supporting world-class education and student development.
+            Discover the modern infrastructure and comprehensive facilities that create an inspiring learning environment for our students.
           </p>
         </div>
 

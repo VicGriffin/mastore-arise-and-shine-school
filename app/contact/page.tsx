@@ -108,9 +108,9 @@ export default function ContactPage() {
               </div>
               <h3 className="font-bold text-foreground mb-2 sm:mb-3 text-sm sm:text-base md:text-lg">Location</h3>
               <p className="text-purple-600 font-semibold text-xs sm:text-sm md:text-base">
-                Nairobi, Kenya
+                Mastore Area, Juja Farm
               </p>
-              <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-2 sm:mt-3">School directions available</p>
+              <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-2 sm:mt-3">Juja, Nairobi, Kenya</p>
             </div>
 
             {/* Hours */}
@@ -122,6 +122,77 @@ export default function ContactPage() {
               <div className="text-sm text-orange-600 font-semibold">
                 <p>7:30 AM - 4:00 PM</p>
                 <p className="text-xs text-muted-foreground mt-1">School days only</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Map Section */}
+      <section className="section-padding bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="container-max px-4 sm:px-0">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8 sm:mb-10 md:mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 sm:mb-4">
+                Find Us on the Map
+              </h2>
+              <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+                Conveniently located in the Mastore area of Juja Farm, our school is easily accessible and well-situated for parents across Nairobi.
+              </p>
+            </div>
+            
+            <div className="relative w-full h-96 sm:h-[500px] rounded-xl overflow-hidden shadow-lg border-2 border-blue-200">
+              <iframe
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen=""
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.824192618447!2d36.919!3d-1.063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b2d9c3c3c3d%3A0x1234567890abcdef!2sMastore%20Arise%20and%20Shine%20School!5e0!3m2!1sen!2ske!4v1234567890"
+              />
+            </div>
+
+            {/* Location Details Card */}
+            <div className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+              <div className="bg-white rounded-xl border border-border shadow-sm p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4">Location Details</h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <div>
+                    <p className="text-sm font-semibold text-muted-foreground">School Address</p>
+                    <p className="text-base sm:text-lg font-semibold text-foreground">Mastore Area, Juja Farm, Juja, Nairobi, Kenya</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-muted-foreground">Coordinates</p>
+                    <p className="text-base sm:text-lg font-semibold text-foreground">-1.0630° S, 36.9190° E</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-muted-foreground">Distance from CBD</p>
+                    <p className="text-base sm:text-lg font-semibold text-foreground">~35 km from Nairobi City Center</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border border-blue-200 p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4">Getting Here</h3>
+                <ul className="space-y-3 sm:space-y-4">
+                  <li className="flex gap-3">
+                    <span className="text-primary font-bold flex-shrink-0">•</span>
+                    <span className="text-sm sm:text-base text-foreground">Via Juja Road - Well-paved access routes</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-primary font-bold flex-shrink-0">•</span>
+                    <span className="text-sm sm:text-base text-foreground">Close to major transport hubs and Juja town</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-primary font-bold flex-shrink-0">•</span>
+                    <span className="text-sm sm:text-base text-foreground">Ample parking facilities for parents</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-primary font-bold flex-shrink-0">•</span>
+                    <span className="text-sm sm:text-base text-foreground">School transport services available</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
