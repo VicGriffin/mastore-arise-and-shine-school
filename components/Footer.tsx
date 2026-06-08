@@ -25,22 +25,27 @@ const Footer = () => {
             <h4 className="font-bold text-base sm:text-lg md:text-xl mb-3 sm:mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm md:text-base">
               <li>
-                <Link href="/" className="text-blue-100 hover:text-white transition-colors h-10 flex items-center focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring rounded px-1">
+                <Link href="/" className="text-primary-foreground/80 hover:text-white transition-colors h-10 flex items-center focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring rounded px-1">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-blue-100 hover:text-white transition-colors h-10 flex items-center focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring rounded px-1">
+                <Link href="/about" className="text-primary-foreground/80 hover:text-white transition-colors h-10 flex items-center focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring rounded px-1">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/academics" className="text-blue-100 hover:text-white transition-colors h-10 flex items-center focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring rounded px-1">
+                <Link href="/academics" className="text-primary-foreground/80 hover:text-white transition-colors h-10 flex items-center focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring rounded px-1">
                   Academics
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="text-blue-100 hover:text-white transition-colors h-10 flex items-center focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring rounded px-1">
+                <Link href="/admissions" className="text-primary-foreground/80 hover:text-white transition-colors h-10 flex items-center focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring rounded px-1">
+                  Admissions
+                </Link>
+              </li>
+              <li>
+                <Link href="/gallery" className="text-primary-foreground/80 hover:text-white transition-colors h-10 flex items-center focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring rounded px-1">
                   Gallery
                 </Link>
               </li>

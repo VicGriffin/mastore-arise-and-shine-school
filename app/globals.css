@@ -4,74 +4,74 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --card: #f8fafc;
-  --card-foreground: #0f172a;
+  --background: #faf9f7;
+  --foreground: #1a1410;
+  --card: #ffffff;
+  --card-foreground: #1a1410;
   --popover: #ffffff;
-  --popover-foreground: #0f172a;
-  --primary: #1e3a8a;
+  --popover-foreground: #1a1410;
+  --primary: #2d5016;
   --primary-foreground: #ffffff;
-  --secondary: #64748b;
+  --secondary: #8b7355;
   --secondary-foreground: #ffffff;
-  --muted: #e2e8f0;
-  --muted-foreground: #475569;
-  --accent: #3b82f6;
+  --muted: #e8e6e1;
+  --muted-foreground: #6b6560;
+  --accent: #c67c4e;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #f1f5f9;
-  --ring: #3b82f6;
-  --chart-1: #1e3a8a;
-  --chart-2: #3b82f6;
-  --chart-3: #60a5fa;
-  --chart-4: #93c5fd;
-  --chart-5: #dbeafe;
+  --border: #e8e6e1;
+  --input: #f5f3f0;
+  --ring: #c67c4e;
+  --chart-1: #2d5016;
+  --chart-2: #c67c4e;
+  --chart-3: #8b7355;
+  --chart-4: #d4a574;
+  --chart-5: #e8dcc8;
   --radius: 0.625rem;
   --sidebar: #ffffff;
-  --sidebar-foreground: #0f172a;
-  --sidebar-primary: #1e3a8a;
+  --sidebar-foreground: #1a1410;
+  --sidebar-primary: #2d5016;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #3b82f6;
+  --sidebar-accent: #c67c4e;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e2e8f0;
-  --sidebar-ring: #3b82f6;
+  --sidebar-border: #e8e6e1;
+  --sidebar-ring: #c67c4e;
 }
 
 .dark {
-  --background: #0f172a;
-  --foreground: #f1f5f9;
-  --card: #1e293b;
-  --card-foreground: #f1f5f9;
-  --popover: #1e293b;
-  --popover-foreground: #f1f5f9;
-  --primary: #60a5fa;
-  --primary-foreground: #0f172a;
-  --secondary: #94a3b8;
-  --secondary-foreground: #0f172a;
-  --muted: #334155;
-  --muted-foreground: #cbd5e1;
-  --accent: #3b82f6;
-  --accent-foreground: #0f172a;
+  --background: #1a1410;
+  --foreground: #faf9f7;
+  --card: #2a2420;
+  --card-foreground: #faf9f7;
+  --popover: #2a2420;
+  --popover-foreground: #faf9f7;
+  --primary: #7cb342;
+  --primary-foreground: #1a1410;
+  --secondary: #d4a574;
+  --secondary-foreground: #1a1410;
+  --muted: #3d3530;
+  --muted-foreground: #c8c4be;
+  --accent: #e8a049;
+  --accent-foreground: #1a1410;
   --destructive: #f87171;
-  --destructive-foreground: #0f172a;
-  --border: #334155;
-  --input: #1e293b;
-  --ring: #60a5fa;
-  --chart-1: #60a5fa;
-  --chart-2: #3b82f6;
-  --chart-3: #1e40af;
-  --chart-4: #1e3a8a;
-  --chart-5: #0f172a;
-  --sidebar: #1e293b;
-  --sidebar-foreground: #f1f5f9;
-  --sidebar-primary: #60a5fa;
-  --sidebar-primary-foreground: #0f172a;
-  --sidebar-accent: #3b82f6;
-  --sidebar-accent-foreground: #0f172a;
-  --sidebar-border: #334155;
-  --sidebar-ring: #60a5fa;
+  --destructive-foreground: #1a1410;
+  --border: #3d3530;
+  --input: #2a2420;
+  --ring: #e8a049;
+  --chart-1: #7cb342;
+  --chart-2: #e8a049;
+  --chart-3: #d4a574;
+  --chart-4: #c67c4e;
+  --chart-5: #5a4a3a;
+  --sidebar: #2a2420;
+  --sidebar-foreground: #faf9f7;
+  --sidebar-primary: #7cb342;
+  --sidebar-primary-foreground: #1a1410;
+  --sidebar-accent: #e8a049;
+  --sidebar-accent-foreground: #1a1410;
+  --sidebar-border: #3d3530;
+  --sidebar-ring: #e8a049;
 }
 
 @theme inline {
@@ -193,11 +193,11 @@
   }
   
   .btn-primary {
-    @apply px-6 py-3 md:h-14 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 shadow-sm hover:shadow-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring;
+    @apply px-6 py-3 md:h-14 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-all duration-200 shadow-sm hover:shadow-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring;
   }
   
   .btn-secondary {
-    @apply px-6 py-3 md:h-14 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:bg-slate-700 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring;
+    @apply px-6 py-3 md:h-14 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:opacity-90 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring;
   }
   
   .btn-outline {
