@@ -1,6 +1,5 @@
 import HeroSection from '@/components/sections/HeroSection';
 import AboutPreviewSection from '@/components/sections/AboutPreviewSection';
-import PrincipalMessageSection from '@/components/sections/PrincipalMessageSection';
 import AchievementsSection from '@/components/sections/AchievementsSection';
 import TrustBadgesSection from '@/components/sections/TrustBadgesSection';
 import WhatWeOfferSection from '@/components/sections/WhatWeOfferSection';
@@ -15,7 +14,6 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutPreviewSection />
-      <PrincipalMessageSection />
       <AchievementsSection />
       <TrustBadgesSection />
       <WhatWeOfferSection />
